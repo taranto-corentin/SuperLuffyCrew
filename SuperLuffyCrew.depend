@@ -1,0 +1,97 @@
+# depslib dependency file v1.0
+1637155426 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/main.cpp
+	"Game.h"
+
+1637155373 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/Game.h
+	"CharacterView.h"
+	"GroundView.h"
+
+1637155356 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/CharacterView.h
+	"Character.h"
+	"GroundView.h"
+
+1637155341 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/Character.h
+	<iostream>
+
+1637155386 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/GroundView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Obstacle.h"
+
+1637155403 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/Obstacle.h
+	<iostream>
+	"Position.h"
+
+1637155414 /home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/include/Position.h
+
+1637155237 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/Character.cpp
+	"Character.h"
+
+1637155252 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/CharacterView.cpp
+	"CharacterView.h"
+
+1637155260 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/Game.cpp
+	"Game.h"
+
+1637155547 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/GroundView.cpp
+	"GroundView.h"
+
+1637155294 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/Obstacle.cpp
+	"Obstacle.h"
+
+1637155312 source:/home/corentin/Documents/WorkspaceDJV/Test/SuperLuffyCrew/src/Position.cpp
+	"Position.h"
+
+1637155426 source:/home/corentin/Documents/Projet/SuperLuffyCrew/main.cpp
+	"Game.h"
+
+1637155373 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Game.h
+	"CharacterView.h"
+	"GroundView.h"
+
+1637155356 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
+	"Character.h"
+	"GroundView.h"
+
+1637155341 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Character.h
+	<iostream>
+
+1637155386 /home/corentin/Documents/Projet/SuperLuffyCrew/include/GroundView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Obstacle.h"
+
+1637155403 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Obstacle.h
+	<iostream>
+	"Position.h"
+
+1637155414 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Position.h
+
+1637155237 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
+	"Character.h"
+
+1637155252 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
+	"CharacterView.h"
+
+1637155260 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
+	"Game.h"
+
+1637155547 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
+	"GroundView.h"
+
+1637155294 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Obstacle.cpp
+	"Obstacle.h"
+
+1637155312 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
+	"Position.h"
+
