@@ -95,3 +95,51 @@
 1637155312 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
+	"Game.h"
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
+	"CharacterView.h"
+	"GroundView.h"
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
+	"Character.h"
+	"GroundView.h"
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
+	<iostream>
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Obstacle.h"
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
+	<iostream>
+	"Position.h"
+
+1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Position.h
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
+	"Character.h"
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
+	"CharacterView.h"
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
+	"Game.h"
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
+	"GroundView.h"
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
+	"Obstacle.h"
+
+1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
+	"Position.h"
+
