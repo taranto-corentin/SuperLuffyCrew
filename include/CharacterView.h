@@ -24,10 +24,10 @@ class CharacterView
         const int nbTypeMovement = 2;
         const int nbImagesPerMovement = 3;
 
-        const float characterWidth = 64.f;
+        const float characterWidth = 45.f;
 
     public:
-        CharacterView(GroundView* groundView=new GroundView());
+        CharacterView();
         virtual ~CharacterView();
         CharacterView(const CharacterView& other);
         CharacterView& operator=(const CharacterView& rhs);

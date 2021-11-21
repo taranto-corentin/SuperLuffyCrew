@@ -10,6 +10,8 @@ GroundView::GroundView()
     }
     Obstacle* obstacle = new Obstacle(64, 600-128);
     this->obstacles.push_back(obstacle);
+    Obstacle* obstacle2 = new Obstacle(300, 390);
+    this->obstacles.push_back(obstacle2);
 
     //Load image
     sf::Image groundImage;

@@ -1,6 +1,6 @@
 #include "CharacterView.h"
 
-CharacterView::CharacterView(GroundView* groundView): groundView(groundView)
+CharacterView::CharacterView()
 {
     //Init the character
     this->character = Character(this->startingY);
@@ -132,6 +132,13 @@ void CharacterView::jump()
     }
     if(!this->jumpDone)
     {
+        int index = this->checkCollision();
+        if(index != -1)
+        {
+            this->jumpDone = true;
+            this->character.jump(7);
+            return;
+        }
         this->character.jump(-6);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -183,10 +190,17 @@ const int CharacterView::checkCollision(int movement) const
         {
             continue;
         }
-        if(this->character.getY() + 64 <= newY || this->character.getY() >= newY + 64)
+        //if(this->character.getY() + 64 <= newY || this->character.getY() > newY + 64)
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
         {
+            if(i == grounds.size() - 1)
+            {
+                std::cout << "No collision in the Y" << std::endl;
+            }
+
             continue;
         }
+        std::cout << "Collision !!!" << std::endl;
         return i;
     }
     return -1;
