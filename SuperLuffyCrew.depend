@@ -144,14 +144,17 @@
 1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-<<<<<<< HEAD
+1637597762 D
+	"Obstacle.h"
+
 1637583648 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1637595348 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
+1637601036 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
+	"EnemyView.h"
 
 1637583648 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
@@ -161,7 +164,7 @@
 	<iostream>
 
 1637583648 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
-=======
+
 1637595849 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
@@ -170,7 +173,8 @@
 	"Position.h"
 
 1637597762 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EnemyView.h
->>>>>>> refs/remotes/origin/main
+
+1637599287 s/remotes/origin/main
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -178,8 +182,6 @@
 	<SFML/Network.hpp>
 	<iostream>
 	<vector>
-<<<<<<< HEAD
-	"Obstacle.h"
 
 1637583648 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
@@ -193,7 +195,7 @@
 1637583648 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1637599532 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
+1637601071 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1637583648 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/GroundView.cpp
@@ -224,11 +226,32 @@
 	<iostream>
 	<vector>
 	"Power.h"
-=======
+
+1637597517 
 	"Enemy.h"
 	"GroundView.h"
 
 1637599287 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
->>>>>>> refs/remotes/origin/main
+
+1637600578 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Enemy.h"
+	"GroundView.h"
+
+1637600578 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Enemy.h
+	<iostream>
+	"Position.h"
+
+1637600578 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Enemy.cpp
+	"Enemy.h"
+
+1637600578 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
+	"EnemyView.h"
 
