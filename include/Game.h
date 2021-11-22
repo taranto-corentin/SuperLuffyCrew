@@ -3,6 +3,7 @@
 
 #include "CharacterView.h"
 #include "GroundView.h"
+#include "EnemyView.h"
 
 class Game
 {
@@ -14,6 +15,7 @@ class Game
         //Ground images
         GroundView groundView;
         CharacterView characterView;
+        EnemyView enemyView;
 
         //Game logic
 

@@ -25,6 +25,7 @@ void Game::initWindow()
 void Game::initVariables()
 {
     this->characterView.setGroundView(&groundView);
+    this->enemyView.setGroundView(&groundView);
 }
 
 //Accesssors
@@ -51,6 +52,7 @@ void Game::pollEvents()
             if(index == -1)
             {
                 this->groundView.moveGround(1);
+                this->enemyView.moveEnemy(1);
             }
 
             //Update the image of the character
@@ -64,6 +66,7 @@ void Game::pollEvents()
             {
                 //Move the obstacles
                 this->groundView.moveGround(0);
+                this->enemyView.moveEnemy(0);
 
             }
 
@@ -94,6 +97,7 @@ void Game::render()
     //Draw the game objects
     this->groundView.render(this->window);
     this->characterView.render(this->window);
+    this->enemyView.render(this->window);
     //Display the new content of the window
     this->window->display();
 }
