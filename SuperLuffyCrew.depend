@@ -95,21 +95,22 @@
 1637155312 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
+1637597447 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
+	"EnemyView.h"
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
+1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
+1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
 	<iostream>
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
+1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -119,30 +120,31 @@
 	<vector>
 	"Obstacle.h"
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
+1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
 	"Position.h"
 
-1637317610 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Position.h
+1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Position.h
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
+1637597918 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
 	"Obstacle.h"
 
-1637317610 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
+1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
+<<<<<<< HEAD
 1637583648 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
 	"Game.h"
 
@@ -159,6 +161,16 @@
 	<iostream>
 
 1637583648 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
+=======
+1637595849 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Enemy.cpp
+	"Enemy.h"
+
+1637595752 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Enemy.h
+	<iostream>
+	"Position.h"
+
+1637597762 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EnemyView.h
+>>>>>>> refs/remotes/origin/main
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -166,6 +178,7 @@
 	<SFML/Network.hpp>
 	<iostream>
 	<vector>
+<<<<<<< HEAD
 	"Obstacle.h"
 
 1637583648 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
@@ -211,4 +224,11 @@
 	<iostream>
 	<vector>
 	"Power.h"
+=======
+	"Enemy.h"
+	"GroundView.h"
+
+1637599287 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
+	"EnemyView.h"
+>>>>>>> refs/remotes/origin/main
 

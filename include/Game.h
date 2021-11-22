@@ -3,7 +3,11 @@
 
 #include "CharacterView.h"
 #include "GroundView.h"
+<<<<<<< HEAD
 #include "PowerView.h"
+=======
+#include "EnemyView.h"
+>>>>>>> refs/remotes/origin/main
 
 class Game
 {
@@ -15,7 +19,11 @@ class Game
         //Ground images
         GroundView groundView;
         CharacterView characterView;
+<<<<<<< HEAD
         PowerView powerView;
+=======
+        EnemyView enemyView;
+>>>>>>> refs/remotes/origin/main
 
         //Game logic
 
