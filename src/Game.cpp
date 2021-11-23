@@ -52,6 +52,7 @@ void Game::pollEvents()
             if(index == -1)
             {
                 this->groundView.moveGround(1);
+                this->powerView.movePowers(1);
                 this->enemyView.moveEnemy(1);
             }
 
@@ -66,8 +67,8 @@ void Game::pollEvents()
             {
                 //Move the obstacles
                 this->groundView.moveGround(0);
+                this->powerView.movePowers(0);
                 this->enemyView.moveEnemy(0);
-
             }
 
             //Update the image of the character
@@ -97,6 +98,7 @@ void Game::render()
     //Draw the game objects
     this->groundView.render(this->window);
     this->characterView.render(this->window);
+    this->powerView.render(this->window);
     this->enemyView.render(this->window);
     //Display the new content of the window
     this->window->display();
