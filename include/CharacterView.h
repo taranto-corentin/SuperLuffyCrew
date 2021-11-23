@@ -36,6 +36,7 @@ class CharacterView
 
         //Accessors
         void setGroundView(GroundView* groundView);
+        void setPowerView(PowerView* powerView);
 
         //Methods
         void render(sf::RenderWindow* window);

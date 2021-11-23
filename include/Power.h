@@ -20,6 +20,7 @@ class Power
         void changePosition(const float x, const float y);
         const float getX() const;
         const float getY() const;
+        const std::string str() const;
 };
 
 #endif // POWER_H

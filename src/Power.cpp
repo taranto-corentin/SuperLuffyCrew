@@ -38,3 +38,8 @@ const float Power::getY() const
 {
     return this->position.getY();
 }
+
+const std::string Power::str() const
+{
+    return "Power ; " + this->position.str();
+}

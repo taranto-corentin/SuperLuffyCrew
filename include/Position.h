@@ -1,6 +1,7 @@
 #ifndef POSITION_H
 #define POSITION_H
 
+#include <string>
 
 class Position
 {
@@ -18,6 +19,8 @@ class Position
         void changePosition(const float x, const float y);
         const float getX() const;
         const float getY() const;
+
+        const std::string str() const;
 };
 
 #endif // POSITION_H
