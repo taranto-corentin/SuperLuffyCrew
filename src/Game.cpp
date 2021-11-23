@@ -48,6 +48,7 @@ void Game::pollEvents()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
             int index = this->characterView.checkCollision(1);
+            int indexPower = this->characterView.checkCollisionWithPowers(1);
             //Move the obstacles
             if(index == -1)
             {

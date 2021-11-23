@@ -205,3 +205,40 @@ const int CharacterView::checkCollision(int movement) const
     }
     return -1;
 }
+
+const int CharacterView::checkCollisionWithPowers(int movement) const
+{
+    std::vector<Power*> powers = this->powerView->getPowers();
+
+    for(size_t i=0; i<powers.size(); i++)
+    {
+        int newX = powers.at(i)->getX();
+        int newY = powers.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        {
+            continue;
+        }
+        //if(this->character.getY() + 64 <= newY || this->character.getY() > newY + 64)
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            if(i == powers.size() - 1)
+            {
+                std::cout << "No collision in the Y with any power" << std::endl;
+            }
+
+            continue;
+        }
+        std::cout << "Collision with a power !!!" << std::endl;
+        return i;
+    }
+    return -1;
+}
