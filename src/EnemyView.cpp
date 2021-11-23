@@ -2,7 +2,7 @@
 
 EnemyView::EnemyView()
 {
-    Enemy* enemy = new Enemy(550, 600 - 128);
+    Enemy* enemy = new Enemy(550, 600 - 192);
     this->enemys.push_back(enemy);
 
     //Load image
@@ -21,7 +21,7 @@ EnemyView::EnemyView()
         sf::Sprite sprite;
         this->enemySprite.push_back(sprite);
         this->enemySprite.at(i).setTexture(this->enemyTexture);
-        this->enemySprite.at(i).setScale(1.f, 1.f);
+        this->enemySprite.at(i).setScale(2.f, 2.f);
     }
 }
 

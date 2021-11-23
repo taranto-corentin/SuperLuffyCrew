@@ -246,6 +246,9 @@
 	"Enemy.h"
 	"GroundView.h"
 
+<<<<<<< HEAD
+1637599647 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
+=======
 1637600578 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Enemy.h
 	<iostream>
 	"Position.h"
@@ -254,5 +257,6 @@
 	"Enemy.h"
 
 1637600578 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
+>>>>>>> refs/remotes/origin/main
 	"EnemyView.h"
 
