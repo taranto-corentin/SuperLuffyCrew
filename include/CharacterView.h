@@ -3,6 +3,7 @@
 
 #include "Character.h"
 #include "GroundView.h"
+#include "EnemyView.h"
 #include "PowerView.h"
 
 class CharacterView
@@ -13,6 +14,7 @@ class CharacterView
         bool jumpDone;
 
         GroundView* groundView;
+        EnemyView* enemyView;
         PowerView* powerView;
 
         //Images
@@ -44,6 +46,7 @@ class CharacterView
         void jump();
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;
+        const int checkCollisionWithEnemies(int movement=0) const;
         const int checkCollisionWithPowers(int movement=0) const;
 };
 
