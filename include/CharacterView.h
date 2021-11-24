@@ -4,6 +4,7 @@
 #include "Character.h"
 #include "GroundView.h"
 #include "EnemyView.h"
+#include "PowerView.h"
 
 class CharacterView
 {
@@ -14,6 +15,8 @@ class CharacterView
 
         GroundView* groundView;
         EnemyView* enemyView;
+        PowerView* powerView;
+
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
@@ -35,6 +38,7 @@ class CharacterView
 
         //Accessors
         void setGroundView(GroundView* groundView);
+        void setPowerView(PowerView* powerView);
 
         //Methods
         void render(sf::RenderWindow* window);
@@ -43,6 +47,7 @@ class CharacterView
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;
         const int checkCollisionWithEnemies(int movement=0) const;
+        const int checkCollisionWithPowers(int movement=0) const;
 };
 
 #endif // CHARACTERVIEW_H

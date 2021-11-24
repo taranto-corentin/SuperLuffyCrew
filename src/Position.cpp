@@ -40,3 +40,8 @@ const float Position::getY() const
 {
     return this->y;
 }
+
+const std::string Position::str() const
+{
+    return "Position : (" + std::to_string(x) + ", " + std::to_string(y) + ")";
+}

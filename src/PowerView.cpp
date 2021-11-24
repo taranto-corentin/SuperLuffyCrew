@@ -9,6 +9,12 @@ PowerView::PowerView()
     Power* meraMera = new Power(420, 600-128);
     this->powers.push_back(meraMera);
 
+    std::cout << "Powers from the constructor : " << std::endl;
+    for(size_t i=0; i<this->powers.size(); i++)
+    {
+        std::cout << this->powers.at(i)->str() << std::endl;
+    }
+
     //Load image of the Gomu Gomu fruit
     sf::Image gomuGomuImage;
     if(!gomuGomuImage.loadFromFile("assets/GomuGomu.png"))
@@ -54,7 +60,11 @@ PowerView::PowerView()
 
 PowerView::~PowerView()
 {
-    //dtor
+    for(size_t i=0; i<this->powers.size(); i++)
+    {
+        delete this->powers.at(i);
+    }
+    this->powers.clear();
 }
 
 PowerView::PowerView(const PowerView& other): powers(other.powers), gomuGomuTexture(other.gomuGomuTexture), baraBaraTexture(other.baraBaraTexture), meraMeraTexture(other.meraMeraTexture), powerSprites(other.powerSprites)
@@ -75,7 +85,7 @@ PowerView& PowerView::operator=(const PowerView& rhs)
     return *this;
 }
 
-std::vector<Power*> PowerView::getPowers()
+std::vector<Power*> PowerView::getPowers() const
 {
     return this->powers;
 }

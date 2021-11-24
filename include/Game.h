@@ -16,8 +16,9 @@ class Game
 
         //Ground images
         GroundView groundView;
-        CharacterView characterView;
         PowerView powerView;
+        CharacterView characterView;
+
 
         EnemyView enemyView;
 

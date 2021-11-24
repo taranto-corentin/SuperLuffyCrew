@@ -25,7 +25,8 @@ void Game::initWindow()
 void Game::initVariables()
 {
     this->characterView.setGroundView(&groundView);
-    this->enemyView.setGroundView(&groundView);
+    //this->enemyView.setGroundView(&groundView);
+    this->characterView.setPowerView(&powerView);
 }
 
 //Accesssors
@@ -49,6 +50,7 @@ void Game::pollEvents()
         {
             int index = this->characterView.checkCollision(1);
             int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
+            int indexPower = this->characterView.checkCollisionWithPowers(1);
             //Move the obstacles
             if(index == -1)
             {

@@ -30,7 +30,7 @@ class PowerView
         PowerView& operator=(const PowerView& other);
 
         //Accessors
-        std::vector<Power*> getPowers();
+        std::vector<Power*> getPowers() const;
 
         //Methods
         void render(sf::RenderWindow* window);
