@@ -78,8 +78,3 @@ void EnemyView::moveEnemy(int movement)
     }
 }
 
-void EnemyView::setGroundView(GroundView* groundView)
-{
-    this->groundView = groundView;
-}
-

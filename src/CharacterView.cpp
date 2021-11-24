@@ -77,6 +77,11 @@ void CharacterView::setPowerView(PowerView* powerView)
     this->powerView = powerView;
 }
 
+void CharacterView::setEnemyView(EnemyView* enemyView)
+{
+    this->enemyView = enemyView;
+}
+
 void CharacterView::render(sf::RenderWindow* window)
 {
     window->draw(this->characterSprite);
@@ -265,7 +270,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
 
             continue;
         }
-        std::cout << "Collision !!!" << std::endl;
+        std::cout << "Collision with the enemy !!!" << std::endl;
         return i;
     }
     return -1;

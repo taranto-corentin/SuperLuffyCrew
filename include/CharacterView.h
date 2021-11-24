@@ -39,7 +39,7 @@ class CharacterView
         //Accessors
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
-
+        void setEnemyView(EnemyView* enemyView);
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);

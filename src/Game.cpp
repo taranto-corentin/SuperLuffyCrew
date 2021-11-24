@@ -27,6 +27,7 @@ void Game::initVariables()
     this->characterView.setGroundView(&groundView);
     //this->enemyView.setGroundView(&groundView);
     this->characterView.setPowerView(&powerView);
+    this->characterView.setEnemyView(&enemyView);
 }
 
 //Accesssors
