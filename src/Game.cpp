@@ -27,6 +27,7 @@ void Game::initVariables()
     this->characterView.setGroundView(&groundView);
     //this->enemyView.setGroundView(&groundView);
     this->characterView.setPowerView(&powerView);
+    this->characterView.setEnemyView(&enemyView);
 }
 
 //Accesssors
@@ -49,15 +50,15 @@ void Game::pollEvents()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
         {
             int index = this->characterView.checkCollision(1);
+            int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
             int indexPower = this->characterView.checkCollisionWithPowers(1);
             //Move the obstacles
-            if(index == -1)
+            if(index == -1 && indexEnemy == -1)
             {
                 this->groundView.moveGround(1);
                 this->powerView.movePowers(1);
                 this->enemyView.moveEnemy(1);
             }
-
             //Update the image of the character
             this->characterView.moveCharacter(1);
         }
@@ -65,14 +66,14 @@ void Game::pollEvents()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             int index = this->characterView.checkCollision(0);
-            if(index == -1)
+            int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
+            if(index == -1 && indexEnemy == -1)
             {
                 //Move the obstacles
                 this->groundView.moveGround(0);
                 this->powerView.movePowers(0);
                 this->enemyView.moveEnemy(0);
             }
-
             //Update the image of the character
             this->characterView.moveCharacter(0);
         }

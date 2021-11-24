@@ -77,6 +77,11 @@ void CharacterView::setPowerView(PowerView* powerView)
     this->powerView = powerView;
 }
 
+void CharacterView::setEnemyView(EnemyView* enemyView)
+{
+    this->enemyView = enemyView;
+}
+
 void CharacterView::render(sf::RenderWindow* window)
 {
     window->draw(this->characterSprite);
@@ -177,7 +182,6 @@ const bool CharacterView::isJumping() const
 const int CharacterView::checkCollision(int movement) const
 {
     std::vector<Obstacle*> grounds = this->groundView->getObstacles();
-
     for(size_t i=0; i<grounds.size(); i++)
     {
         int newX = grounds.at(i)->getX();
@@ -230,6 +234,38 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
             continue;
         }
         std::cout << "Collision with power !" << std::endl;
+        return i;
+    }
+    return -1;
+}
+
+const int CharacterView::checkCollisionWithEnemies(int movement) const
+{
+    std::vector<Enemy*> enemies = this->enemyView->getEnemys();
+
+    for(size_t i=0; i<enemies.size(); i++)
+    {
+        int newX = enemies.at(i)->getX();
+        int newY = enemies.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        {
+            continue;
+        }
+
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            continue;
+        }
+        std::cout << "Collision with the enemy !!!" << std::endl;
         return i;
     }
     return -1;

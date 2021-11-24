@@ -31,7 +31,6 @@ class EnemyView
 
         //Accessors
         std::vector<Enemy*> getEnemys();
-        void setGroundView(GroundView* groundView);
         //Methods
         void render(sf::RenderWindow* window);
         void moveEnemy(int movement);
