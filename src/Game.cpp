@@ -75,7 +75,7 @@ void Game::pollEvents()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             int index = this->characterView.checkCollision(0);
-            //int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
+            int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
             if(index == -1)
             {
                 //Move the obstacles
@@ -84,13 +84,13 @@ void Game::pollEvents()
                 this->enemyView.moveEnemy(0);
             }
 
-            /*if(indexEnemy == -1)
+            if(indexEnemy == -1)
             {
                 //Move the obstacles
                 this->groundView.moveGround(0);
                 this->powerView.movePowers(0);
                 this->enemyView.moveEnemy(0);
-            }*/
+            }
 
 
             //Update the image of the character
