@@ -117,3 +117,8 @@ void PowerView::movePowers(int movement)
         this->powers.at(i)->changePosition(changement, 0.f);
     }
 }
+
+void PowerView::assignPower(int index)
+{
+//    powers.erase(powers.begin() + index);
+}

@@ -66,6 +66,8 @@ void Game::pollEvents()
         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
         {
             int index = this->characterView.checkCollision(0);
+            //int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
+            int indexPower = this->characterView.checkCollisionWithPowers(1);
             int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
             if(index == -1 && indexEnemy == -1)
             {
