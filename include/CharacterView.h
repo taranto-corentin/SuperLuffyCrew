@@ -20,6 +20,7 @@ class CharacterView
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
+        sf::Sprite powerSprite;
 
         //Constants
         const float xPos = 368.f;
@@ -39,7 +40,7 @@ class CharacterView
         //Accessors
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
-
+        void setEnemyView(EnemyView* enemyView);
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);
