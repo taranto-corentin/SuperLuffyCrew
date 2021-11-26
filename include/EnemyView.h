@@ -34,6 +34,7 @@ class EnemyView
         //Methods
         void render(sf::RenderWindow* window);
         void moveEnemy(int movement);
+        void killEnemy(int index);
 
     protected:
 };

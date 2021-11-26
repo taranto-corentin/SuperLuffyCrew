@@ -78,3 +78,8 @@ void EnemyView::moveEnemy(int movement)
     }
 }
 
+void EnemyView::killEnemy(int index)
+{
+    enemys.erase(enemys.begin() + index);
+}
+

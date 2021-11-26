@@ -261,7 +261,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
             continue;
         }
 
-        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        if(this->character.getY() + 128 <= newY || newY + 128 <= this->character.getY())
         {
             if(i == enemies.size() - 1)
             {
@@ -271,7 +271,9 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
             continue;
         }
         std::cout << "Collision with the enemy !!!" << std::endl;
+        //enemyView->killEnemy(i);
         return i;
     }
     return -1;
 }
+
