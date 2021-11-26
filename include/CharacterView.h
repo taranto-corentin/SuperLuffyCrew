@@ -20,6 +20,7 @@ class CharacterView
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
+        sf::Sprite powerSprite;
 
         //Constants
         const float xPos = 368.f;

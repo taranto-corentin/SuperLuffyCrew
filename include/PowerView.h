@@ -35,6 +35,7 @@ class PowerView
         //Methods
         void render(sf::RenderWindow* window);
         void movePowers(int movement);
+        void assignPower(int index);
 };
 
 #endif // POWERVIEW_H

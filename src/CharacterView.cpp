@@ -234,6 +234,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
             continue;
         }
         std::cout << "Collision with power !" << std::endl;
+        powerView->assignPower(i);
         return i;
     }
     return -1;
@@ -263,11 +264,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
 
         if(this->character.getY() + 128 <= newY || newY + 128 <= this->character.getY())
         {
-            if(i == enemies.size() - 1)
-            {
-                std::cout << "No collision in the Y" << std::endl;
-            }
-
             continue;
         }
         std::cout << "Collision with the enemy !!!" << std::endl;
