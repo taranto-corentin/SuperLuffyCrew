@@ -121,4 +121,5 @@ void PowerView::movePowers(int movement)
 void PowerView::assignPower(int index)
 {
 //    powers.erase(powers.begin() + index);
+        std::cout << "woaw" << std::endl;
 }
