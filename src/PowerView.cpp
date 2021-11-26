@@ -121,6 +121,7 @@ void PowerView::movePowers(int movement)
 void PowerView::assignPower(int index)
 {
 //    powers.erase(powers.begin() + index);
+<<<<<<< HEAD
     std::cout << "Inside the method assign power" << std::endl;
 }
 
@@ -132,4 +133,7 @@ const std::string PowerView::str() const
         result += this->powers.at(i)->str() + "\n";
     }
     return result;
+=======
+        std::cout << "woaw" << std::endl;
+>>>>>>> d3907d2b154c4d63f5fd6a3eb3c101f06767e5ae
 }
