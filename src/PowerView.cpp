@@ -120,8 +120,10 @@ void PowerView::movePowers(int movement)
 
 void PowerView::assignPower(int index)
 {
-//    powers.erase(powers.begin() + index);
-    std::cout << "Inside the method assign" << std::endl;
+    Power* power = powers.at(index);
+    powers.erase(powers.begin() + index);
+    delete power;
+    powerSprites.erase(powerSprites.begin() + index);
 }
 
 const std::string PowerView::str() const
