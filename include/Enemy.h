@@ -18,6 +18,7 @@ class Enemy
         void changePosition(const float x, const float y);
         const float getX() const;
         const float getY() const;
+        std::string str() const;
 
     protected:
 };

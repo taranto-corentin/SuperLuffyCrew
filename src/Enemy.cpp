@@ -38,3 +38,8 @@ const float Enemy::getY() const
 {
     return this->position.getY();
 }
+
+std::string Enemy::str() const
+{
+    return "Enemy : " + position.str();
+}

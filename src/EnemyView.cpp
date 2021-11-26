@@ -3,7 +3,9 @@
 EnemyView::EnemyView()
 {
     Enemy* enemy = new Enemy(550, 600 - 192);
+    Enemy* enemy2 = new Enemy(745, 600-192);
     this->enemys.push_back(enemy);
+    this->enemys.push_back(enemy2);
 
     //Load image
     sf::Image enemyImage;
@@ -80,6 +82,19 @@ void EnemyView::moveEnemy(int movement)
 
 void EnemyView::killEnemy(int index)
 {
+    std::cout << str() << std::endl;
     enemys.erase(enemys.begin() + index);
+    enemySprite.erase(enemySprite.begin() + index);
+
+}
+
+std::string EnemyView::str() const
+{
+    std::string result;
+    for(size_t i=0; i<this->enemys.size(); i++)
+    {
+        result += this->enemys.at(i)->str() + "\n";
+    }
+    return result;
 }
 

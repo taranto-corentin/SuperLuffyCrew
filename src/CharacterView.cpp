@@ -268,7 +268,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
             continue;
         }
         std::cout << "Collision with the enemy !!!" << std::endl;
-        //enemyView->killEnemy(i);
+        enemyView->killEnemy(i);
         return i;
     }
     return -1;
