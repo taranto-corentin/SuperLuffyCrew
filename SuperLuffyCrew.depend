@@ -56,7 +56,7 @@
 	"PowerView.h"
 	"EnemyView.h"
 
-1637760387 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
+1637773225 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -85,10 +85,10 @@
 1637506535 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1637760533 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
+1637917436 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1637773095 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
+1637773225 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1637505283 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
@@ -296,7 +296,15 @@
 	<vector>
 	"Power.h"
 
-1637688655 /home/corentin/Documents/Projet/SuperLuffyCrew/include/PowerView.h
+1637917272 /home/corentin/Documents/Projet/SuperLuffyCrew/include/PowerView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Power.h"
 
 1637759184 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Power.h
 	<iostream>
@@ -338,6 +346,6 @@
 1637688519 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Power.cpp
 	"Power.h"
 
-1637689450 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/PowerView.cpp
+1637917359 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 

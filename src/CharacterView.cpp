@@ -235,6 +235,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
         }
         std::cout << "Collision with power !" << std::endl;
         powerView->assignPower(i);
+        std::cout << "Power view : " << powerView->str() << std::endl;
         return i;
     }
     return -1;
