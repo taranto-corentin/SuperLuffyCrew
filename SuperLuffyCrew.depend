@@ -56,7 +56,7 @@
 	"PowerView.h"
 	"EnemyView.h"
 
-1637760387 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
+1637917794 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -85,10 +85,10 @@
 1637506535 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1637760533 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
+1637917794 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1637773095 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
+1637917794 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1637505283 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
@@ -156,25 +156,25 @@
 1637688655 D
 	"Obstacle.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
 	"EnemyView.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
 	"PowerView.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
 	<iostream>
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -221,42 +221,42 @@
 	<vector>
 	"Power.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
 	"Position.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Position.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Position.h
 	<string>
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Character.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1637916050 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/GroundView.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Obstacle.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Obstacle.cpp
 	"Obstacle.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Position.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Power.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Power.cpp
 	"Power.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Power.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Power.h
 	<iostream>
 	"Position.h"
 
-1637915294 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/PowerView.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/PowerView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -273,7 +273,7 @@
 1637763918 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyView.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -284,14 +284,14 @@
 	"Enemy.h"
 	"GroundView.h"
 
-1637914457 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Enemy.h
+1637918082 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Enemy.h
 	<iostream>
 	"Position.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Enemy.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1637914457 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
+1637918082 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
 1637917091 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/PowerView.h
@@ -304,7 +304,15 @@
 	<vector>
 	"Power.h"
 
-1637688655 /home/corentin/Documents/Projet/SuperLuffyCrew/include/PowerView.h
+1637917272 /home/corentin/Documents/Projet/SuperLuffyCrew/include/PowerView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Power.h"
 
 1637759184 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Power.h
 	<iostream>
@@ -322,7 +330,7 @@
 	<iostream>
 	"Position.h"
 
-1637760387 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EnemyView.h
+1637917794 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EnemyView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -340,12 +348,12 @@
 1637687152 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1637761185 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
+1637917794 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
 1637688519 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Power.cpp
 	"Power.h"
 
-1637689450 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/PowerView.cpp
+1637917359 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 

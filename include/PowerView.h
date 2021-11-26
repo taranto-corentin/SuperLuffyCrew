@@ -36,6 +36,7 @@ class PowerView
         void render(sf::RenderWindow* window);
         void movePowers(int movement);
         void assignPower(int index);
+        const std::string str() const;
 };
 
 #endif // POWERVIEW_H
