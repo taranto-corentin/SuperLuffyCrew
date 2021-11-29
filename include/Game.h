@@ -19,6 +19,7 @@ class Game
         PowerView powerView;
         CharacterView characterView;
 
+        MeatView meatView;
 
         EnemyView enemyView;
 
