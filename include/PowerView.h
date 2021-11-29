@@ -23,6 +23,8 @@ class PowerView
         sf::Texture meraMeraTexture;
         std::vector<sf::Sprite> powerSprites;
 
+        bool isInFire = false;
+
     public:
         PowerView();
         virtual ~PowerView();
@@ -31,6 +33,8 @@ class PowerView
 
         //Accessors
         std::vector<Power*> getPowers() const;
+        bool getIsInFire() const;
+        void setIsInFire(bool var);
 
         //Methods
         void render(sf::RenderWindow* window);
