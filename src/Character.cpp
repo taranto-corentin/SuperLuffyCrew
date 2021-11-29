@@ -1,7 +1,7 @@
 #include "Character.h"
 
 //Test
-Character::Character(float y): y(y), jumping(false)
+Character::Character(float y): y(y), jumping(false), lifePoint(3)
 {
 
 }
@@ -13,7 +13,7 @@ Character::~Character()
 
 Character::Character(const Character& other): y(other.y), jumping(other.jumping)
 {
-    //copy ctor
+    //copy ctors
 }
 
 Character& Character::operator=(const Character& rhs)
@@ -34,6 +34,11 @@ const float Character::getY() const
     return y;
 }
 
+const int Character::getLifePoint() const
+{
+    return lifePoint;
+}
+
 void Character::setJumping(const bool jumping)
 {
     this->jumping = jumping;
@@ -47,4 +52,14 @@ const bool Character::isJumping() const
 void Character::jump(const float change)
 {
     this->y += change;
+}
+
+void Character::takeDamage()
+{
+    this->lifePoint--;
+}
+
+void Character::gainLife()
+{
+    this->lifePoint++;
 }
