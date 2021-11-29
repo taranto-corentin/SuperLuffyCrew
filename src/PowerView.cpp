@@ -95,9 +95,9 @@ bool PowerView::getIsInFire() const
     return this->isInFire;
 }
 
-void PowerView::setIsInFire(bool var)
+void PowerView::turnOffLuffy()
 {
-    isInFire = var;
+    isInFire = false;
 }
 
 void PowerView::render(sf::RenderWindow* window)
