@@ -120,6 +120,21 @@ void PowerView::movePowers(int movement)
 
 void PowerView::assignPower(int index)
 {
+    //Assign the power
+    const sf::Texture* texture = powerSprites.at(index).getTexture();
+    if(texture == &(this->gomuGomuTexture))
+    {
+        std::cout << "GomuGomu" << std::endl;
+    }
+    else if(texture == &(this->baraBaraTexture))
+    {
+        std::cout << "BaraBara" << std::endl;
+    }
+    else
+    {
+        std::cout << "MeraMera" << std::endl;
+    }
+
     Power* power = powers.at(index);
     powers.erase(powers.begin() + index);
     delete power;
