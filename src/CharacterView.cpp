@@ -130,6 +130,11 @@ void CharacterView::moveCharacter(const int movement)
         {
             this->characterSprite.setTexture(this->characterTextures[movement][0]);
         }
+        if(powerView->getIsInFire())
+        {
+            std::cout << "Luffy is in fire" << std::endl;
+            checkCollisionWithEnemies();
+        }
     }
 }
 
@@ -174,6 +179,8 @@ void CharacterView::jump()
 
             return;
         }
+        checkCollisionWithPowers();
+        checkCollisionWithMeats();
         this->character.jump(7);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -305,10 +312,10 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         {
             continue;
         }
-        std::cout << "Collision with meat ! hero life: " << character.getLifePoint() << std::endl;
+        std::cout << "Collision with meat !" << std::endl;
         meatView->eatMeat(i);
         character.gainLife();
-        std::cout << "Meat view : " << powerView->str() << std::endl;
+        std::cout << "Meat view : " << meatView->str() << std::endl;
         return i;
     }
     return -1;

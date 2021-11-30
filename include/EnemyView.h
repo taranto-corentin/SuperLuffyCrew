@@ -12,6 +12,7 @@
 
 #include "Enemy.h"
 #include "GroundView.h"
+#include "PowerView.h"
 
 class EnemyView
 {
@@ -20,6 +21,7 @@ class EnemyView
         //Game logic
         std::vector<Enemy*> enemys;
         GroundView* groundView;
+        PowerView* powerView;
         //Images
         sf::Texture enemyTexture;
         std::vector<sf::Sprite> enemySprite;
@@ -31,8 +33,10 @@ class EnemyView
 
         //Accessors
         std::vector<Enemy*> getEnemys();
+
         //Methods
         void render(sf::RenderWindow* window);
+        void setPowerView(PowerView* powerView);
         void moveEnemy(int movement);
         void killEnemy(int index);
         std::string str() const;
