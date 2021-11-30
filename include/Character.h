@@ -8,6 +8,7 @@ class Character
     private:
         float y;
         bool jumping;
+        int lifePoint;
 
     public:
         Character(float y=0);
@@ -17,11 +18,14 @@ class Character
 
         //Accessors
         const float getY() const;
+        const int getLifePoint() const;
         void setJumping(const bool jumping);
         const bool isJumping() const;
 
         //Methods for the game
         void jump(const float change);
+        void takeDamage();
+        void gainLife();
 };
 
 #endif // CHARACTER_H
