@@ -62,6 +62,5 @@ void LifeView::updateLifeTxt(int nbLife)
     if (nLife < 0) {
         nLife = 0;
     }
-    std::cout << "life received: " << nLife << std::endl;
     lifeText.setString( std::to_string(nLife) );
 }
