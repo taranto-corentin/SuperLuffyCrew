@@ -179,12 +179,9 @@ void CharacterView::jump()
 
             return;
         }
-<<<<<<< HEAD
         checkCollisionWithEnemies(2);
-=======
         checkCollisionWithPowers();
         checkCollisionWithMeats();
->>>>>>> refs/remotes/origin/main
         this->character.jump(7);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -287,21 +284,15 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
             continue;
         }
-<<<<<<< HEAD
 
         if(movement == 1 || movement == 0){
              std::cout << "Collision with the enemy !!! on side" << std::endl;
+             character.takeDamage();
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
         }
 
-
-=======
-        std::cout << "Collision with the enemy !!!" << std::endl;
-        enemyView->killEnemy(i);
-        character.takeDamage();
->>>>>>> refs/remotes/origin/main
         return i;
     }
     return -1;
