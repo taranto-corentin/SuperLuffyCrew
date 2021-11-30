@@ -293,6 +293,12 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             enemyView->killEnemy(i);
         }
 
+<<<<<<< HEAD
+=======
+        std::cout << "Collision with the enemy !!!" << std::endl;
+        enemyView->killEnemy(i);
+        character.takeDamage();
+>>>>>>> refs/remotes/origin/main
         return i;
     }
     return -1;
