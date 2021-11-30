@@ -6,6 +6,7 @@
 
 #include "PowerView.h"
 #include "EnemyView.h"
+#include "LifeView.h"
 
 class Game
 {
@@ -18,7 +19,9 @@ class Game
         GroundView groundView;
         PowerView powerView;
         CharacterView characterView;
+        LifeView lifeView;
 
+        MeatView meatView;
 
         EnemyView enemyView;
 

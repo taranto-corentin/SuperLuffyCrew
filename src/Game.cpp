@@ -28,6 +28,7 @@ void Game::initVariables()
     //this->enemyView.setGroundView(&groundView);
     this->characterView.setPowerView(&powerView);
     this->characterView.setEnemyView(&enemyView);
+    this->characterView.setMeatView(&meatView);
 }
 
 //Accesssors
@@ -52,12 +53,14 @@ void Game::pollEvents()
             int index = this->characterView.checkCollision(1);
             int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
             int indexPower = this->characterView.checkCollisionWithPowers(1);
+            int indexMeat = this->characterView.checkCollisionWithMeats(1);
             //Move the obstacles
             if(index == -1 && indexEnemy == -1)
             {
                 this->groundView.moveGround(1);
                 this->powerView.movePowers(1);
                 this->enemyView.moveEnemy(1);
+                this->meatView.moveMeat(1);
             }
             //Update the image of the character
             this->characterView.moveCharacter(1);
@@ -68,12 +71,14 @@ void Game::pollEvents()
             int index = this->characterView.checkCollision(0);
             int indexPower = this->characterView.checkCollisionWithPowers(0);
             int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
+            int indexMeat = this->characterView.checkCollisionWithMeats(0);
             if(index == -1 && indexEnemy == -1)
             {
                 //Move the obstacles
                 this->groundView.moveGround(0);
                 this->powerView.movePowers(0);
                 this->enemyView.moveEnemy(0);
+                this->meatView.moveMeat(0);
             }
             //Update the image of the character
             this->characterView.moveCharacter(0);
@@ -104,6 +109,11 @@ void Game::render()
     this->characterView.render(this->window);
     this->powerView.render(this->window);
     this->enemyView.render(this->window);
+    this->meatView.render(this->window);
+    this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
+    //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
+    this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
+
     //Display the new content of the window
     this->window->display();
 }

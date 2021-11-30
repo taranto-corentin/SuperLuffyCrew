@@ -82,6 +82,11 @@ void CharacterView::setEnemyView(EnemyView* enemyView)
     this->enemyView = enemyView;
 }
 
+void CharacterView::setMeatView(MeatView* meatView)
+{
+    this->meatView = meatView;
+}
+
 void CharacterView::render(sf::RenderWindow* window)
 {
     window->draw(this->characterSprite);
@@ -124,6 +129,11 @@ void CharacterView::moveCharacter(const int movement)
         else
         {
             this->characterSprite.setTexture(this->characterTextures[movement][0]);
+        }
+        if(powerView->getIsInFire())
+        {
+            std::cout << "Luffy is in fire" << std::endl;
+            checkCollisionWithEnemies();
         }
     }
 }
@@ -169,7 +179,12 @@ void CharacterView::jump()
 
             return;
         }
+<<<<<<< HEAD
         checkCollisionWithEnemies(2);
+=======
+        checkCollisionWithPowers();
+        checkCollisionWithMeats();
+>>>>>>> refs/remotes/origin/main
         this->character.jump(7);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -242,7 +257,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
     return -1;
 }
 
-const int CharacterView::checkCollisionWithEnemies(int movement) const
+const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<Enemy*> enemies = this->enemyView->getEnemys();
 
@@ -272,6 +287,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
 
             continue;
         }
+<<<<<<< HEAD
 
         if(movement == 1 || movement == 0){
              std::cout << "Collision with the enemy !!! on side" << std::endl;
@@ -281,8 +297,51 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
         }
 
 
+=======
+        std::cout << "Collision with the enemy !!!" << std::endl;
+        enemyView->killEnemy(i);
+        character.takeDamage();
+>>>>>>> refs/remotes/origin/main
         return i;
     }
     return -1;
+}
+
+const int CharacterView::checkCollisionWithMeats(int movement)
+{
+    std::vector<Meat*> meats = this->meatView->getMeats();
+
+    for(size_t i=0; i<meats.size(); i++)
+    {
+        int newX = meats.at(i)->getX();
+        int newY = meats.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        {
+            continue;
+        }
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            continue;
+        }
+        std::cout << "Collision with meat !" << std::endl;
+        meatView->eatMeat(i);
+        character.gainLife();
+        std::cout << "Meat view : " << meatView->str() << std::endl;
+        return i;
+    }
+    return -1;
+}
+
+Character CharacterView::getCharacter() const {
+    return character;
 }
 

@@ -5,6 +5,7 @@
 #include "GroundView.h"
 #include "EnemyView.h"
 #include "PowerView.h"
+#include "MeatView.h"
 
 class CharacterView
 {
@@ -16,6 +17,7 @@ class CharacterView
         GroundView* groundView;
         EnemyView* enemyView;
         PowerView* powerView;
+        MeatView* meatView;
 
         //Images
         sf::Texture characterTextures[2][3];
@@ -38,18 +40,25 @@ class CharacterView
         CharacterView& operator=(const CharacterView& rhs);
 
         //Accessors
+        Character getCharacter() const;
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
         void setEnemyView(EnemyView* enemyView);
+        void setMeatView(MeatView* meatView);
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);
         void jump();
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;
-        const int checkCollisionWithEnemies(int movement=0) const;
+        const int checkCollisionWithEnemies(int movement=0);
         const int checkCollisionWithPowers(int movement=0) const;
+<<<<<<< HEAD
 
+=======
+        const int checkCollisionWithMeats(int movement=0);
+        const int checkIfLuffyOrEnemyDie()const;
+>>>>>>> refs/remotes/origin/main
 };
 
 #endif // CHARACTERVIEW_H
