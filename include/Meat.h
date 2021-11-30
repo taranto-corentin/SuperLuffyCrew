@@ -4,11 +4,11 @@
 #include <iostream>
 
 #include "Position.h"
+#include "MovableObject.h"
 
-class Meat
+class Meat : public MovableObject
 {
     private:
-        Position position;
 
     public:
         Meat(float x, float y);
@@ -17,9 +17,6 @@ class Meat
         Meat& operator=(const Meat& other);
 
         //Methods
-        void changePosition(const float x, const float y);
-        const float getX() const;
-        const float getY() const;
         const std::string str() const;
 };
 
