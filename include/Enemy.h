@@ -4,10 +4,13 @@
 #include <iostream>
 
 #include "Position.h"
-class Enemy
+#include "MovableObject.h"
+
+class Enemy : public MovableObject
 {
     private:
-        Position position;
+
+
     public:
         Enemy(float x, float y);
         virtual ~Enemy();
@@ -15,12 +18,7 @@ class Enemy
         Enemy& operator=(const Enemy& other);
 
         //Methods
-        void changePosition(const float x, const float y);
-        const float getX() const;
-        const float getY() const;
-        std::string str() const;
-
-    protected:
+        virtual const std::string str() const;
 };
 
 #endif // ENEMY_H
