@@ -155,7 +155,7 @@
 1637759184 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-1638180677 D
+1638275251 D
 	"Obstacle.h"
 	"LifeView.h"
 
@@ -208,7 +208,7 @@
 	"GroundView.h"
 	"PowerView.h"
 
-1637687152 s/remotes/origin/main
+1638275251 s/remotes/origin/main
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -226,6 +226,14 @@
 	<iostream>
 	<vector>
 	"Power.h"
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	"LifeView.h"
+	<sstream>
 
 1638275251 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
@@ -494,9 +502,6 @@
 
 1638269575 /home/manjaro/Documents/SuperLuffyCrew/include/LifeView.h
 
-<<<<<<< HEAD
-1638180677 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MeatView.h
-=======
 1638275251 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MeatView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
@@ -506,7 +511,6 @@
 	<iostream>
 	<vector>
 	"Meat.h"
->>>>>>> refs/remotes/origin/main
 
 1638269617 source:/home/manjaro/Documents/SuperLuffyCrew/src/LifeView.cpp
 	"LifeView.h"
@@ -522,7 +526,6 @@
 1638275251 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MeatView.cpp
 	"MeatView.h"
 
-<<<<<<< HEAD
 1638275622 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MeatView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
@@ -538,27 +541,18 @@
 	"Position.h"
 
 1638275622 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/LifeView.h
-=======
-1638275251 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/LifeView.h
->>>>>>> refs/remotes/origin/main
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
 
-<<<<<<< HEAD
+1638275251 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/LifeView.h
+
 1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Meat.cpp
 	"Meat.h"
 
 1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MeatView.cpp
 	"MeatView.h"
 
-1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/LifeView.cpp
-=======
-1638275251 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/LifeView.cpp
->>>>>>> refs/remotes/origin/main
+1638288987 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/LifeView.cpp
 	"LifeView.h"
 	<sstream>
+
+1638275251 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/LifeView.cpp
 
