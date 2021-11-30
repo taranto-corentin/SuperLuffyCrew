@@ -130,6 +130,11 @@ void CharacterView::moveCharacter(const int movement)
         {
             this->characterSprite.setTexture(this->characterTextures[movement][0]);
         }
+        if(powerView->getIsInFire())
+        {
+            std::cout << "Luffy is in fire" << std::endl;
+            checkCollisionWithEnemies();
+        }
     }
 }
 
@@ -174,6 +179,9 @@ void CharacterView::jump()
 
             return;
         }
+        checkCollisionWithEnemies(2);
+        checkCollisionWithPowers();
+        checkCollisionWithMeats();
         this->character.jump(7);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -246,7 +254,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
     return -1;
 }
 
-const int CharacterView::checkCollisionWithEnemies(int movement) const
+const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<Enemy*> enemies = this->enemyView->getEnemys();
 
@@ -262,18 +270,31 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
             case 1:
                 newX -= 4.f;
                 break;
+            case 2:
+                newY -= 4.f;
+                break;
         }
         if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
         {
             continue;
         }
 
-        if(this->character.getY() + 128 <= newY || newY + 128 <= this->character.getY())
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
         {
+
             continue;
         }
+
+        if(movement == 1 || movement == 0){
+             std::cout << "Collision with the enemy !!! on side" << std::endl;
+        } else {
+            std::cout << "Collision with the enemy !!! on top" << std::endl;
+            enemyView->killEnemy(i);
+        }
+
         std::cout << "Collision with the enemy !!!" << std::endl;
         enemyView->killEnemy(i);
+        character.takeDamage();
         return i;
     }
     return -1;
@@ -307,9 +328,13 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         std::cout << "Collision with meat !" << std::endl;
         meatView->eatMeat(i);
         character.gainLife();
-        std::cout << "Meat view : " << powerView->str() << std::endl;
+        std::cout << "Meat view : " << meatView->str() << std::endl;
         return i;
     }
     return -1;
+}
+
+Character CharacterView::getCharacter() const {
+    return character;
 }
 

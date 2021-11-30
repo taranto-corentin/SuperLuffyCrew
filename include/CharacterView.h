@@ -40,6 +40,7 @@ class CharacterView
         CharacterView& operator=(const CharacterView& rhs);
 
         //Accessors
+        Character getCharacter() const;
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
         void setEnemyView(EnemyView* enemyView);
@@ -50,7 +51,7 @@ class CharacterView
         void jump();
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;
-        const int checkCollisionWithEnemies(int movement=0) const;
+        const int checkCollisionWithEnemies(int movement=0);
         const int checkCollisionWithPowers(int movement=0) const;
         const int checkCollisionWithMeats(int movement=0);
         const int checkIfLuffyOrEnemyDie()const;

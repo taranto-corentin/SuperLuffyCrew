@@ -47,10 +47,13 @@
 		<Unit filename="include/EnemyView.h" />
 		<Unit filename="include/Game.h" />
 		<Unit filename="include/GroundView.h" />
+		<Unit filename="include/Meat.h" />
+		<Unit filename="include/MeatView.h" />
 		<Unit filename="include/Obstacle.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/Power.h" />
 		<Unit filename="include/PowerView.h" />
+		<Unit filename="include/lifeView.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/CharacterView.cpp" />
@@ -58,10 +61,13 @@
 		<Unit filename="src/EnemyView.cpp" />
 		<Unit filename="src/Game.cpp" />
 		<Unit filename="src/GroundView.cpp" />
+		<Unit filename="src/Meat.cpp" />
+		<Unit filename="src/MeatView.cpp" />
 		<Unit filename="src/Obstacle.cpp" />
 		<Unit filename="src/Position.cpp" />
 		<Unit filename="src/Power.cpp" />
 		<Unit filename="src/PowerView.cpp" />
+		<Unit filename="src/lifeView.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

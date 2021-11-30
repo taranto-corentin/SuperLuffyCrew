@@ -2,8 +2,8 @@
 
 EnemyView::EnemyView()
 {
-    Enemy* enemy = new Enemy(550, 600 - 192);
-    Enemy* enemy2 = new Enemy(745, 600-192);
+    Enemy* enemy = new Enemy(550, 600 - 128);
+    Enemy* enemy2 = new Enemy(745,600 - 128);
     this->enemys.push_back(enemy);
     this->enemys.push_back(enemy2);
 
@@ -52,6 +52,11 @@ std::vector<Enemy*> EnemyView::getEnemys()
     return this->enemys;
 }
 
+void EnemyView::setPowerView(PowerView* powerView)
+{
+    this->powerView = powerView;
+}
+
 void EnemyView::render(sf::RenderWindow* window)
 {
     for(size_t i=0; i<this->enemySprite.size(); i++)
@@ -82,10 +87,11 @@ void EnemyView::moveEnemy(int movement)
 
 void EnemyView::killEnemy(int index)
 {
+    powerView->turnOffLuffy();
+    std::cout << powerView->getIsInFire() << std::endl;
     std::cout << str() << std::endl;
     enemys.erase(enemys.begin() + index);
     enemySprite.erase(enemySprite.begin() + index);
-
 }
 
 std::string EnemyView::str() const

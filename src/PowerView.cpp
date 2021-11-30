@@ -90,6 +90,16 @@ std::vector<Power*> PowerView::getPowers() const
     return this->powers;
 }
 
+bool PowerView::getIsInFire() const
+{
+    return this->isInFire;
+}
+
+void PowerView::turnOffLuffy()
+{
+    isInFire = false;
+}
+
 void PowerView::render(sf::RenderWindow* window)
 {
     for(size_t i=0; i<this->powerSprites.size(); i++)
@@ -133,6 +143,8 @@ void PowerView::assignPower(int index)
     else
     {
         std::cout << "MeraMera" << std::endl;
+        this->isInFire = true;
+        std::cout << getIsInFire() << std::endl;
     }
 
     Power* power = powers.at(index);

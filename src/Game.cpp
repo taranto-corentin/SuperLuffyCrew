@@ -110,6 +110,10 @@ void Game::render()
     this->powerView.render(this->window);
     this->enemyView.render(this->window);
     this->meatView.render(this->window);
+    this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
+    //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
+    this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
+
     //Display the new content of the window
     this->window->display();
 }

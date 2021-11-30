@@ -3,7 +3,7 @@
 //Test
 Character::Character(float y): y(y), jumping(false), lifePoint(3)
 {
-
+ std::cout << "constructor called" << std::endl;
 }
 
 Character::~Character()
@@ -11,7 +11,7 @@ Character::~Character()
     //dtor
 }
 
-Character::Character(const Character& other): y(other.y), jumping(other.jumping)
+Character::Character(const Character& other): y(other.y), jumping(other.jumping), lifePoint(other.lifePoint)
 {
     //copy ctors
 }
