@@ -169,6 +169,7 @@ void CharacterView::jump()
 
             return;
         }
+        checkCollisionWithEnemies(2);
         this->character.jump(7);
         this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
@@ -257,18 +258,29 @@ const int CharacterView::checkCollisionWithEnemies(int movement) const
             case 1:
                 newX -= 4.f;
                 break;
+            case 2:
+                newY -= 4.f;
+                break;
         }
         if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
         {
             continue;
         }
 
-        if(this->character.getY() + 128 <= newY || newY + 128 <= this->character.getY())
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
         {
+
             continue;
         }
-        std::cout << "Collision with the enemy !!!" << std::endl;
-        enemyView->killEnemy(i);
+
+        if(movement == 1 || movement == 0){
+             std::cout << "Collision with the enemy !!! on side" << std::endl;
+        } else {
+            std::cout << "Collision with the enemy !!! on top" << std::endl;
+            enemyView->killEnemy(i);
+        }
+
+
         return i;
     }
     return -1;
