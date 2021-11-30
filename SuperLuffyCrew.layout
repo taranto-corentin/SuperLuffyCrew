@@ -3,6 +3,11 @@
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
 <<<<<<< HEAD
+	<File name="src/Game.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2287" topLine="81" />
+=======
+<<<<<<< HEAD
 	<File name="include/Character.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="601" topLine="8" />
@@ -61,6 +66,7 @@
 	<File name="src/EnemyView.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2037" topLine="77" />
+>>>>>>> refs/remotes/origin/main
 		</Cursor>
 	</File>
 	<File name="src/Game.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -68,13 +74,29 @@
 			<Cursor1 position="3305" topLine="94" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
+	<File name="src/EnemyView.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="53" />
+		</Cursor>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="79" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src/PowerView.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
 	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 =======
 	<File name="src/EnemyView.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> refs/remotes/origin/main
 		<Cursor>
 			<Cursor1 position="2023" topLine="80" />
 		</Cursor>
 	</File>
+<<<<<<< HEAD
+=======
 	<File name="src/CharacterView.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="3832" topLine="117" />
@@ -156,4 +178,5 @@
 >>>>>>> 9d54f7f7b3936e3f53bb1f2e3d604fd9ba366f37
 		</Cursor>
 	</File>
+>>>>>>> refs/remotes/origin/main
 </CodeBlocks_layout_file>

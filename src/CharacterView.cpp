@@ -179,6 +179,7 @@ void CharacterView::jump()
 
             return;
         }
+        checkCollisionWithEnemies(2);
         checkCollisionWithPowers();
         checkCollisionWithMeats();
         this->character.jump(7);
@@ -269,16 +270,28 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             case 1:
                 newX -= 4.f;
                 break;
+            case 2:
+                newY -= 4.f;
+                break;
         }
         if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
         {
             continue;
         }
 
-        if(this->character.getY() + 128 <= newY || newY + 128 <= this->character.getY())
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
         {
+
             continue;
         }
+
+        if(movement == 1 || movement == 0){
+             std::cout << "Collision with the enemy !!! on side" << std::endl;
+        } else {
+            std::cout << "Collision with the enemy !!! on top" << std::endl;
+            enemyView->killEnemy(i);
+        }
+
         std::cout << "Collision with the enemy !!!" << std::endl;
         enemyView->killEnemy(i);
         character.takeDamage();

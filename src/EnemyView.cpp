@@ -2,8 +2,8 @@
 
 EnemyView::EnemyView()
 {
-    Enemy* enemy = new Enemy(550, 600 - 192);
-    Enemy* enemy2 = new Enemy(745, 600-192);
+    Enemy* enemy = new Enemy(550, 600 - 128);
+    Enemy* enemy2 = new Enemy(745,600 - 128);
     this->enemys.push_back(enemy);
     this->enemys.push_back(enemy2);
 
