@@ -27,10 +27,15 @@ class MovableObjectView
 
         //Accessors
         std::vector<MovableObject*> getObjects() const;
+        std::vector<sf::Texture> getTextures() const;
+        std::vector<sf::Sprite> getSprites() const;
+        void addObject(MovableObject* object);
+        void addTexture(sf::Texture texture);
+        void addSprite(sf::Sprite sprite);
 
         //Methods
         void render(sf::RenderWindow* window);
-        void moveObject();
+        void moveObjects(int direction);
         virtual const std::string str() const = 0;
 };
 

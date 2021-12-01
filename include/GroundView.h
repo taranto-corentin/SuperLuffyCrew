@@ -11,30 +11,20 @@
 #include <vector>
 
 #include "Obstacle.h"
+#include "MovableObjectView.h"
 
 
-class GroundView
+class GroundView : public MovableObjectView
 {
     private:
-        //Game logic
-        std::vector<Obstacle*> obstacles;
 
-        //Images
-        sf::Texture groundTexture;
-        std::vector<sf::Sprite> groundSprites;
 
     public:
         GroundView();
         virtual ~GroundView();
         GroundView(const GroundView& other);
         GroundView& operator=(const GroundView& other);
-
-        //Accessors
-        std::vector<Obstacle*> getObstacles();
-
-        //Methods
-        void render(sf::RenderWindow* window);
-        void moveGround(int movement);
+        const std::string str() const;
 };
 
 #endif // GROUNDVIEW_H
