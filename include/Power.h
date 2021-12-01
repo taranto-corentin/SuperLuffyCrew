@@ -19,6 +19,7 @@ class Power : public MovableObject
 
         //Methods
         const std::string str() const;
+        Power* clone() const;
 };
 
 #endif // POWER_H

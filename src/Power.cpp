@@ -28,3 +28,8 @@ const std::string Power::str() const
 {
     return "Power ; " + this->getPosition().str();
 }
+
+Power* Power::clone() const
+{
+    return new Power(*this);
+}

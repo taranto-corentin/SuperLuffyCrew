@@ -22,6 +22,7 @@ class MovableObject
         //Methods
         void changePosition(const float x, const float y);
         virtual const std::string str() const = 0;
+        virtual MovableObject* clone() const = 0;
 };
 
 #endif // MOVABLEOBJECT_H

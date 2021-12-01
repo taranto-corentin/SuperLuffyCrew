@@ -18,6 +18,7 @@ class Meat : public MovableObject
 
         //Methods
         const std::string str() const;
+        Meat* clone() const;
 };
 
 #endif // MEAT_H
