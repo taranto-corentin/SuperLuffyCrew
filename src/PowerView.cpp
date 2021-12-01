@@ -97,7 +97,7 @@ bool PowerView::getIsInFire() const
 
 void PowerView::turnOffLuffy()
 {
-    isInFire = false;
+    this->isInFire = false;
 }
 
 void PowerView::render(sf::RenderWindow* window)
@@ -144,7 +144,7 @@ void PowerView::assignPower(int index)
     {
         std::cout << "MeraMera" << std::endl;
         this->isInFire = true;
-        std::cout << getIsInFire() << std::endl;
+        std::cout << this->getIsInFire() << std::endl;
     }
 
     Power* power = powers.at(index);
