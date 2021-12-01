@@ -287,19 +287,15 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
         if(movement == 1 || movement == 0){
              std::cout << "Collision with the enemy !!! on side" << std::endl;
-<<<<<<< HEAD
              if(powerView->getIsInFire()) {
                 enemyView->killEnemy(i);
              }
              else {
                 character.takeDamage();
              }
-=======
              character.takeDamage();
 
              this->invincibility(2);
-
->>>>>>> refs/remotes/origin/main
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
