@@ -4,11 +4,12 @@
 #include <iostream>
 
 #include "Position.h"
+#include "MovableObject.h"
 
-class Obstacle
+class Obstacle : public MovableObject
 {
     private:
-        Position position;
+
 
     public:
         Obstacle(float x, float y);
@@ -17,9 +18,7 @@ class Obstacle
         Obstacle& operator=(const Obstacle& other);
 
         //Methods
-        void changePosition(const float x, const float y);
-        const float getX() const;
-        const float getY() const;
+        const std::string str() const;
 };
 
 #endif // OBSTACLE_H

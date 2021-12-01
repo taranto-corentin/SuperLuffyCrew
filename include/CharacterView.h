@@ -55,6 +55,7 @@ class CharacterView
         const int checkCollisionWithEnemies(int movement=0);
         const int checkCollisionWithPowers(int movement=0) const;
         const int checkCollisionWithMeats(int movement=0);
+        const int checkIfLuffyOrEnemyDie()const;
 };
 
 #endif // CHARACTERVIEW_H

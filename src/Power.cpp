@@ -1,6 +1,6 @@
 #include "Power.h"
 
-Power::Power(float x, float y): position(Position(x, y))
+Power::Power(float x, float y): MovableObject(x, y)
 {
     //ctor
 }
@@ -10,7 +10,7 @@ Power::~Power()
     //dtor
 }
 
-Power::Power(const Power& other): position(other.position)
+Power::Power(const Power& other): MovableObject::MovableObject(other)
 {
     //copy ctor
 }
@@ -19,27 +19,12 @@ Power& Power::operator=(const Power& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
 
-    this->position = rhs.position;
+    MovableObject::operator=(rhs);
 
     return *this;
 }
 
-void Power::changePosition(const float x, const float y)
-{
-    this->position.changePosition(x, y);
-}
-
-const float Power::getX() const
-{
-    return this->position.getX();
-}
-
-const float Power::getY() const
-{
-    return this->position.getY();
-}
-
 const std::string Power::str() const
 {
-    return "Power ; " + this->position.str();
+    return "Power ; " + this->getPosition().str();
 }
