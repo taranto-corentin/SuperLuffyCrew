@@ -18,12 +18,12 @@ class CharacterView
         EnemyView* enemyView;
         PowerView* powerView;
         MeatView* meatView;
-
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
         sf::Sprite powerSprite;
 
+        int collision = 0;
         //Constants
         const float xPos = 368.f;
         const float jumpHeight = 322.f;
@@ -48,6 +48,7 @@ class CharacterView
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);
+        void invincibility(int seconds);
         void jump();
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;

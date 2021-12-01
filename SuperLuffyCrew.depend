@@ -100,7 +100,7 @@
 1637688582 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-1637591444 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
+1638366554 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
 	"Game.h"
 
 1638275622 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
@@ -110,14 +110,14 @@
 	"EnemyView.h"
 	"LifeView.h"
 
-1638275740 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
+1638370039 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
 	"PowerView.h"
 	"MeatView.h"
 
-1638275622 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
+1638370022 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
 	<iostream>
 
 1637591444 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
@@ -137,10 +137,10 @@
 1637759184 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Position.h
 	<string>
 
-1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
+1638370057 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638289172 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
+1638370066 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
 1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
@@ -196,7 +196,7 @@
 	<iostream>
 	"Position.h"
 
-1638275622 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EnemyView.h
+1638369187 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EnemyView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -204,6 +204,7 @@
 	<SFML/Network.hpp>
 	<iostream>
 	<vector>
+	<chrono>
 	"Enemy.h"
 	"GroundView.h"
 	"PowerView.h"
@@ -286,7 +287,7 @@
 	<vector>
 	"Meat.h"
 
-1638275622 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
+1638360909 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
 1638275251 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyView.h

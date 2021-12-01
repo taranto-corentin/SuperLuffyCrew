@@ -288,6 +288,9 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         if(movement == 1 || movement == 0){
              std::cout << "Collision with the enemy !!! on side" << std::endl;
              character.takeDamage();
+
+             this->invincibility(2);
+
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
@@ -337,3 +340,11 @@ Character CharacterView::getCharacter() const {
     return character;
 }
 
+void CharacterView::invincibility(int seconds)
+{
+    for(auto runUntil = std::chrono::system_clock::now() + std::chrono::seconds(seconds);
+        std::chrono::system_clock::now() < runUntil;)
+    {
+        std::cout << "Hi" << std::endl;
+    }
+}
