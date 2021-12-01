@@ -1,5 +1,4 @@
 #include "Character.h"
-
 //Test
 Character::Character(float y): y(y), jumping(false), lifePoint(3)
 {
