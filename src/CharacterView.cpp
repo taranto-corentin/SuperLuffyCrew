@@ -67,6 +67,16 @@ CharacterView& CharacterView::operator=(const CharacterView& rhs)
     return *this;
 }
 
+bool CharacterView::isWin() const
+{
+    return win;
+}
+
+void CharacterView::setWin(bool win)
+{
+    this->win = win;
+}
+
 void CharacterView::setGroundView(GroundView* groundView)
 {
     this->groundView = groundView;
@@ -381,6 +391,7 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
             continue;
         }
         std::cout << "Collision with EndLevel !" << std::endl;
+        this->win = true;
         std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
     }
