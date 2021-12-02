@@ -322,6 +322,9 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
         }
+        if(character.getLifePoint() <= 0){
+            setWin(true);
+        }
 
         std::cout << "Collision with the enemy !!!" << std::endl;
         return i;

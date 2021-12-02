@@ -67,7 +67,7 @@ void Game::pollEvents()
                 int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
                 int indexPower = this->characterView.checkCollisionWithPowers(1);
                 int indexMeat = this->characterView.checkCollisionWithMeats(1);
-                int indexEndLevel = this->characterView.checkCollisionWithEndLevel(1);
+             //   int indexEndLevel = this->characterView.checkCollisionWithEndLevel(1);
                 //Move the obstacles
                 if(index == -1 && indexEnemy == -1)
                 {
@@ -75,7 +75,7 @@ void Game::pollEvents()
                     this->powerView.movePowers(1);
                     this->enemyView.moveEnemy(1);
                     this->meatView.moveMeat(1);
-                    this->endLevelView.moveEndLevel(1);
+                    //this->endLevelView.moveEndLevel(1);
                 }
                 //Update the image of the character
                 this->characterView.moveCharacter(1);
@@ -87,7 +87,7 @@ void Game::pollEvents()
                 int indexPower = this->characterView.checkCollisionWithPowers(0);
                 int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
                 int indexMeat = this->characterView.checkCollisionWithMeats(0);
-                int indexEndLevel = this->characterView.checkCollisionWithEndLevel(0);
+                //int indexEndLevel = this->characterView.checkCollisionWithEndLevel(0);
                 if(index == -1 && indexEnemy == -1)
                 {
                     //Move the obstacles
@@ -95,7 +95,7 @@ void Game::pollEvents()
                     this->powerView.movePowers(0);
                     this->enemyView.moveEnemy(0);
                     this->meatView.moveMeat(0);
-                    this->endLevelView.moveEndLevel(0);
+                    //this->endLevelView.moveEndLevel(0);
                 }
                 //Update the image of the character
                 this->characterView.moveCharacter(0);
@@ -131,7 +131,7 @@ void Game::render()
         this->powerView.render(this->window);
         this->enemyView.render(this->window);
         this->meatView.render(this->window);
-        this->endLevelView.render(this->window);
+        //this->endLevelView.render(this->window);
         this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
         //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
         this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
