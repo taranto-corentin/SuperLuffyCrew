@@ -165,21 +165,22 @@
 1638435647 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
+1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
 	"EnemyView.h"
 	"LifeView.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
+1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
 	"PowerView.h"
 	"MeatView.h"
+	"EndLevelView.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
+1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
 	<iostream>
 
 1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
@@ -257,13 +258,13 @@
 1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Position.h
 	<string>
 
-1638435647 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Character.cpp
+1638462092 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638459525 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
+1638462394 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638457294 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
+1638462092 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1638435647 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/GroundView.cpp
@@ -283,7 +284,7 @@
 	"Position.h"
 	"MovableObject.h"
 
-1638455552 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
+1638461109 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
 1638461064 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/PowerView.h
@@ -640,3 +641,31 @@
 	"PowerView.h"
 	"EndLevel.h"
 
+<<<<<<< HEAD
+=======
+1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EndLevelView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	<chrono>
+	"Enemy.h"
+	"GroundView.h"
+	"PowerView.h"
+	"EndLevel.h"
+
+1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EndLevel.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638462092 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EndLevel.cpp
+	"EndLevel.h"
+
+1638462092 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EndLevelView.cpp
+	"EndLevelView.h"
+
+>>>>>>> refs/remotes/origin/main

@@ -312,19 +312,12 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
              else {
-<<<<<<< HEAD
                 character.takeDamage();
              }
-=======
-                    if(character.isInvincible() == false){
-                        character.takeDamage();
-                        character.setInvincible(true);
-                    }
->>>>>>> refs/remotes/origin/main
-
-             }
-
-             //this->invincibility(2);
+             if(character.isInvincible() == false){
+                character.takeDamage();
+                character.setInvincible(true);
+            }
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
