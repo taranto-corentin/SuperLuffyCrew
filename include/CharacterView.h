@@ -13,7 +13,6 @@ class CharacterView
         //Game logic
         Character character;
         bool jumpDone;
-
         GroundView* groundView;
         EnemyView* enemyView;
         PowerView* powerView;
@@ -23,7 +22,7 @@ class CharacterView
         sf::Sprite characterSprite;
         sf::Sprite powerSprite;
 
-        int collision = 0;
+        time_t momentCollision;
         //Constants
         const float xPos = 368.f;
         const float jumpHeight = 322.f;

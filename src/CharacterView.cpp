@@ -257,6 +257,11 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<Enemy*> enemies = this->enemyView->getEnemys();
+    time_t now;
+    now = time(NULL);
+    if(now - momentCollision >= 3){
+        character.setInvincible(false);
+    }
 
     for(size_t i=0; i<enemies.size(); i++)
     {
@@ -286,16 +291,22 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         }
 
         if(movement == 1 || movement == 0){
+             momentCollision = time(NULL);
              std::cout << "Collision with the enemy !!! on side" << std::endl;
              if(powerView->getIsInFire()) {
                 enemyView->killEnemy(i);
              }
              else {
-                character.takeDamage();
-             }
-             character.takeDamage();
+                    if(character.isInvincible() == false){
+                        character.takeDamage();
+                        character.setInvincible(true);
+                    }
 
-             this->invincibility(2);
+             }
+
+
+
+             //this->invincibility(2);
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
