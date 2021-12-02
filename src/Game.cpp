@@ -29,6 +29,7 @@ void Game::initVariables()
     this->characterView.setPowerView(&powerView);
     this->characterView.setEnemyView(&enemyView);
     this->characterView.setMeatView(&meatView);
+    this->enemyView.setPowerView(&powerView);
 }
 
 //Accesssors
