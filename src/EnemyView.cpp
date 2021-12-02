@@ -87,7 +87,7 @@ void EnemyView::moveEnemy(int movement)
 
 void EnemyView::killEnemy(int index)
 {
-    this->powerView->turnOffLuffy();
+    this->powerView->turnOffLuffy(index);
     std::cout << str() << std::endl;
     enemys.erase(enemys.begin() + index);
     enemySprite.erase(enemySprite.begin() + index);

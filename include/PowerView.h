@@ -18,12 +18,13 @@ class PowerView
         //Game logic
         std::vector<Power*> powers;
 
-        sf::Texture gomuGomuTexture;
-        sf::Texture baraBaraTexture;
         sf::Texture meraMeraTexture;
         std::vector<sf::Sprite> powerSprites;
 
         bool isInFire = false;
+
+        sf::Texture activePowerTexture;
+        sf::Sprite activePowerSprite;
 
     public:
         PowerView();
@@ -40,7 +41,7 @@ class PowerView
         void movePowers(int movement);
         void assignPower(int index);
         const std::string str() const;
-        void turnOffLuffy();
+        void turnOffLuffy(int index);
 };
 
 #endif // POWERVIEW_H
