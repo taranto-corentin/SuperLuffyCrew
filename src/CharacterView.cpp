@@ -87,6 +87,11 @@ void CharacterView::setMeatView(MeatView* meatView)
     this->meatView = meatView;
 }
 
+void CharacterView::setEndLevelView(EndLevelView* endLevelView)
+{
+    this->endLevelView = endLevelView;
+}
+
 void CharacterView::render(sf::RenderWindow* window)
 {
     window->draw(this->characterSprite);
@@ -304,8 +309,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
              }
 
-
-
              //this->invincibility(2);
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
@@ -347,6 +350,38 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         meatView->eatMeat(i);
         character.gainLife();
         std::cout << "Meat view : " << meatView->str() << std::endl;
+        return i;
+    }
+    return -1;
+}
+
+const int CharacterView::checkCollisionWithEndLevel(int movement)
+{
+    std::vector<EndLevel*> endLevels = this->endLevelView->getEndLevels();
+
+    for(size_t i=0; i<endLevels.size(); i++)
+    {
+        int newX = endLevels.at(i)->getX();
+        int newY = endLevels.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        {
+            continue;
+        }
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            continue;
+        }
+        std::cout << "Collision with EndLevel !" << std::endl;
+        std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
     }
     return -1;

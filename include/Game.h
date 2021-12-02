@@ -22,7 +22,7 @@ class Game
         LifeView lifeView;
 
         MeatView meatView;
-
+        EndLevelView endLevelView;
         EnemyView enemyView;
 
         //Game logic

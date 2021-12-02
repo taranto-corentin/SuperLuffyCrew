@@ -43,6 +43,8 @@
 		</Compiler>
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/CharacterView.h" />
+		<Unit filename="include/EndLevel.h" />
+		<Unit filename="include/EndLevelView.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/EnemyView.h" />
 		<Unit filename="include/Game.h" />
@@ -51,6 +53,7 @@
 		<Unit filename="include/Meat.h" />
 		<Unit filename="include/MeatView.h" />
 		<Unit filename="include/MovableObject.h" />
+		<Unit filename="include/MovableObjectView.h" />
 		<Unit filename="include/Obstacle.h" />
 		<Unit filename="include/Position.h" />
 		<Unit filename="include/Power.h" />
@@ -58,6 +61,8 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/CharacterView.cpp" />
+		<Unit filename="src/EndLevel.cpp" />
+		<Unit filename="src/EndLevelView.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/EnemyView.cpp" />
 		<Unit filename="src/Game.cpp" />
@@ -66,6 +71,7 @@
 		<Unit filename="src/Meat.cpp" />
 		<Unit filename="src/MeatView.cpp" />
 		<Unit filename="src/MovableObject.cpp" />
+		<Unit filename="src/MovableObjectView.cpp" />
 		<Unit filename="src/Obstacle.cpp" />
 		<Unit filename="src/Position.cpp" />
 		<Unit filename="src/Power.cpp" />

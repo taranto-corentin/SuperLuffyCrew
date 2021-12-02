@@ -103,24 +103,25 @@
 1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
+1638452490 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
 	"EnemyView.h"
 	"LifeView.h"
 
-1638436550 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
+1638452562 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
 	"PowerView.h"
 	"MeatView.h"
+	"EndLevelView.h"
 
 1638436650 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
 	<iostream>
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -129,8 +130,9 @@
 	<iostream>
 	<vector>
 	"Obstacle.h"
+	"MovableObjectView.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
@@ -141,16 +143,16 @@
 1638436689 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638437004 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
+1638453067 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
+1638452909 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
 	"Obstacle.h"
 
 1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
@@ -190,10 +192,10 @@
 	<vector>
 	"Obstacle.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Enemy.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Enemy.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Enemy.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
@@ -338,12 +340,12 @@
 	<vector>
 	"Power.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Power.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Power.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Power.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Power.cpp
 	"Power.h"
 
 1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/PowerView.cpp
@@ -545,7 +547,7 @@
 	<vector>
 	"Meat.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Meat.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Meat.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
@@ -566,7 +568,7 @@
 	<SFML/Network.hpp>
 	<iostream>
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Meat.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Meat.cpp
 	"Meat.h"
 
 1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MeatView.cpp
@@ -580,7 +582,7 @@
 	"LifeView.h"
 	<sstream>
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MovableObject.h
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MovableObject.h
 	"Position.h"
 
 1638354816 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MovableObject.h
@@ -589,6 +591,44 @@
 1638354816 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
 
-1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObject.cpp
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
+
+1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MovableObjectView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"MovableObject.h"
+
+1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObjectView.cpp
+	"MovableObjectView.h"
+
+1638450459 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EndLevel.cpp
+	"EndLevel.h"
+
+1638451702 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EndLevel.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638453146 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EndLevelView.cpp
+	"EndLevelView.h"
+
+1638451864 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EndLevelView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	<chrono>
+	"Enemy.h"
+	"GroundView.h"
+	"PowerView.h"
+	"EndLevel.h"
 
