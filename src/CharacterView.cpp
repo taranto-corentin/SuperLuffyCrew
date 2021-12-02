@@ -98,7 +98,7 @@ void CharacterView::moveCharacter(const int movement)
     if(!this->character.isJumping())
     {
         //Check if there is nothing under the character
-        std::vector<Obstacle*> grounds = this->groundView->getObstacles();
+        std::vector<MovableObject*> grounds = this->groundView->getObjects();
         bool hasToFall = true;
         for(size_t i=0; i<grounds.size(); i++)
         {
@@ -168,7 +168,7 @@ void CharacterView::jump()
         if(index != -1)
         {
             //Recover the obstacles
-            std::vector<Obstacle*> grounds = this->groundView->getObstacles();
+            std::vector<MovableObject*> grounds = this->groundView->getObjects();
             //Put it at the right height
             this->character.jump(grounds.at(index)->getY() - this->character.getY() - 64);
             //Stop the jump
@@ -194,7 +194,7 @@ const bool CharacterView::isJumping() const
 
 const int CharacterView::checkCollision(int movement) const
 {
-    std::vector<Obstacle*> grounds = this->groundView->getObstacles();
+    std::vector<MovableObject*> grounds = this->groundView->getObjects();
     for(size_t i=0; i<grounds.size(); i++)
     {
         int newX = grounds.at(i)->getX();

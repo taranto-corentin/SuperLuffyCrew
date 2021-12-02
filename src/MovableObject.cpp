@@ -43,3 +43,4 @@ const Position MovableObject::getPosition() const
 {
     return this->position;
 }
+

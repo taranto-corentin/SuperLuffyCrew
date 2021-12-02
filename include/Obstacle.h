@@ -19,6 +19,7 @@ class Obstacle : public MovableObject
 
         //Methods
         const std::string str() const;
+        Obstacle* clone() const;
 };
 
 #endif // OBSTACLE_H

@@ -28,3 +28,8 @@ const std::string Enemy::str() const
 {
     return "Enemy : " + getPosition().str();
 }
+
+Enemy* Enemy::clone() const
+{
+    return new Enemy(*this);
+}

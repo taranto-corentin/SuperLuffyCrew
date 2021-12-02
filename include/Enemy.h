@@ -18,7 +18,8 @@ class Enemy : public MovableObject
         Enemy& operator=(const Enemy& other);
 
         //Methods
-        virtual const std::string str() const;
+        const std::string str() const;
+        Enemy* clone() const;
 };
 
 #endif // ENEMY_H

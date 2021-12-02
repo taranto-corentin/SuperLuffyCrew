@@ -28,3 +28,8 @@ const std::string Meat::str() const
 {
     return "Meat ; " + this->getPosition().str();
 }
+
+Meat* Meat::clone() const
+{
+    return new Meat(*this);
+}

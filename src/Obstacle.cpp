@@ -28,3 +28,8 @@ const std::string Obstacle::str() const
 {
     return "Obstacle : " + this->getPosition().str();
 }
+
+Obstacle* Obstacle::clone() const
+{
+    return new Obstacle(*this);
+}
