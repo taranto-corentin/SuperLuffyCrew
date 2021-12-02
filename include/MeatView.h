@@ -18,7 +18,7 @@ class MeatView
     private:
         //Game logic
         std::vector<Meat*> meats;
-            //GroundView* groundView;
+
         //Images
         sf::Texture meatTexture;
         std::vector<sf::Sprite> meatSprite;
