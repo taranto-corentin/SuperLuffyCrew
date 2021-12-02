@@ -9,7 +9,7 @@ class Character
         float y;
         bool jumping;
         int lifePoint;
-
+        bool invincible;
     public:
         Character(float y=0);
         virtual ~Character();
@@ -21,7 +21,8 @@ class Character
         const int getLifePoint() const;
         void setJumping(const bool jumping);
         const bool isJumping() const;
-
+        const bool isInvincible() const;
+        void setInvincible(const bool invincible);
         //Methods for the game
         void jump(const float change);
         void takeDamage();

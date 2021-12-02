@@ -6,6 +6,7 @@
 #include "EnemyView.h"
 #include "PowerView.h"
 #include "MeatView.h"
+#include "EndLevelView.h"
 
 class CharacterView
 {
@@ -13,17 +14,18 @@ class CharacterView
         //Game logic
         Character character;
         bool jumpDone;
-
         GroundView* groundView;
         EnemyView* enemyView;
         PowerView* powerView;
         MeatView* meatView;
+        EndLevelView* endLevelView;
+        bool win = false;
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
         sf::Sprite powerSprite;
 
-        int collision = 0;
+        time_t momentCollision;
         //Constants
         const float xPos = 368.f;
         const float jumpHeight = 322.f;
@@ -41,10 +43,13 @@ class CharacterView
 
         //Accessors
         Character getCharacter() const;
+        bool isWin()const;
+        void setWin(bool win);
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
         void setEnemyView(EnemyView* enemyView);
         void setMeatView(MeatView* meatView);
+        void setEndLevelView(EndLevelView* endLevelView);
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);
@@ -55,6 +60,7 @@ class CharacterView
         const int checkCollisionWithEnemies(int movement=0);
         const int checkCollisionWithPowers(int movement=0) const;
         const int checkCollisionWithMeats(int movement=0);
+        const int checkCollisionWithEndLevel(int movement=0);
         const int checkIfLuffyOrEnemyDie()const;
 };
 

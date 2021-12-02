@@ -14,6 +14,8 @@ class Game
         sf::RenderWindow* window;
         sf::VideoMode videoMode;
         sf::Event events;
+        sf::Texture winTextures;
+        sf::Sprite winSprite;
 
         //Ground images
         GroundView groundView;
@@ -22,7 +24,7 @@ class Game
         LifeView lifeView;
 
         MeatView meatView;
-
+        EndLevelView endLevelView;
         EnemyView enemyView;
 
         //Game logic
