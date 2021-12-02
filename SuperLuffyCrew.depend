@@ -158,7 +158,7 @@
 1638388244 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
-1638275251 D
+1638450018 D
 	"Obstacle.h"
 	"LifeView.h"
 
@@ -214,7 +214,7 @@
 	"GroundView.h"
 	"PowerView.h"
 
-1638275251 s/remotes/origin/main
+1638451864 s/remotes/origin/main
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -240,6 +240,14 @@
 	<iostream>
 	"LifeView.h"
 	<sstream>
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"MovableObject.h"
 
 1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
@@ -321,7 +329,7 @@
 1638455524 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/PowerView.h
+1638462226 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/PowerView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -553,7 +561,7 @@
 	"Position.h"
 	"MovableObject.h"
 
-1638388244 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/LifeView.h
+1638462226 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/LifeView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -592,28 +600,18 @@
 1638435647 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
 
-<<<<<<< HEAD
 1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MovableObjectView.h
-=======
+
 1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
 
 1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MovableObjectView.h
->>>>>>> refs/remotes/origin/main
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-	"MovableObject.h"
 
-<<<<<<< HEAD
 1638435647 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MovableObjectView.cpp
 	"MovableObjectView.h"
 
-=======
+1638435647 jectView.h"
+
 1638450018 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObjectView.cpp
 	"MovableObjectView.h"
 
@@ -642,4 +640,3 @@
 	"PowerView.h"
 	"EndLevel.h"
 
->>>>>>> refs/remotes/origin/main
