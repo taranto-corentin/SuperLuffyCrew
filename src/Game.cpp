@@ -6,14 +6,14 @@ Game::Game()
     initWindow();
 
     sf::Image winImage;
-    if(!winImage.loadFromFile("assets/GoingMerry.png"))
+    if(!winImage.loadFromFile("assets/BackgroundWin.png"))
     {
         std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
     }
 
     this->winTextures.loadFromImage(winImage);
     this->winSprite.setTexture(this->winTextures);
-    this->winSprite.setScale(2.f, 2.f);
+    this->winSprite.setScale(1.f, 1.f);
 }
 
 Game::~Game()
@@ -107,7 +107,10 @@ void Game::pollEvents()
             }
         }
         //Affichage gagner ou perdu
-
+        else if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+        {
+            this->window->clear();
+        }
     }
     if(this->characterView.isJumping())
     {

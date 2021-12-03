@@ -17,7 +17,7 @@ PowerView::PowerView()
 
     //Load image of the Mera Mera fruit
     sf::Image meraMeraImage;
-    if(!meraMeraImage.loadFromFile("assets/MeraMera.jpg"))
+    if(!meraMeraImage.loadFromFile("assets/MeraMera.png"))
     {
         std::cout << "ERROR::MERA MERA FRUIT IMAGE NOT FOUND !!!" << std::endl;
     }
@@ -30,7 +30,7 @@ PowerView::PowerView()
     {
         sf::Sprite sprite;
         sprite.setTexture(this->meraMeraTexture);
-        sprite.setScale(2.f, 2.f);
+        sprite.setScale(1.f, 1.f);
         powerSprites.push_back(sprite);
     }
 }
@@ -77,7 +77,7 @@ void PowerView::turnOffLuffy(int index)
 
 void PowerView::render(sf::RenderWindow* window)
 {
-    activePowerSprite.setPosition(800-50,80); //800-70,15
+    activePowerSprite.setPosition(800-70,80); //800-70,15
     if(this->getIsInFire()) {
         window->draw(activePowerSprite);
     }
