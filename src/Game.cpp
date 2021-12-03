@@ -104,8 +104,12 @@ void Game::pollEvents()
                 break;
         }
         if(characterView.getAdvancementState() == 7){
-                if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)){
                     this->characterView.setAdvancementState(1);
+                }
+
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                    this->window->close();
                 }
             /*if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
                 if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(this->window))){
