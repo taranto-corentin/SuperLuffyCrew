@@ -6,7 +6,7 @@ Game::Game()
     initWindow();
 
     sf::Image winImage;
-    if(!winImage.loadFromFile("assets/BackgroundWin.png"))
+    if(!winImage.loadFromFile("assets/LevelPassed.png"))
     {
         std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
     }
@@ -151,7 +151,7 @@ void Game::render()
         //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
         this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
     } else{
-        if(characterView.getAdvancementState() == 5 || characterView.getAdvancementState() == 0){
+        if(characterView.getAdvancementState() == 5){
             this->window->clear();
             window->draw(this->winSprite);
         }
