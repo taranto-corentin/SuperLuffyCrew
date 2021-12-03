@@ -256,7 +256,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
 
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
-    std::vector<Enemy*> enemies = this->enemyView->getEnemys();
+    std::vector<MovableObject*> enemies = this->enemyView->getObjects();
 
     for(size_t i=0; i<enemies.size(); i++)
     {

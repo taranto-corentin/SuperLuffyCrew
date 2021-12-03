@@ -89,10 +89,10 @@
 1638432134 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638438152 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
+1638525246 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638438189 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
+1638525279 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1638436487 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
@@ -101,7 +101,7 @@
 1638345147 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Obstacle.cpp
 	"Obstacle.h"
 
-1638180762 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
+1638468409 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
 	"Position.h"
 
 1638366554 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
@@ -360,7 +360,7 @@
 	"Position.h"
 	"MovableObject.h"
 
-1638432134 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EnemyView.h
+1638525217 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EnemyView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -372,6 +372,7 @@
 	"Enemy.h"
 	"GroundView.h"
 	"PowerView.h"
+	"MovableObjectView.h"
 
 1638344641 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Enemy.h
 	<iostream>
@@ -381,7 +382,7 @@
 1638344519 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1638432134 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
+1638525223 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
 1638345197 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Power.cpp
@@ -638,7 +639,7 @@
 1638468239 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/MeatView.cpp
 	"MeatView.h"
 
-1638344380 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/MovableObject.cpp
+1638468506 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
 
 1638468350 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/MovableObjectView.cpp

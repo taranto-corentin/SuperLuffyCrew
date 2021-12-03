@@ -13,35 +13,24 @@
 #include "Enemy.h"
 #include "GroundView.h"
 #include "PowerView.h"
+#include "MovableObjectView.h"
 
-class EnemyView
+class EnemyView : public MovableObjectView
 {
     private:
-
         //Game logic
-        std::vector<Enemy*> enemys;
-        GroundView* groundView;
         PowerView* powerView;
-        //Images
-        sf::Texture enemyTexture;
-        std::vector<sf::Sprite> enemySprite;
+
     public:
         EnemyView();
         virtual ~EnemyView();
         EnemyView(const EnemyView& other);
         EnemyView& operator=(const EnemyView& other);
 
-        //Accessors
-        std::vector<Enemy*> getEnemys();
-
         //Methods
-        void render(sf::RenderWindow* window);
         void setPowerView(PowerView* powerView);
-        void moveEnemy(int movement);
         void killEnemy(int index);
-        std::string str() const;
-
-    protected:
+        const std::string str() const;
 };
 
 #endif // ENEMYVIEW_H
