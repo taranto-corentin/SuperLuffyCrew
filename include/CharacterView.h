@@ -19,7 +19,7 @@ class CharacterView
         PowerView* powerView;
         MeatView* meatView;
         EndLevelView* endLevelView;
-        int advancementState = 1;
+        int advancementState = 7;
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
