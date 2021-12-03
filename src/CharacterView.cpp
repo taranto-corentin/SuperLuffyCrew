@@ -309,7 +309,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
 const int CharacterView::checkCollisionWithMeats(int movement)
 {
-    std::vector<Meat*> meats = this->meatView->getMeats();
+    std::vector<MovableObject*> meats = this->meatView->getObjects();
 
     for(size_t i=0; i<meats.size(); i++)
     {

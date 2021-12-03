@@ -12,29 +12,22 @@
 #include <vector>
 
 #include "Meat.h"
+#include "MovableObjectView.h"
 
-class MeatView
+class MeatView : public MovableObjectView
 {
     private:
-        //Game logic
-        std::vector<Meat*> meats;
 
-        //Images
-        sf::Texture meatTexture;
-        std::vector<sf::Sprite> meatSprite;
+
     public:
         MeatView();
         virtual ~MeatView();
         MeatView(const MeatView& other);
         MeatView& operator=(const MeatView& other);
 
-        //Accessors
-        std::vector<Meat*> getMeats() const;
         //Methods
-        void render(sf::RenderWindow* window);
-        void moveMeat(int movement);
         void eatMeat(int index);
-        std::string str() const;
+        const std::string str() const;
 };
 
 #endif // MEATVIEW_H

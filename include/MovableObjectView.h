@@ -32,6 +32,9 @@ class MovableObjectView
         void addObject(MovableObject* object);
         void addSprite(sf::Sprite sprite, sf::Texture* texture);
 
+        //Remove object from the list
+        void removeObject(MovableObject* object);
+
         //Methods
         void render(sf::RenderWindow* window);
         void moveObjects(int direction);

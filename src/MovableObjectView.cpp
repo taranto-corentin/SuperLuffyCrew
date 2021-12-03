@@ -65,6 +65,18 @@ void MovableObjectView::addSprite(sf::Sprite sprite, sf::Texture* texture)
     this->sprites.push_back(sprite);
 }
 
+void MovableObjectView::removeObject(MovableObject* object)
+{
+    for(size_t i=0; i<this->objects.size(); i++)
+    {
+        if(*object == *(this->objects.at(i)))
+        {
+            this->objects.erase(this->objects.begin() + i);
+            this->sprites.erase(this->sprites.begin() + i);
+        }
+    }
+}
+
 void MovableObjectView::render(sf::RenderWindow* window)
 {
     //For each objects get the sprite that matches its index and position it at the position of the matching object and draw it on the window passed in argument
