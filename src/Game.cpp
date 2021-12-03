@@ -4,6 +4,16 @@ Game::Game()
 {
     initVariables();
     initWindow();
+
+    sf::Image winImage;
+    if(!winImage.loadFromFile("assets/LevelPassed.png"))
+    {
+        std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
+    }
+
+    this->winTextures.loadFromImage(winImage);
+    this->winSprite.setTexture(this->winTextures);
+    this->winSprite.setScale(1.f, 1.f);
 }
 
 Game::~Game()
@@ -29,6 +39,7 @@ void Game::initVariables()
     this->characterView.setPowerView(&powerView);
     this->characterView.setEnemyView(&enemyView);
     this->characterView.setMeatView(&meatView);
+    this->characterView.setEndLevelView(&endLevelView);
     this->enemyView.setPowerView(&powerView);
 }
 
@@ -49,47 +60,74 @@ void Game::pollEvents()
                 this->window->close();
                 break;
         }
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-        {
-            int index = this->characterView.checkCollision(1);
-            int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
-            int indexPower = this->characterView.checkCollisionWithPowers(1);
-            int indexMeat = this->characterView.checkCollisionWithMeats(1);
-            std::cout << "Inside the keyboard right" << std::endl;
-            //Move the obstacles
-            if(index == -1 && indexEnemy == -1)
+        if(characterView.getAdvancementState() == 1){
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             {
-                this->groundView.moveObjects(1);
-                this->powerView.movePowers(1);
-                this->enemyView.moveObjects(1);
-                this->meatView.moveObjects(1);
+                int index = this->characterView.checkCollision(1);
+                int indexEnemy = this->characterView.checkCollisionWithEnemies(1);
+                int indexPower = this->characterView.checkCollisionWithPowers(1);
+                int indexMeat = this->characterView.checkCollisionWithMeats(1);
+                int indexEndLevel = this->characterView.checkCollisionWithEndLevel(1);
+                //Move the obstacles
+                if(index == -1 && indexEnemy == -1)
+                {
+                    this->groundView.moveObjects(1);
+                    this->powerView.movePowers(1);
+                    this->enemyView.moveObjects(1);
+                    this->meatView.moveObjects(1);
+                    this->endLevelView.moveEndLevel(1);
+                }
+                //Update the image of the character
+                this->characterView.moveCharacter(1);
             }
-            //Update the image of the character
-            this->characterView.moveCharacter(1);
-        }
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-        {
-            int index = this->characterView.checkCollision(0);
-            int indexPower = this->characterView.checkCollisionWithPowers(0);
-            int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
-            int indexMeat = this->characterView.checkCollisionWithMeats(0);
-            if(index == -1 && indexEnemy == -1)
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
             {
                 //Move the obstacles
                 this->groundView.moveObjects(0);
                 this->powerView.movePowers(0);
                 this->enemyView.moveObjects(0);
                 this->meatView.moveObjects(0);
+                int index = this->characterView.checkCollision(0);
+                int indexPower = this->characterView.checkCollisionWithPowers(0);
+                int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
+                int indexMeat = this->characterView.checkCollisionWithMeats(0);
+                int indexEndLevel = this->characterView.checkCollisionWithEndLevel(0);
+                if(index == -1 && indexEnemy == -1)
+                {
+                    //Move the obstacles
+                    this->groundView.moveObjects(0);
+                    this->powerView.movePowers(0);
+                    this->enemyView.moveObjects(0);
+                    this->meatView.moveObjects(0);
+                    this->endLevelView.moveEndLevel(0);
+                }
+                //Update the image of the character
+                this->characterView.moveCharacter(0);
             }
-            //Update the image of the character
-            this->characterView.moveCharacter(0);
+
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            {
+                this->characterView.jump();
+            }
+        }
+        //Display level passed
+        else {
+            if(characterView.getAdvancementState() == 5){
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout<<"level win" << std::endl;
+                }
+            } else {
+                if(characterView.getAdvancementState() == 0){
+                    if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                    {
+                        std::cout<<"level lost" << std::endl;
+                    }
+                }
+            }
         }
 
-        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-        {
-            this->characterView.jump();
-        }
     }
     if(this->characterView.isJumping())
     {
@@ -104,18 +142,26 @@ void Game::update()
 
 void Game::render()
 {
-    //Clear the content of the window
-    this->window->clear();
-    //Draw the game objects
-    this->groundView.render(this->window);
-    this->characterView.render(this->window);
-    this->powerView.render(this->window);
-    this->enemyView.render(this->window);
-    this->meatView.render(this->window);
-    this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
-    //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
-    this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
+    if(characterView.getAdvancementState() == 1){
+          //Clear the content of the window
+        this->window->clear();
+        //Draw the game objects
+        this->groundView.render(this->window);
+        this->characterView.render(this->window);
+        this->powerView.render(this->window);
+        this->enemyView.render(this->window);
+        this->meatView.render(this->window);
+        this->endLevelView.render(this->window);
+        this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
+        //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
+        this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
+    } else{
+        if(characterView.getAdvancementState() == 5){
+            this->window->clear();
+            window->draw(this->winSprite);
+        }
 
+    }
     //Display the new content of the window
     this->window->display();
 }

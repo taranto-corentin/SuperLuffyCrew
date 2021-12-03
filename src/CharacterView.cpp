@@ -67,6 +67,16 @@ CharacterView& CharacterView::operator=(const CharacterView& rhs)
     return *this;
 }
 
+int CharacterView::getAdvancementState()const
+{
+    return advancementState;
+}
+
+void CharacterView::setAdvancementState(int advancementState)
+{
+    this->advancementState = advancementState;
+}
+
 void CharacterView::setGroundView(GroundView* groundView)
 {
     this->groundView = groundView;
@@ -85,6 +95,11 @@ void CharacterView::setEnemyView(EnemyView* enemyView)
 void CharacterView::setMeatView(MeatView* meatView)
 {
     this->meatView = meatView;
+}
+
+void CharacterView::setEndLevelView(EndLevelView* endLevelView)
+{
+    this->endLevelView = endLevelView;
 }
 
 void CharacterView::render(sf::RenderWindow* window)
@@ -247,8 +262,8 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
             continue;
         }
         std::cout << "Collision with power !" << std::endl;
-        powerView->assignPower(i);
         std::cout << "Power view : " << powerView->str() << std::endl;
+        powerView->assignPower(i);
         return i;
     }
     return -1;
@@ -257,6 +272,11 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<MovableObject*> enemies = this->enemyView->getObjects();
+    time_t now;
+    now = time(NULL);
+    if(now - momentCollision >= 3){
+        character.setInvincible(false);
+    }
 
     for(size_t i=0; i<enemies.size(); i++)
     {
@@ -286,6 +306,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         }
 
         if(movement == 1 || movement == 0){
+             momentCollision = time(NULL);
              std::cout << "Collision with the enemy !!! on side" << std::endl;
              if(powerView->getIsInFire()) {
                 enemyView->killEnemy(i);
@@ -293,12 +314,16 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
              else {
                 character.takeDamage();
              }
-             character.takeDamage();
-
-             this->invincibility(2);
+             if(character.isInvincible() == false){
+                character.takeDamage();
+                character.setInvincible(true);
+            }
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
+        }
+        if(character.getLifePoint() <= 0){
+            setAdvancementState(0);
         }
 
         std::cout << "Collision with the enemy !!!" << std::endl;
@@ -336,6 +361,39 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         meatView->eatMeat(i);
         character.gainLife();
         std::cout << "Meat view : " << meatView->str() << std::endl;
+        return i;
+    }
+    return -1;
+}
+
+const int CharacterView::checkCollisionWithEndLevel(int movement)
+{
+    std::vector<EndLevel*> endLevels = this->endLevelView->getEndLevels();
+
+    for(size_t i=0; i<endLevels.size(); i++)
+    {
+        int newX = endLevels.at(i)->getX();
+        int newY = endLevels.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        {
+            continue;
+        }
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            continue;
+        }
+        std::cout << "Collision with EndLevel !" << std::endl;
+        this->advancementState = 5;
+        std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
     }
     return -1;

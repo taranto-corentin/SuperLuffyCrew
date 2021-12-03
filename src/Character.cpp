@@ -62,3 +62,13 @@ void Character::gainLife()
 {
     this->lifePoint++;
 }
+
+const bool Character::isInvincible() const
+{
+    return invincible;
+}
+
+void Character::setInvincible(const bool invincible)
+{
+    this->invincible = invincible;
+}

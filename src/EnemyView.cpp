@@ -48,7 +48,7 @@ void EnemyView::setPowerView(PowerView* powerView)
 
 void EnemyView::killEnemy(int index)
 {
-    this->powerView->turnOffLuffy();
+    this->powerView->turnOffLuffy(index);
     this->removeObject(this->getObjects().at(index));
 }
 

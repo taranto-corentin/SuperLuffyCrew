@@ -2,12 +2,12 @@
 
 PowerView::PowerView()
 {
-    Power* gomuGomu = new Power(150, 600-128);
-    this->powers.push_back(gomuGomu);
-    Power* baraBara = new Power(300, 390);
-    this->powers.push_back(baraBara);
-    Power* meraMera = new Power(420, 600-128);
-    this->powers.push_back(meraMera);
+    Power* meraMera1 = new Power(150, 600-128);
+    this->powers.push_back(meraMera1);
+    Power* meraMera2 = new Power(300, 390);
+    this->powers.push_back(meraMera2);
+    Power* meraMera3 = new Power(100, 600-128);
+    this->powers.push_back(meraMera3);
 
     std::cout << "Powers from the constructor : " << std::endl;
     for(size_t i=0; i<this->powers.size(); i++)
@@ -15,46 +15,23 @@ PowerView::PowerView()
         std::cout << this->powers.at(i)->str() << std::endl;
     }
 
-    //Load image of the Gomu Gomu fruit
-    sf::Image gomuGomuImage;
-    if(!gomuGomuImage.loadFromFile("assets/GomuGomu.png"))
-    {
-        std::cout << "ERROR::GOMU GOMU FRUIT IMAGE NOT FOUND !!!" << std::endl;
-    }
-    //Load image of the Bara Bara fruit
-    sf::Image baraBaraImage;
-    if(!baraBaraImage.loadFromFile("assets/BaraBara.jpg"))
-    {
-        std::cout << "ERROR::BARA BARA FRUIT IMAGE NOT FOUND !!!" << std::endl;
-    }
     //Load image of the Mera Mera fruit
     sf::Image meraMeraImage;
-    if(!meraMeraImage.loadFromFile("assets/MeraMera.jpg"))
+    if(!meraMeraImage.loadFromFile("assets/MeraMera.png"))
     {
         std::cout << "ERROR::MERA MERA FRUIT IMAGE NOT FOUND !!!" << std::endl;
     }
 
     //Load texture
-    this->gomuGomuTexture.loadFromImage(gomuGomuImage);
-    this->baraBaraTexture.loadFromImage(baraBaraImage);
     this->meraMeraTexture.loadFromImage(meraMeraImage);
 
     //Load the sprites
-    sf::Sprite sprite1;
-    sprite1.setTexture(this->gomuGomuTexture);
-    powerSprites.push_back(sprite1);
-
-    sf::Sprite sprite2;
-    sprite2.setTexture(this->baraBaraTexture);
-    powerSprites.push_back(sprite2);
-
-    sf::Sprite sprite3;
-    sprite3.setTexture(this->meraMeraTexture);
-    powerSprites.push_back(sprite3);
-
     for(size_t i=0; i<this->powers.size(); i++)
     {
-        this->powerSprites.at(i).setScale(2.f, 2.f);
+        sf::Sprite sprite;
+        sprite.setTexture(this->meraMeraTexture);
+        sprite.setScale(1.f, 1.f);
+        powerSprites.push_back(sprite);
     }
 }
 
@@ -67,7 +44,7 @@ PowerView::~PowerView()
     this->powers.clear();
 }
 
-PowerView::PowerView(const PowerView& other): powers(other.powers), gomuGomuTexture(other.gomuGomuTexture), baraBaraTexture(other.baraBaraTexture), meraMeraTexture(other.meraMeraTexture), powerSprites(other.powerSprites)
+PowerView::PowerView(const PowerView& other): powers(other.powers), meraMeraTexture(other.meraMeraTexture), powerSprites(other.powerSprites)
 {
     //copy ctor
 }
@@ -77,8 +54,6 @@ PowerView& PowerView::operator=(const PowerView& rhs)
     if (this == &rhs) return *this; // handle self assignment
 
     this->powers = rhs.powers;
-    this->gomuGomuTexture = rhs.gomuGomuTexture;
-    this->baraBaraTexture = rhs.baraBaraTexture;
     this->meraMeraTexture = rhs.meraMeraTexture;
     this->powerSprites = rhs.powerSprites;
 
@@ -95,13 +70,17 @@ bool PowerView::getIsInFire() const
     return this->isInFire;
 }
 
-void PowerView::turnOffLuffy()
+void PowerView::turnOffLuffy(int index)
 {
     this->isInFire = false;
 }
 
 void PowerView::render(sf::RenderWindow* window)
 {
+    activePowerSprite.setPosition(800-70,80); //800-70,15
+    if(this->getIsInFire()) {
+        window->draw(activePowerSprite);
+    }
     for(size_t i=0; i<this->powerSprites.size(); i++)
     {
         this->powerSprites.at(i).setPosition(this->powers.at(i)->getX(), this->powers.at(i)->getY());
@@ -131,21 +110,10 @@ void PowerView::movePowers(int movement)
 void PowerView::assignPower(int index)
 {
     //Assign the power
-    const sf::Texture* texture = powerSprites.at(index).getTexture();
-    if(texture == &(this->gomuGomuTexture))
-    {
-        std::cout << "GomuGomu" << std::endl;
-    }
-    else if(texture == &(this->baraBaraTexture))
-    {
-        std::cout << "BaraBara" << std::endl;
-    }
-    else
-    {
-        std::cout << "MeraMera" << std::endl;
-        this->isInFire = true;
-        std::cout << this->getIsInFire() << std::endl;
-    }
+    std::cout << "MeraMera" << std::endl;
+    activePowerSprite = powerSprites.at(index);
+    this->isInFire = true;
+    std::cout << this->getIsInFire() << std::endl;
 
     Power* power = powers.at(index);
     powers.erase(powers.begin() + index);
