@@ -19,7 +19,7 @@ class CharacterView
         PowerView* powerView;
         MeatView* meatView;
         EndLevelView* endLevelView;
-        bool win = false;
+        int advancementState = 1;
         //Images
         sf::Texture characterTextures[2][3];
         sf::Sprite characterSprite;
@@ -43,8 +43,8 @@ class CharacterView
 
         //Accessors
         Character getCharacter() const;
-        bool isWin()const;
-        void setWin(bool win);
+        int getAdvancementState()const;
+        void setAdvancementState(int advancementState);
         void setGroundView(GroundView* groundView);
         void setPowerView(PowerView* powerView);
         void setEnemyView(EnemyView* enemyView);

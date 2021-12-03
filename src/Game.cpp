@@ -60,7 +60,7 @@ void Game::pollEvents()
                 this->window->close();
                 break;
         }
-        if(characterView.isWin() == false){
+        if(characterView.getAdvancementState() == 1){
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
             {
                 int index = this->characterView.checkCollision(1);
@@ -106,11 +106,23 @@ void Game::pollEvents()
                 this->characterView.jump();
             }
         }
-        //Affichage gagner ou perdu
-        else if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
-        {
-            this->window->clear();
+        //Display level passed
+        else {
+            if(characterView.getAdvancementState() == 5){
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                {
+                    std::cout<<"level win" << std::endl;
+                }
+            } else {
+                if(characterView.getAdvancementState() == 0){
+                    if(sf::Mouse::isButtonPressed(sf::Mouse::Left))
+                    {
+                        std::cout<<"level lost" << std::endl;
+                    }
+                }
+            }
         }
+
     }
     if(this->characterView.isJumping())
     {
@@ -125,7 +137,7 @@ void Game::update()
 
 void Game::render()
 {
-    if(characterView.isWin() == false){
+    if(characterView.getAdvancementState() == 1){
           //Clear the content of the window
         this->window->clear();
         //Draw the game objects
@@ -139,8 +151,11 @@ void Game::render()
         //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
         this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
     } else{
-        this->window->clear();
-        window->draw(this->winSprite);
+        if(characterView.getAdvancementState() == 5 || characterView.getAdvancementState() == 0){
+            this->window->clear();
+            window->draw(this->winSprite);
+        }
+
     }
     //Display the new content of the window
     this->window->display();

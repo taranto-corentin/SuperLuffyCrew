@@ -6,7 +6,7 @@ PowerView::PowerView()
     this->powers.push_back(meraMera1);
     Power* meraMera2 = new Power(300, 390);
     this->powers.push_back(meraMera2);
-    Power* meraMera3 = new Power(420, 600-128);
+    Power* meraMera3 = new Power(100, 600-128);
     this->powers.push_back(meraMera3);
 
     std::cout << "Powers from the constructor : " << std::endl;

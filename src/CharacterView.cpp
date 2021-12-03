@@ -67,14 +67,14 @@ CharacterView& CharacterView::operator=(const CharacterView& rhs)
     return *this;
 }
 
-bool CharacterView::isWin() const
+int CharacterView::getAdvancementState()const
 {
-    return win;
+    return advancementState;
 }
 
-void CharacterView::setWin(bool win)
+void CharacterView::setAdvancementState(int advancementState)
 {
-    this->win = win;
+    this->advancementState = advancementState;
 }
 
 void CharacterView::setGroundView(GroundView* groundView)
@@ -323,7 +323,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             enemyView->killEnemy(i);
         }
         if(character.getLifePoint() <= 0){
-            setWin(true);
+            setAdvancementState(0);
         }
 
         std::cout << "Collision with the enemy !!!" << std::endl;
@@ -392,7 +392,7 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
             continue;
         }
         std::cout << "Collision with EndLevel !" << std::endl;
-        this->win = true;
+        this->advancementState = 5;
         std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
     }
