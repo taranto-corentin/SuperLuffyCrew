@@ -24,6 +24,8 @@ class GroundView : public MovableObjectView
         virtual ~GroundView();
         GroundView(const GroundView& other);
         GroundView& operator=(const GroundView& other);
+
+        //Methods
         const std::string str() const;
 };
 

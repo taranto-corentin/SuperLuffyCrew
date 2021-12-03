@@ -73,8 +73,8 @@ void Game::pollEvents()
                 {
                     this->groundView.moveObjects(1);
                     this->powerView.movePowers(1);
-                    this->enemyView.moveEnemy(1);
-                    this->meatView.moveMeat(1);
+                    this->enemyView.moveObjects(1);
+                    this->meatView.moveObjects(1);
                     this->endLevelView.moveEndLevel(1);
                 }
                 //Update the image of the character
@@ -83,6 +83,11 @@ void Game::pollEvents()
 
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
             {
+                //Move the obstacles
+                this->groundView.moveObjects(0);
+                this->powerView.movePowers(0);
+                this->enemyView.moveObjects(0);
+                this->meatView.moveObjects(0);
                 int index = this->characterView.checkCollision(0);
                 int indexPower = this->characterView.checkCollisionWithPowers(0);
                 int indexEnemy = this->characterView.checkCollisionWithEnemies(0);
@@ -93,8 +98,8 @@ void Game::pollEvents()
                     //Move the obstacles
                     this->groundView.moveObjects(0);
                     this->powerView.movePowers(0);
-                    this->enemyView.moveEnemy(0);
-                    this->meatView.moveMeat(0);
+                    this->enemyView.moveObjects(0);
+                    this->meatView.moveObjects(0);
                     this->endLevelView.moveEndLevel(0);
                 }
                 //Update the image of the character

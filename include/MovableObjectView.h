@@ -16,7 +16,6 @@ class MovableObjectView
 {
     private:
         std::vector<MovableObject*> objects;
-        std::vector<sf::Texture> textures;
         std::vector<sf::Sprite> sprites;
 
     public:
@@ -27,11 +26,14 @@ class MovableObjectView
 
         //Accessors
         std::vector<MovableObject*> getObjects() const;
-        std::vector<sf::Texture> getTextures() const;
         std::vector<sf::Sprite> getSprites() const;
+
+        //Add elements in the vectors
         void addObject(MovableObject* object);
-        void addTexture(sf::Texture texture);
-        void addSprite(sf::Sprite sprite);
+        void addSprite(sf::Sprite sprite, sf::Texture* texture);
+
+        //Remove object from the list
+        void removeObject(MovableObject* object);
 
         //Methods
         void render(sf::RenderWindow* window);
