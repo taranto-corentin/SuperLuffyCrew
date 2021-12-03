@@ -133,7 +133,7 @@ void Game::pollEvents()
                     if(index == -1 && indexEnemy == -1)
                     {
                         this->groundView.moveObjects(1);
-                        this->powerView.movePowers(1);
+                        this->powerView.moveObjects(1);
                         this->enemyView.moveObjects(1);
                         this->meatView.moveObjects(1);
                         this->endLevelView.moveEndLevel(1);
@@ -154,7 +154,7 @@ void Game::pollEvents()
                     {
                         //Move the obstacles
                         this->groundView.moveObjects(0);
-                        this->powerView.movePowers(0);
+                        this->powerView.moveObjects(0);
                         this->enemyView.moveObjects(0);
                         this->meatView.moveObjects(0);
                         this->endLevelView.moveEndLevel(0);
