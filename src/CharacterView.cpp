@@ -238,7 +238,7 @@ const int CharacterView::checkCollision(int movement) const
 
 const int CharacterView::checkCollisionWithPowers(int movement) const
 {
-    std::vector<Power*> powers = this->powerView->getPowers();
+    std::vector<MovableObject*> powers = this->powerView->getObjects();
 
     for(size_t i=0; i<powers.size(); i++)
     {
@@ -271,7 +271,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
 
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
-    std::vector<Enemy*> enemies = this->enemyView->getEnemys();
+    std::vector<MovableObject*> enemies = this->enemyView->getObjects();
     time_t now;
     now = time(NULL);
     if(now - momentCollision >= 3){
@@ -334,7 +334,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
 const int CharacterView::checkCollisionWithMeats(int movement)
 {
-    std::vector<Meat*> meats = this->meatView->getMeats();
+    std::vector<MovableObject*> meats = this->meatView->getObjects();
 
     for(size_t i=0; i<meats.size(); i++)
     {

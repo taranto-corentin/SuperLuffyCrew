@@ -19,6 +19,9 @@ class MovableObject
         const float getY() const;
         const Position getPosition() const;
 
+        //Operators
+        bool operator==(const MovableObject& other);
+
         //Methods
         void changePosition(const float x, const float y);
         virtual const std::string str() const = 0;

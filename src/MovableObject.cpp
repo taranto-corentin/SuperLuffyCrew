@@ -24,6 +24,11 @@ MovableObject& MovableObject::operator=(const MovableObject& rhs)
     return *this;
 }
 
+bool MovableObject::operator==(const MovableObject& other)
+{
+    return other.getX() == this->getX() && other.getY() == this->getY();
+}
+
 void MovableObject::changePosition(const float x, const float y)
 {
     this->position.changePosition(x, y);

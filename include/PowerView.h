@@ -11,16 +11,12 @@
 #include <vector>
 
 #include "Power.h"
+#include "MovableObjectView.h"
 
-class PowerView
+class PowerView : public MovableObjectView
 {
     private:
         //Game logic
-        std::vector<Power*> powers;
-
-        sf::Texture meraMeraTexture;
-        std::vector<sf::Sprite> powerSprites;
-
         bool isInFire = false;
 
         sf::Texture activePowerTexture;
@@ -33,12 +29,9 @@ class PowerView
         PowerView& operator=(const PowerView& other);
 
         //Accessors
-        std::vector<Power*> getPowers() const;
         bool getIsInFire() const;
 
         //Methods
-        void render(sf::RenderWindow* window);
-        void movePowers(int movement);
         void assignPower(int index);
         const std::string str() const;
         void turnOffLuffy(int index);

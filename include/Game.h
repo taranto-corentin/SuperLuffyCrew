@@ -16,6 +16,14 @@ class Game
         sf::Event events;
         sf::Texture winTextures;
         sf::Sprite winSprite;
+        sf::Texture loseTextures;
+        sf::Sprite loseSprite;
+        sf::Texture mainMenuTextures;
+        sf::Sprite mainMenuSprite;
+        sf::Texture playTextures;
+        sf::Sprite playSprite;
+        sf::Texture quitTextures;
+        sf::Sprite quitSprite;
 
         //Ground images
         GroundView groundView;

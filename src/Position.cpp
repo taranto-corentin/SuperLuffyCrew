@@ -25,6 +25,11 @@ Position& Position::operator=(const Position& rhs)
     return *this;
 }
 
+bool Position::operator==(const Position& other)
+{
+    return other.x == this->x && other.y == this->y;
+}
+
 void Position::changePosition(const float x, const float y)
 {
     this->x += x;

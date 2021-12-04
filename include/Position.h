@@ -15,6 +15,9 @@ class Position
         Position(const Position& other);
         Position& operator=(const Position& other);
 
+        //Operators
+        bool operator==(const Position& other);
+
         //Methods
         void changePosition(const float x, const float y);
         const float getX() const;
