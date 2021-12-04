@@ -24,11 +24,13 @@ Meat& Meat::operator=(const Meat& rhs)
     return *this;
 }
 
+//To String
 const std::string Meat::str() const
 {
     return "Meat ; " + this->getPosition().str();
 }
 
+//Return a copy of a meat
 Meat* Meat::clone() const
 {
     return new Meat(*this);

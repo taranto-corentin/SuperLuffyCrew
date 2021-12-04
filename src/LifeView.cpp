@@ -33,6 +33,7 @@ LifeView& LifeView::operator=(const LifeView& rhs)
     return *this;
 }
 
+//Render the lifepoints in the right-top corner of the window
 void LifeView::render(sf::RenderWindow* window, int nbLife)
 {
     lifeSprite.setPosition(800-70,15);
@@ -56,6 +57,7 @@ void LifeView::render(sf::RenderWindow* window, int nbLife)
     window->draw(lifeText);
 }
 
+//Update the text of the number of lifes when it change
 void LifeView::updateLifeTxt(int nbLife)
 {
     int nLife = nbLife;

@@ -24,11 +24,13 @@ Power& Power::operator=(const Power& rhs)
     return *this;
 }
 
+//To String
 const std::string Power::str() const
 {
     return "Power ; " + this->getPosition().str();
 }
 
+//Return a copy of a power
 Power* Power::clone() const
 {
     return new Power(*this);

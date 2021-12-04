@@ -48,6 +48,7 @@ GroundView& GroundView::operator=(const GroundView& rhs)
     return *this;
 }
 
+//To String
 const std::string GroundView::str() const
 {
     return "Ground view";

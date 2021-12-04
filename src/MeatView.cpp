@@ -41,11 +41,13 @@ MeatView& MeatView::operator=(const MeatView& rhs)
     return *this;
 }
 
+//When the character eats a piece of meat, it's removed from the level
 void MeatView::eatMeat(int index)
 {
     this->removeObject(this->getObjects().at(index));
 }
 
+//To String
 const std::string MeatView::str() const
 {
     return "Meat view";

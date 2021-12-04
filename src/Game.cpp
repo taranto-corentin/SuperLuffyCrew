@@ -35,7 +35,7 @@ Game::Game()
         std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
     }
 
-
+    //Set images and textures for each image
     this->winTextures.loadFromImage(winImage);
     this->winSprite.setTexture(this->winTextures);
     this->winSprite.setScale(1.f, 1.f);
@@ -115,7 +115,7 @@ void Game::pollEvents()
                 if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(this->window))){
                     this->characterView.setAdvancementState(1);
                 }
-                //CEST DE LA MERDE CELUI QUI TROUVE LA SOLUTION JE LUI PAYE MCDO (C'EST MAXIME QUI DIT CA)
+                //CEST DE LA MERDE CELUI QUI TROUVE LA SOLUTION JE LUI PAYE MCDO (C'EST CEDRIC QUI DIT CA)
 
             }*/
 
@@ -168,7 +168,7 @@ void Game::pollEvents()
                     this->characterView.jump();
                 }
             }
-        //Display level passed
+            //Display level passed
             else {
                 if(characterView.getAdvancementState() == 5){
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))

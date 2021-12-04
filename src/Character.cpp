@@ -28,6 +28,7 @@ Character& Character::operator=(const Character& rhs)
     return *this;
 }
 
+//Getters
 const float Character::getY() const
 {
     return y;
@@ -38,36 +39,42 @@ const int Character::getLifePoint() const
     return lifePoint;
 }
 
-void Character::setJumping(const bool jumping)
-{
-    this->jumping = jumping;
-}
-
 const bool Character::isJumping() const
 {
     return jumping;
 }
 
+//Setters
+void Character::setJumping(const bool jumping)
+{
+    this->jumping = jumping;
+}
+
+//Increase the 'y' position of the character for the jump
 void Character::jump(const float change)
 {
     this->y += change;
 }
 
+//The character lost a life
 void Character::takeDamage()
 {
     this->lifePoint--;
 }
 
+//the character gain a life
 void Character::gainLife()
 {
     this->lifePoint++;
 }
 
+//Check if the character is invincible after he hurts an enemy
 const bool Character::isInvincible() const
 {
     return invincible;
 }
 
+//Settter
 void Character::setInvincible(const bool invincible)
 {
     this->invincible = invincible;

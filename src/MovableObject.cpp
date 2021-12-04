@@ -34,6 +34,7 @@ void MovableObject::changePosition(const float x, const float y)
     this->position.changePosition(x, y);
 }
 
+//Getters
 const float MovableObject::getX() const
 {
     return this->position.getX();

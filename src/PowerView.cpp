@@ -2,10 +2,10 @@
 
 PowerView::PowerView()
 {
-    /*Power* meraMera1 = new Power(150, 600-128);
-    this->powers.push_back(meraMera1);
+    Power* meraMera1 = new Power(150, 600-128);
+    this->addObject(meraMera1);
     Power* meraMera2 = new Power(300, 390);
-    this->powers.push_back(meraMera2);*/
+    this->addObject(meraMera2);
     Power* meraMera3 = new Power(100, 600-128);
     this->addObject(meraMera3);
 
@@ -43,29 +43,29 @@ PowerView& PowerView::operator=(const PowerView& rhs)
     return *this;
 }
 
+//When the character eats a power, he's in fire
 bool PowerView::getIsInFire() const
 {
     return this->isInFire;
 }
 
+//When the effect of the power disapears, the character is not in fire anymore
 void PowerView::turnOffLuffy(int index)
 {
     this->isInFire = false;
 }
 
+//Assign the power to the character
 void PowerView::assignPower(int index)
 {
-    //Assign the power
+    //Show the active power in the right-top corner of the window
     activePowerSprite = this->getSprites().at(index);
     this->isInFire = true;
 
-    //Power* power = this->getObjects().at(index);
-//    powers.erase(powers.begin() + index);
-//    delete power;
-//    powerSprites.erase(powerSprites.begin() + index);
     this->removeObject(this->getObjects().at(index));
 }
 
+//To String
 const std::string PowerView::str() const
 {
     return "Power view";

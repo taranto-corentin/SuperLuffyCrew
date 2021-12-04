@@ -48,16 +48,19 @@ std::vector<MovableObject*> MovableObjectView::getObjects() const
     return result;
 }
 
+//Getter
 std::vector<sf::Sprite> MovableObjectView::getSprites() const
 {
     return this->sprites;
 }
 
+//Add a copy of an object in the objects list
 void MovableObjectView::addObject(MovableObject* object)
 {
     this->objects.push_back(object->clone());
 }
 
+//Add the texture and the sprite in the sprites list
 void MovableObjectView::addSprite(sf::Sprite sprite, sf::Texture* texture)
 {
     //Set the texture to the sprite and add the sprite to the list
@@ -65,6 +68,7 @@ void MovableObjectView::addSprite(sf::Sprite sprite, sf::Texture* texture)
     this->sprites.push_back(sprite);
 }
 
+//Remove the object of its list and remove its sprites in the sprites list
 void MovableObjectView::removeObject(MovableObject* object)
 {
     for(size_t i=0; i<this->objects.size(); i++)

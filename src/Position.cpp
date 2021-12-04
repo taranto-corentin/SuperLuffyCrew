@@ -36,6 +36,7 @@ void Position::changePosition(const float x, const float y)
     this->y += y;
 }
 
+//Getters
 const float Position::getX() const
 {
     return this->x;
@@ -46,6 +47,7 @@ const float Position::getY() const
     return this->y;
 }
 
+//To String
 const std::string Position::str() const
 {
     return "Position : (" + std::to_string(x) + ", " + std::to_string(y) + ")";

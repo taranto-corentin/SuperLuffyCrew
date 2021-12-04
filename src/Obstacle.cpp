@@ -24,11 +24,13 @@ Obstacle& Obstacle::operator=(const Obstacle& rhs)
     return *this;
 }
 
+//To String
 const std::string Obstacle::str() const
 {
     return "Obstacle : " + this->getPosition().str();
 }
 
+//Return a copy of an obstacle
 Obstacle* Obstacle::clone() const
 {
     return new Obstacle(*this);

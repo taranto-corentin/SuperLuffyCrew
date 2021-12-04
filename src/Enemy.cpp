@@ -24,11 +24,13 @@ Enemy& Enemy::operator=(const Enemy& rhs)
     return *this;
 }
 
+//To String
 const std::string Enemy::str() const
 {
     return "Enemy : " + getPosition().str();
 }
 
+//Return a copy of an enemy
 Enemy* Enemy::clone() const
 {
     return new Enemy(*this);

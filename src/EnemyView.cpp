@@ -41,10 +41,13 @@ EnemyView& EnemyView::operator=(const EnemyView& rhs)
     return *this;
 }
 
+//Setter
 void EnemyView::setPowerView(PowerView* powerView)
 {
     this->powerView = powerView;
 }
+
+//The character kills the enemy at the 'index' position
 
 void EnemyView::killEnemy(int index)
 {
@@ -52,6 +55,7 @@ void EnemyView::killEnemy(int index)
     this->removeObject(this->getObjects().at(index));
 }
 
+//To String
 const std::string EnemyView::str() const
 {
     return "Enemy view";

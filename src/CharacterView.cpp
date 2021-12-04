@@ -67,11 +67,13 @@ CharacterView& CharacterView::operator=(const CharacterView& rhs)
     return *this;
 }
 
+//Getter
 int CharacterView::getAdvancementState()const
 {
     return advancementState;
 }
 
+//Setters
 void CharacterView::setAdvancementState(int advancementState)
 {
     this->advancementState = advancementState;
@@ -102,10 +104,16 @@ void CharacterView::setEndLevelView(EndLevelView* endLevelView)
     this->endLevelView = endLevelView;
 }
 
+//Render the character in the window
 void CharacterView::render(sf::RenderWindow* window)
 {
     window->draw(this->characterSprite);
 }
+
+/*
+Check the movements of the character, change the texture of the character in function of the movement he does.
+Check also the collision with enemies when the character is on fire (after he took a power)
+*/
 
 void CharacterView::moveCharacter(const int movement)
 {
@@ -145,6 +153,7 @@ void CharacterView::moveCharacter(const int movement)
         {
             this->characterSprite.setTexture(this->characterTextures[movement][0]);
         }
+        //Check the collision when the character is on fire
         if(powerView->getIsInFire())
         {
             std::cout << "Luffy is in fire" << std::endl;
@@ -153,6 +162,7 @@ void CharacterView::moveCharacter(const int movement)
     }
 }
 
+//Make the character jump and check the collisions during the jump
 void CharacterView::jump()
 {
     //Setting the attribute jumping to true if it is not the case already
@@ -207,6 +217,7 @@ const bool CharacterView::isJumping() const
     return this->character.isJumping();
 }
 
+//Check collisions with obstacles
 const int CharacterView::checkCollision(int movement) const
 {
     std::vector<MovableObject*> grounds = this->groundView->getObjects();
@@ -236,6 +247,7 @@ const int CharacterView::checkCollision(int movement) const
     return -1;
 }
 
+//Check collisions with powers
 const int CharacterView::checkCollisionWithPowers(int movement) const
 {
     std::vector<MovableObject*> powers = this->powerView->getObjects();
@@ -269,6 +281,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
     return -1;
 }
 
+//Check collisions with enemies
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<MovableObject*> enemies = this->enemyView->getObjects();
@@ -305,6 +318,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             continue;
         }
 
+        //Check if the character enters in collision with an enemy on the side or on the top
         if(movement == 1 || movement == 0){
              momentCollision = time(NULL);
              std::cout << "Collision with the enemy !!! on side" << std::endl;
@@ -332,6 +346,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
     return -1;
 }
 
+//Check collisions with the meat
 const int CharacterView::checkCollisionWithMeats(int movement)
 {
     std::vector<MovableObject*> meats = this->meatView->getObjects();
@@ -366,6 +381,7 @@ const int CharacterView::checkCollisionWithMeats(int movement)
     return -1;
 }
 
+//Check collisions with the end of the level (the boat)
 const int CharacterView::checkCollisionWithEndLevel(int movement)
 {
     std::vector<EndLevel*> endLevels = this->endLevelView->getEndLevels();
@@ -399,10 +415,12 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
     return -1;
 }
 
+//Getter
 Character CharacterView::getCharacter() const {
     return character;
 }
 
+//Give the invincibility to the character after he hurts an enemy
 void CharacterView::invincibility(int seconds)
 {
     for(auto runUntil = std::chrono::system_clock::now() + std::chrono::seconds(seconds);
