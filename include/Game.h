@@ -24,6 +24,9 @@ class Game
         sf::Sprite playSprite;
         sf::Texture quitTextures;
         sf::Sprite quitSprite;
+        //World background
+        sf::Texture worldBackgroundTexture;
+        sf::Sprite worldBackgroundSprite;
 
         //Ground images
         GroundView groundView;
@@ -39,6 +42,7 @@ class Game
 
         //Init methods
         void initWindow();
+        void initBackground();
         void initVariables();
         void initGroundSprite();
         void initGrounds();
@@ -55,6 +59,7 @@ class Game
         void update();
         void render();
         void renderGround();
+        void renderBackground();
 };
 
 #endif // GAME_H

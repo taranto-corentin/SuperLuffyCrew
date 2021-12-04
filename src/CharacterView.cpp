@@ -327,11 +327,8 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
              }
              else {
                 character.takeDamage();
+                invincibility(2);
              }
-             if(character.isInvincible() == false){
-                character.takeDamage();
-                character.setInvincible(true);
-            }
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);

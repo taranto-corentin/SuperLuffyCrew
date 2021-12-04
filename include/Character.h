@@ -21,8 +21,8 @@ class Character
         const int getLifePoint() const;
         void setJumping(const bool jumping);
         const bool isJumping() const;
-        const bool isInvincible() const;
         void setInvincible(const bool invincible);
+        const bool isInvincible() const;
         //Methods for the game
         void jump(const float change);
         void takeDamage();

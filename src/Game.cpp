@@ -4,6 +4,7 @@ Game::Game()
 {
     initVariables();
     initWindow();
+    initBackground();
 
     sf::Image winImage;
     sf::Image loseImage;
@@ -84,6 +85,16 @@ void Game::initVariables()
     this->characterView.setMeatView(&meatView);
     this->characterView.setEndLevelView(&endLevelView);
     this->enemyView.setPowerView(&powerView);
+}
+
+void Game::initBackground()
+{
+    if(!worldBackgroundTexture.loadFromFile("assets/Background.png"))
+    {
+        std::cout << "ERROR::WORLD BACKGROUND IMAGE NOT FOUND !!!" << std::endl;
+    }
+    this->worldBackgroundSprite.setTexture(this->worldBackgroundTexture);
+    this->worldBackgroundSprite.setScale(1.f, 1.f);
 }
 
 //Accesssors
@@ -198,6 +209,11 @@ void Game::update()
     this->pollEvents();
 }
 
+void Game::renderBackground()
+{
+    this->window->draw(this->worldBackgroundSprite);
+}
+
 void Game::render()
 {
     if(characterView.getAdvancementState() == 7){
@@ -210,16 +226,18 @@ void Game::render()
         {
             //Clear the content of the window
             this->window->clear();
+            //Draw the world background
+            this->renderBackground();
             //Draw the game objects
             this->groundView.render(this->window);
             this->characterView.render(this->window);
+            this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
+            this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
             this->powerView.render(this->window);
             this->enemyView.render(this->window);
             this->meatView.render(this->window);
             this->endLevelView.render(this->window);
-            this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
             //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
-            this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
