@@ -285,11 +285,6 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
     std::vector<MovableObject*> enemies = this->enemyView->getObjects();
-    time_t now;
-    now = time(NULL);
-    if(now - momentCollision >= 3){
-        character.setInvincible(false);
-    }
 
     for(size_t i=0; i<enemies.size(); i++)
     {
@@ -327,7 +322,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
              }
              else {
                 character.takeDamage();
-                invincibility(2);
+                enemyView->killEnemy(i);
              }
         } else {
             std::cout << "Collision with the enemy !!! on top" << std::endl;
@@ -415,14 +410,4 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
 //Getter
 Character CharacterView::getCharacter() const {
     return character;
-}
-
-//Give the invincibility to the character after he hurts an enemy
-void CharacterView::invincibility(int seconds)
-{
-    for(auto runUntil = std::chrono::system_clock::now() + std::chrono::seconds(seconds);
-        std::chrono::system_clock::now() < runUntil;)
-    {
-        std::cout << "Hi" << std::endl;
-    }
 }

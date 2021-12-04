@@ -68,14 +68,3 @@ void Character::gainLife()
     this->lifePoint++;
 }
 
-//Check if the character is invincible after he hurts an enemy
-const bool Character::isInvincible() const
-{
-    return invincible;
-}
-
-//Settter
-void Character::setInvincible(const bool invincible)
-{
-    this->invincible = invincible;
-}

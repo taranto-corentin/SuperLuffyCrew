@@ -2,7 +2,7 @@
 
 EndLevelView::EndLevelView()
 {
-    EndLevel* endLevel = new EndLevel(650, 600 - 190);
+    EndLevel* endLevel = new EndLevel(4600, 600 - 190);
     this->endLevels.push_back(endLevel);
 
     //Load image

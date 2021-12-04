@@ -73,7 +73,7 @@ void Game::initWindow()
     //Creation of the window
     this->window = new sf::RenderWindow(this->videoMode, "Super Luffy Crew", sf::Style::Titlebar | sf::Style::Close);
     //Definition of the FPS of the game
-    this->window->setFramerateLimit(20);
+    this->window->setFramerateLimit(30);
 }
 
 void Game::initVariables()
@@ -115,7 +115,7 @@ void Game::pollEvents()
                 break;
         }
         if(characterView.getAdvancementState() == 7){
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter)){
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
                     this->characterView.setAdvancementState(1);
                 }
 
