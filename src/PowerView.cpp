@@ -60,6 +60,8 @@ void PowerView::assignPower(int index)
 {
     //Show the active power in the right-top corner of the window
     activePowerSprite = this->getSprites().at(index);
+    activePowerSprite.setPosition(800-70,80);
+
     this->isInFire = true;
 
     this->removeObject(this->getObjects().at(index));
