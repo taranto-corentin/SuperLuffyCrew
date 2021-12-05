@@ -116,7 +116,6 @@ void Game::pollEvents()
         }
         if(characterView.getAdvancementState() == 7){
 
-<<<<<<< HEAD
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
                     sf::Vector2i MousePos = sf::Mouse::getPosition(*(this->window)) ;
                     sf::FloatRect objPos = playSprite.getGlobalBounds() ;
@@ -129,8 +128,6 @@ void Game::pollEvents()
                 }
             }
 
-=======
->>>>>>> refs/remotes/origin/main
         }else {
             if(characterView.getAdvancementState() == 1)
             {
