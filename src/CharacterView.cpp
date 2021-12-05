@@ -402,6 +402,7 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
         }
         std::cout << "Collision with EndLevel !" << std::endl;
         this->advancementState = 5;
+        endLevels.at(i)->changePosition(5301, 600 -190);
         character.setLifePoint(3);
         std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
@@ -413,3 +414,5 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
 Character CharacterView::getCharacter() const {
     return character;
 }
+
+

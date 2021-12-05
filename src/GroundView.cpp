@@ -118,6 +118,13 @@ GroundView::GroundView()
     Obstacle* obstacle43 = new Obstacle(4364, 600-192);
     this->addObject(obstacle43);
 
+    for(int i=0; i<20; i++)
+    {
+        Obstacle* obstacleMur = new Obstacle(5000, 600 - 64 * i);
+        this->addObject(obstacleMur);
+    }
+
+
 
     //Creation of the texture from the file that contains the image and display a error message in the console if the image is not found
     sf::Texture* texture = new sf::Texture();
