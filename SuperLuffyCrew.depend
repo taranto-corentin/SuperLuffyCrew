@@ -29,7 +29,7 @@
 	"MeatView.h"
 	"EndLevelView.h"
 
-1638612529 D
+1638610147 D
 	"Obstacle.h"
 	"LifeView.h"
 	"MovableObject.h"
@@ -37,6 +37,13 @@
 	"MovableObjectView.h"
 	"Power.h"
 	"MovableObjectView.h"
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
 
 1638534732 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Character.h
 	<iostream>
@@ -124,7 +131,7 @@
 1638700799 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638702077 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
+1638709691 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1638629240 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
@@ -138,10 +145,11 @@
 
 1638698007 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
 
-1638612544 s/remotes/origin/main
+1638610147 s/remotes/origin/main
 	<iostream>
 	"MovableObjectView.h"
 	"Position.h"
+	"MovableObject.h"
 
 1638610147 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
@@ -173,17 +181,6 @@
 	<SFML/Network.hpp>
 	<iostream>
 	<vector>
-<<<<<<< HEAD
-=======
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
->>>>>>> refs/remotes/origin/main
-	"MovableObject.h"
 
 1638451702 
 	"Enemy.h"
