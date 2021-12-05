@@ -181,7 +181,11 @@ void Game::pollEvents()
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
+<<<<<<< HEAD
+
+=======
 //                        this->setGameRestart(true);
+>>>>>>> refs/remotes/origin/main
                         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                         {
                             this->characterView.setAdvancementState(7);
@@ -235,6 +239,9 @@ void Game::render()
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
+<<<<<<< HEAD
+
+=======
                 this->characterView = CharacterView();
                 this->groundView = GroundView();
                 this->enemyView = EnemyView();
@@ -242,6 +249,7 @@ void Game::render()
                 this->meatView = MeatView();
                 this->endLevelView = EndLevelView();
                 initVariables();
+>>>>>>> refs/remotes/origin/main
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
