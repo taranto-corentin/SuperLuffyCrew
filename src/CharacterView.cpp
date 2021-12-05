@@ -330,11 +330,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         }
         if(character.getLifePoint() <= 0){
             setAdvancementState(0);
-<<<<<<< HEAD
-
-=======
             character.setLifePoint(3);
->>>>>>> refs/remotes/origin/main
         }
 
         std::cout << "Collision with the enemy !!!" << std::endl;

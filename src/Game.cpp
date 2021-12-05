@@ -115,17 +115,16 @@ void Game::pollEvents()
                 break;
         }
         if(characterView.getAdvancementState() == 7){
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
-                    this->characterView.setAdvancementState(1);
-                }
-
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-                    this->window->close();
-                }
 
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(*(this->window))){
+                    sf::Vector2i MousePos = sf::Mouse::getPosition(*(this->window)) ;
+                    sf::FloatRect objPos = playSprite.getGlobalBounds() ;
+                if(objPos.contains(MousePos.x, MousePos.y)){
                     this->characterView.setAdvancementState(1);
+                }
+                sf::FloatRect objPos2 = quitSprite.getGlobalBounds() ;
+                if(objPos2.contains(MousePos.x, MousePos.y)){
+                    this->window->close();
                 }
             }
 
@@ -187,11 +186,7 @@ void Game::pollEvents()
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
-<<<<<<< HEAD
 
-=======
-//                        this->setGameRestart(true);
->>>>>>> refs/remotes/origin/main
                         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                         {
                             this->characterView.setAdvancementState(7);
@@ -245,9 +240,6 @@ void Game::render()
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
-<<<<<<< HEAD
-
-=======
                 this->characterView = CharacterView();
                 this->groundView = GroundView();
                 this->enemyView = EnemyView();
@@ -255,7 +247,6 @@ void Game::render()
                 this->meatView = MeatView();
                 this->endLevelView = EndLevelView();
                 initVariables();
->>>>>>> refs/remotes/origin/main
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
