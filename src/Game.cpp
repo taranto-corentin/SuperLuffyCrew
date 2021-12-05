@@ -231,7 +231,7 @@ void Game::pollEvents()
                 if(characterView.getAdvancementState() == 5){
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                     {
-                        this->characterView.setAdvancementState(7);
+                        this->characterView.setAdvancementState(1);
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
