@@ -118,7 +118,6 @@ GroundView::GroundView()
     Obstacle* obstacle43 = new Obstacle(4364, 600-192);
     this->addObject(obstacle43);
 
-
     //Creation of the texture from the file that contains the image and display a error message in the console if the image is not found
     sf::Texture* texture = new sf::Texture();
     if(!texture->loadFromFile("assets/Ground.png"))
