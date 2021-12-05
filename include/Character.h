@@ -20,6 +20,8 @@ class Character
         const int getLifePoint() const;
         void setJumping(const bool jumping);
         const bool isJumping() const;
+        void setLifePoint(const int lifePoint);
+
         //Methods for the game
         void jump(const float change);
         void takeDamage();

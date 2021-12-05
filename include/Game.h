@@ -38,6 +38,8 @@ class Game
         EndLevelView endLevelView;
         EnemyView enemyView;
 
+        bool gameRestart = false;
+
         //Game logic
 
         //Init methods
@@ -53,6 +55,8 @@ class Game
 
         //Accessors
         const bool running() const;
+        const bool getGameRestart() const;
+        void setGameRestart(bool gameRestart);
 
         //Functions
         void pollEvents();
