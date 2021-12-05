@@ -24,6 +24,7 @@ EnemyView::EnemyView()
     this->addObject(enemy10);
     Enemy* enemy11 = new Enemy(4500, 600 - 128);
     this->addObject(enemy11);
+    std::cout << "constructor called" << std::endl;
     //Load texture
     sf::Texture* texture = new sf::Texture();
     if(!texture->loadFromFile("assets/Katakuri.png"))

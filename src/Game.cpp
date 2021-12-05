@@ -188,6 +188,7 @@ void Game::pollEvents()
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
+//                        this->setGameRestart(true);
                         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                         {
                             this->characterView.setAdvancementState(7);
@@ -241,10 +242,25 @@ void Game::render()
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
+                this->characterView = CharacterView();
+        this->groundView = GroundView();
+        this->enemyView = EnemyView();
+        this->powerView = PowerView();
+        this->meatView = MeatView();
+        this->endLevelView = EndLevelView();
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
                     this->window->clear();
+                    this->characterView = CharacterView();
+        this->groundView = GroundView();
+        this->enemyView = EnemyView();
+        this->powerView = PowerView();
+        this->meatView = MeatView();
+        this->endLevelView = EndLevelView();
+
+                    initVariables();
+                    std::cout << "state 0" << std::endl;
                     window->draw(this->loseSprite);
                 }
             }

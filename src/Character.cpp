@@ -50,6 +50,11 @@ void Character::setJumping(const bool jumping)
     this->jumping = jumping;
 }
 
+void Character::setLifePoint(const int lifePoint)
+{
+    this->lifePoint = lifePoint;
+}
+
 //Increase the 'y' position of the character for the jump
 void Character::jump(const float change)
 {
