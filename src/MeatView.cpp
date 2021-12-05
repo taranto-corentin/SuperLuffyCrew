@@ -30,16 +30,17 @@ MeatView::~MeatView()
     //dtor
 }
 
-MeatView::MeatView(const MeatView& other)
+MeatView::MeatView(const MeatView& other): MovableObjectView::MovableObjectView(other)
 {
     //copy ctor
 }
 
 MeatView& MeatView::operator=(const MeatView& rhs)
 {
-    if (this != &rhs){
+    if (this == &rhs) return *this; // handle self assignment
 
-    }
+    MovableObjectView::operator=(rhs);
+
     return *this;
 }
 

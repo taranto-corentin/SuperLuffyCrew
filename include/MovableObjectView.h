@@ -36,7 +36,7 @@ class MovableObjectView
         void removeObject(MovableObject* object);
 
         //Methods
-        void render(sf::RenderWindow* window);
+        virtual void render(sf::RenderWindow* window);
         void moveObjects(int direction);
         virtual const std::string str() const = 0;
 };

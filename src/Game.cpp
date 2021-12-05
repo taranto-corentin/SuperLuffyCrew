@@ -122,13 +122,12 @@ void Game::pollEvents()
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
                     this->window->close();
                 }
-            /*if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(this->window))){
+
+            if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+                if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(*(this->window))){
                     this->characterView.setAdvancementState(1);
                 }
-                //CEST DE LA MERDE CELUI QUI TROUVE LA SOLUTION JE LUI PAYE MCDO (C'EST CEDRIC QUI DIT CA)
-
-            }*/
+            }
 
         }else {
             if(characterView.getAdvancementState() == 1)
@@ -243,22 +242,22 @@ void Game::render()
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
                 this->characterView = CharacterView();
-        this->groundView = GroundView();
-        this->enemyView = EnemyView();
-        this->powerView = PowerView();
-        this->meatView = MeatView();
-        this->endLevelView = EndLevelView();
+                this->groundView = GroundView();
+                this->enemyView = EnemyView();
+                this->powerView = PowerView();
+                this->meatView = MeatView();
+                this->endLevelView = EndLevelView();
+                initVariables();
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
                     this->window->clear();
                     this->characterView = CharacterView();
-        this->groundView = GroundView();
-        this->enemyView = EnemyView();
-        this->powerView = PowerView();
-        this->meatView = MeatView();
-        this->endLevelView = EndLevelView();
-
+                    this->groundView = GroundView();
+                    this->enemyView = EnemyView();
+                    this->powerView = PowerView();
+                    this->meatView = MeatView();
+                    this->endLevelView = EndLevelView();
                     initVariables();
                     std::cout << "state 0" << std::endl;
                     window->draw(this->loseSprite);

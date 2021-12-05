@@ -54,6 +54,15 @@ void PowerView::turnOffLuffy(int index)
     this->isInFire = false;
 }
 
+void PowerView::render(sf::RenderWindow* window)
+{
+    MovableObjectView::render(window);
+    if(this->isInFire)
+    {
+        window->draw(activePowerSprite);
+    }
+}
+
 //Assign the power to the character
 void PowerView::assignPower(int index)
 {

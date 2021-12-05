@@ -32,6 +32,7 @@ class PowerView : public MovableObjectView
         bool getIsInFire() const;
 
         //Methods
+        void render(sf::RenderWindow* window);
         void assignPower(int index);
         const std::string str() const;
         void turnOffLuffy(int index);
