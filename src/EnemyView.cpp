@@ -2,6 +2,7 @@
 
 EnemyView::EnemyView()
 {
+    std::cout<<"coucou"<<std::endl;
     Enemy* enemy1 = new Enemy(1150, 600 - 128);
     this->addObject(enemy1);
     Enemy* enemy2 = new Enemy(1250, 600 - 128);
@@ -26,7 +27,7 @@ EnemyView::EnemyView()
     this->addObject(enemy11);
     //Load texture
     sf::Texture* texture = new sf::Texture();
-    if(!texture->loadFromFile("assets/Katakuri.png"))
+    if(!texture->loadFromFile("assets/Dragon_Kaido.png"))
     {
         std::cout << "ERROR::ENEMY IMAGE NOT FOUND !!!" << std::endl;
     }

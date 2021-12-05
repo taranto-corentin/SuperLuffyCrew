@@ -188,6 +188,7 @@ void Game::pollEvents()
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
+
                         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                         {
                             this->characterView.setAdvancementState(7);
@@ -241,6 +242,7 @@ void Game::render()
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
+
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
