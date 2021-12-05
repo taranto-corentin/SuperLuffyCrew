@@ -89,6 +89,7 @@ void MovableObjectView::render(sf::RenderWindow* window)
         this->sprites.at(i).setPosition(this->objects.at(i)->getX(), this->objects.at(i)->getY());
         window->draw(this->sprites.at(i));
     }
+
 }
 
 void MovableObjectView::moveObjects(int direction)

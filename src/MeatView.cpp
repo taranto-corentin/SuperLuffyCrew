@@ -2,10 +2,12 @@
 
 MeatView::MeatView()
 {
-    Meat* meat = new Meat(500, 600 - 128);
-    Meat* meat2 = new Meat(845, 600-128);
-    this->addObject(meat);
-    this->addObject(meat2);
+      Meat* meat1 = new Meat(2290, 600 - 384);
+      this->addObject(meat1);
+      Meat* meat2 = new Meat(3180, 600 - 256);
+      this->addObject(meat2);
+      Meat* meat3 = new Meat(3642, 600 - 256);
+      this->addObject(meat3);
 
     //Load texture
     sf::Texture* texture = new sf::Texture();

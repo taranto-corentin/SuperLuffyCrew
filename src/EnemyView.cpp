@@ -2,11 +2,28 @@
 
 EnemyView::EnemyView()
 {
-    Enemy* enemy = new Enemy(550, 600 - 128);
-    Enemy* enemy2 = new Enemy(745,600 - 128);
-    this->addObject(enemy);
+    Enemy* enemy1 = new Enemy(1150, 600 - 128);
+    this->addObject(enemy1);
+    Enemy* enemy2 = new Enemy(1250, 600 - 128);
     this->addObject(enemy2);
-
+    Enemy* enemy3 = new Enemy(1620, 600 - 256);
+    this->addObject(enemy3);
+    Enemy* enemy4 = new Enemy(1920, 600 - 128);
+    this->addObject(enemy4);
+    Enemy* enemy5 = new Enemy(2550, 600 - 128);
+    this->addObject(enemy5);
+    Enemy* enemy6 = new Enemy(3118, 600 - 384);
+    this->addObject(enemy6);
+    Enemy* enemy7 = new Enemy(3450, 600 - 192);
+    this->addObject(enemy7);
+    Enemy* enemy8 = new Enemy(3770, 600 - 256);
+    this->addObject(enemy8);
+    Enemy* enemy9 = new Enemy(4000, 600 - 128);
+    this->addObject(enemy9);
+    Enemy* enemy10 = new Enemy(4200, 600 - 128);
+    this->addObject(enemy10);
+    Enemy* enemy11 = new Enemy(4500, 600 - 128);
+    this->addObject(enemy11);
     //Load texture
     sf::Texture* texture = new sf::Texture();
     if(!texture->loadFromFile("assets/Katakuri.png"))

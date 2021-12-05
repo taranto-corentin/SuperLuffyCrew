@@ -2,13 +2,12 @@
 
 PowerView::PowerView()
 {
-    Power* meraMera1 = new Power(150, 600-128);
+    Power* meraMera1 = new Power(785, 600-128);
     this->addObject(meraMera1);
-    Power* meraMera2 = new Power(300, 390);
+    Power* meraMera2 = new Power(2900, 600-128);
     this->addObject(meraMera2);
-    Power* meraMera3 = new Power(100, 600-128);
+    Power* meraMera3 = new Power(3642, 600-384);
     this->addObject(meraMera3);
-
     //Load texture
     sf::Texture* texture = new sf::Texture();
     if(!texture->loadFromFile("assets/MeraMera.png"))

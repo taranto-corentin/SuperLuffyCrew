@@ -53,7 +53,6 @@ class CharacterView
         //Methods
         void render(sf::RenderWindow* window);
         void moveCharacter(const int movement);
-        void invincibility(int seconds);
         void jump();
         const bool isJumping() const;
         const int checkCollision(int movement=0) const;
