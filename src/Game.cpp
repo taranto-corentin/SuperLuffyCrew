@@ -115,13 +115,18 @@ void Game::pollEvents()
                 break;
         }
         if(characterView.getAdvancementState() == 7){
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+
+            if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+                    sf::Vector2i MousePos = sf::Mouse::getPosition(*(this->window)) ;
+                    sf::FloatRect objPos = playSprite.getGlobalBounds() ;
+                if(objPos.contains(MousePos.x, MousePos.y)){
                     this->characterView.setAdvancementState(1);
                 }
-
-                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                sf::FloatRect objPos2 = quitSprite.getGlobalBounds() ;
+                if(objPos2.contains(MousePos.x, MousePos.y)){
                     this->window->close();
                 }
+            }
 
         }else {
             if(characterView.getAdvancementState() == 1)
@@ -181,7 +186,11 @@ void Game::pollEvents()
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){
+<<<<<<< HEAD
 //                        this->setGameRestart(true);
+=======
+
+>>>>>>> refs/remotes/origin/main
                         if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                         {
                             this->characterView.setAdvancementState(7);
@@ -235,7 +244,10 @@ void Game::render()
         } else{
             if(characterView.getAdvancementState() == 5){
                 this->window->clear();
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/origin/main
                 this->characterView = CharacterView();
                 this->groundView = GroundView();
                 this->enemyView = EnemyView();
