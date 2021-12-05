@@ -17,8 +17,6 @@
 class GroundView : public MovableObjectView
 {
     private:
-
-
     public:
         GroundView();
         virtual ~GroundView();
