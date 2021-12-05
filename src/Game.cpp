@@ -123,12 +123,6 @@ void Game::pollEvents()
                     this->window->close();
                 }
 
-            if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
-                if(playSprite.getGlobalBounds().contains(sf::Mouse::getPosition(*(this->window))){
-                    this->characterView.setAdvancementState(1);
-                }
-            }
-
         }else {
             if(characterView.getAdvancementState() == 1)
             {
