@@ -97,6 +97,44 @@ void Game::initBackground()
     this->worldBackgroundSprite.setScale(1.f, 1.f);
 }
 
+void Game::playMusic(int window)
+{
+    if (musicPlaying != window) {
+        // stop previous music
+        music.stop();
+    } else {
+        return;
+    }
+/*
+    if (music.getStatus() == sf::Music::Status::Playing) {
+       std::cout << "ALREADY PLAYING" << std::endl;
+       return;
+    }
+    */
+    bool success;
+
+    switch(window) {
+        case 0:
+            success = music.openFromFile("assets/gameOver.wav");
+
+            break;
+        case 7:
+            success = music.openFromFile("assets/mainMenu.ogg");
+            break;
+    }
+
+    if (!success) {
+        std::cout << "COULDN'T LOAD MUSIC ";
+        return;
+    }
+
+    std::cout << "FUNC MUSIC ";
+    music.setVolume(30);
+    music.setLoop(true);
+    music.play();
+    musicPlaying = window;
+}
+
 //Accesssors
 const bool Game::running() const
 {
@@ -174,6 +212,17 @@ void Game::pollEvents()
 
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                 {
+
+                    if ( !this->characterView.getCharacter().isJumping() )
+                    {
+                        if ( !buffer.loadFromFile("assets/jump.wav") )
+                        {
+                            return;
+                        }
+                        sound = sf::Sound(buffer);
+                        sound.play();
+                    }
+
                     this->characterView.jump();
                 }
             }
@@ -219,6 +268,8 @@ void Game::render()
         window->draw(this->mainMenuSprite);
         window->draw(this->playSprite);
         window->draw(this->quitSprite);
+
+        playMusic(7);
     }else {
         if(characterView.getAdvancementState() == 1)
         {
@@ -249,6 +300,7 @@ void Game::render()
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
+                    playMusic(0);
                     this->window->clear();
                     this->characterView = CharacterView();
                     this->groundView = GroundView();

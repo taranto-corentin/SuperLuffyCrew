@@ -40,6 +40,11 @@ class Game
 
         bool gameRestart = false;
 
+        sf::Music music;
+        sf::SoundBuffer buffer;
+        sf::Sound sound;
+        int musicPlaying = -1;
+
         //Game logic
 
         //Init methods
@@ -48,6 +53,8 @@ class Game
         void initVariables();
         void initGroundSprite();
         void initGrounds();
+
+        void playMusic(int window);
 
     public:
         Game();

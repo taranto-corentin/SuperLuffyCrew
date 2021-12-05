@@ -447,3 +447,186 @@
 1638700753 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/CharacterView.cpp
+	"CharacterView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/CharacterView.h
+	"Character.h"
+	"GroundView.h"
+	"EnemyView.h"
+	"PowerView.h"
+	"MeatView.h"
+	"EndLevelView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Character.h
+	<iostream>
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/GroundView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Obstacle.h"
+	"MovableObjectView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Obstacle.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Position.h
+	<string>
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MovableObject.h
+	"Position.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MovableObjectView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"MovableObject.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/EnemyView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	<chrono>
+	"Enemy.h"
+	"GroundView.h"
+	"PowerView.h"
+	"MovableObjectView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Enemy.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/PowerView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Power.h"
+	"MovableObjectView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Power.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MeatView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	"Meat.h"
+	"MovableObjectView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Meat.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/EndLevelView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+	<vector>
+	<chrono>
+	"Enemy.h"
+	"GroundView.h"
+	"PowerView.h"
+	"EndLevel.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/EndLevel.h
+	<iostream>
+	"Position.h"
+	"MovableObject.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/main.cpp
+	"Game.h"
+
+1638713766 /home/cedricloneux/Documents/SuperLuffyCrew/include/Game.h
+	"CharacterView.h"
+	"GroundView.h"
+	"PowerView.h"
+	"EnemyView.h"
+	"LifeView.h"
+
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/LifeView.h
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+	<SFML/Window.hpp>
+	<SFML/Audio.hpp>
+	<SFML/Network.hpp>
+	<iostream>
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Character.cpp
+	"Character.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevel.cpp
+	"EndLevel.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevelView.cpp
+	"EndLevelView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Enemy.cpp
+	"Enemy.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EnemyView.cpp
+	"EnemyView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/GroundView.cpp
+	"GroundView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/LifeView.cpp
+	"LifeView.h"
+	<sstream>
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Meat.cpp
+	"Meat.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MeatView.cpp
+	"MeatView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MovableObject.cpp
+	"MovableObject.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MovableObjectView.cpp
+	"MovableObjectView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Obstacle.cpp
+	"Obstacle.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Position.cpp
+	"Position.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Power.cpp
+	"Power.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/PowerView.cpp
+	"PowerView.h"
+
+1638715202 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Game.cpp
+	"Game.h"
+
