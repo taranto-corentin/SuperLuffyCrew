@@ -137,11 +137,9 @@ GroundView::GroundView()
 
 
 
-
-
     //Creation of the texture from the file that contains the image and display a error message in the console if the image is not found
     sf::Texture* texture = new sf::Texture();
-    if(!texture->loadFromFile("assets/Ground.png"))
+    if(!texture->loadFromFile("assets/Ground2.png"))
     {
         std::cout << "ERROR::GROUND IMAGE NOT FOUND !!!" << std::endl;
     }
