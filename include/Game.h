@@ -7,6 +7,7 @@
 #include "PowerView.h"
 #include "EnemyView.h"
 #include "LifeView.h"
+#include "EndLevelView.h"
 
 class Game
 {
