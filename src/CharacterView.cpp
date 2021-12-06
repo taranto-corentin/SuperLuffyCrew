@@ -400,7 +400,6 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
             continue;
         }
         this->advancementState = 5;
-        endLevels.at(i)->changePosition(5301, 600 -190);
         character.setLifePoint(3);
         return i;
     }
