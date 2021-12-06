@@ -40,32 +40,72 @@ CharacterView::CharacterView()
 
 CharacterView::~CharacterView()
 {
-    //dtor
+    for(int i=0; i<this->nbTypeMovement; i++)
+    {
+        for(int j=0; j<this->nbImagesPerMovement; j++)
+        {
+            delete this->characterTextures[i][j];
+            this->characterTextures[i][j] = nullptr;
+        }
+    }
 }
 
 CharacterView::CharacterView(const CharacterView& other)
 {
+    //Copy of the game logic elements
+    this->startingY = other.startingY;
+    this->character = other.character;
+    this->jumpDone = other.jumpDone;
 
+    //Copy of all the view elements for the collisions
+    this->groundView = other.groundView;
+    this->enemyView = other.enemyView;
+    this->powerView = other.powerView;
+    this->meatView = other.meatView;
+    this->endLevelView = other.endLevelView;
+
+    //Copy the textures
+    for(int i=0; i<2; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            this->characterTextures[i][j] = new sf::Texture(*(other.characterTextures[i][j]));
+        }
+    }
+
+    //Copy the sprite and set it to its initial state
+    this->characterSprite = other.characterSprite;
+    this->characterSprite.setTexture(*(characterTextures[1][0]));
 }
 
 CharacterView& CharacterView::operator=(const CharacterView& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
 
+    //Copy of the game logic elements
     this->startingY = rhs.startingY;
     this->character = rhs.character;
     this->jumpDone = rhs.jumpDone;
+
+    //Copy of all the view elements for the collisions
     this->groundView = rhs.groundView;
+    this->enemyView = rhs.enemyView;
+    this->powerView = rhs.powerView;
+    this->meatView = rhs.meatView;
+    this->endLevelView = rhs.endLevelView;
+
     //Copy the textures
     for(int i=0; i<2; i++)
     {
         for(int j=0; j<3; j++)
         {
-            this->characterTextures[i][j] = rhs.characterTextures[i][j];
+            this->characterTextures[i][j] = new sf::Texture(*(rhs.characterTextures[i][j]));
         }
     }
 
+    //Copy the sprite and set it to its initial state
     this->characterSprite = rhs.characterSprite;
+    this->characterSprite.setTexture(*(characterTextures[1][0]));
 
     return *this;
 }
@@ -180,6 +220,7 @@ void CharacterView::jump()
     {
         this->jumpDone = true;
     }
+
     //If the character hasn't reached its highest point
     if(!this->jumpDone)
     {
@@ -279,6 +320,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
         {
             continue;
         }
+
         powerView->assignPower(i);
         return i;
     }
@@ -324,6 +366,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
              else {
+             /*
+                if ( buffer.loadFromFile("assets/dammaged.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load dammage sound effect!";
+                }
+*/
                 character.takeDamage();
                 enemyView->killEnemy(i);
              }
@@ -366,6 +419,16 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         {
             continue;
         }
+        /*
+        if ( buffer.loadFromFile("assets/upLife.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load dammage sound effect!";
+                }*/
         meatView->eatMeat(i);
         character.gainLife();
         return i;
@@ -400,7 +463,6 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
             continue;
         }
         this->advancementState = 5;
-        endLevels.at(i)->changePosition(5301, 600 -190);
         character.setLifePoint(3);
         return i;
     }

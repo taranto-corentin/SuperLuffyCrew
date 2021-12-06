@@ -11,7 +11,7 @@ class Meat : public MovableObject
     private:
 
     public:
-        Meat(float x, float y);
+        Meat(float x=0.f, float y=0.f);
         virtual ~Meat();
         Meat(const Meat& other);
         Meat& operator=(const Meat& other);

@@ -24,6 +24,7 @@ Character& Character::operator=(const Character& rhs)
 
     this->y = rhs.y;
     this->jumping = rhs.jumping;
+    this->lifePoint = rhs.lifePoint;
 
     return *this;
 }

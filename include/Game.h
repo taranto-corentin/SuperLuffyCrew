@@ -12,9 +12,11 @@
 class Game
 {
     private:
+        //Window objects
         sf::RenderWindow* window;
         sf::VideoMode videoMode;
         sf::Event events;
+        //Textures and sprites
         sf::Texture winTextures;
         sf::Sprite winSprite;
         sf::Texture loseTextures;
@@ -29,17 +31,24 @@ class Game
         sf::Texture worldBackgroundTexture;
         sf::Sprite worldBackgroundSprite;
 
-        //Ground images
+        //Game objects
         GroundView groundView;
         PowerView powerView;
         CharacterView characterView;
         LifeView lifeView;
-
         MeatView meatView;
         EndLevelView endLevelView;
         EnemyView enemyView;
 
         bool gameRestart = false;
+
+        /*sf::Music music;
+        sf::SoundBuffer buffer;
+        sf::Sound sound;*/
+        int musicPlaying = -1;
+        bool wasInFire = false;
+
+        void checkCollisionsAndMove(int move);
 
         //Game logic
 
@@ -47,19 +56,19 @@ class Game
         void initWindow();
         void initBackground();
         void initVariables();
-        void initGroundSprite();
-        void initGrounds();
+
+        //void playMusic(int window);
 
     public:
         Game();
         virtual ~Game();
+        Game(const Game& other);
+        Game& operator=(const Game& rhs);
 
         //Accessors
         const bool running() const;
-        const bool getGameRestart() const;
-        void setGameRestart(bool gameRestart);
 
-        //Functions
+        //Methods
         void pollEvents();
         void update();
         void render();

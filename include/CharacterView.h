@@ -25,7 +25,9 @@ class CharacterView
         //Images
         sf::Texture* characterTextures[2][3];
         sf::Sprite characterSprite;
-        sf::Sprite powerSprite;
+
+        /*sf::SoundBuffer buffer;
+        sf::Sound sound;*/
 
         time_t momentCollision;
         //Constants

@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1638784524 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
+1638799099 source:/home/cedricloneux/Documents/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638785793 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
+1638799099 /home/cedricloneux/Documents/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
@@ -10,7 +10,7 @@
 	"LifeView.h"
 	"EndLevelView.h"
 
-1638785793 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
+1638799444 /home/cedricloneux/Documents/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -18,27 +18,10 @@
 	"MeatView.h"
 	"EndLevelView.h"
 
-1638699802 D
-	"Obstacle.h"
-	"LifeView.h"
-	"MovableObject.h"
-	"Meat.h"
-	"MovableObjectView.h"
-	"Power.h"
-	"MovableObjectView.h"
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-	"MovableObject.h"
-
-1638781335 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Character.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Character.h
 	<iostream>
 
-1638781335 /home/corentin/Documents/Projet/SuperLuffyCrew/include/GroundView.h
+1638718875 /home/cedricloneux/Documents/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -49,55 +32,37 @@
 	"Obstacle.h"
 	"MovableObjectView.h"
 
-1638344662 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Obstacle.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Obstacle.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638468134 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Position.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Position.h
 	<string>
 
-1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
+<<<<<<< HEAD
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MovableObject.h
+=======
+1638791467 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638785420 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
+1638794484 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638785420 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
+1638795169 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
-1638785420 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
+1638791390 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Obstacle.cpp
 	"Obstacle.h"
 
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Position.cpp
+>>>>>>> b6b0e0dc1a35c9f00416a6511bee8d0a652ebce8
 	"Position.h"
 
-1638700753 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/main.cpp
-	"Game.h"
-
-1638782464 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Game.h
-	"CharacterView.h"
-	"GroundView.h"
-	"PowerView.h"
-	"EnemyView.h"
-	"LifeView.h"
-	"EndLevelView.h"
-
-1638716198 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/CharacterView.h
-	"Character.h"
-	"GroundView.h"
-	"EnemyView.h"
-	"PowerView.h"
-	"MeatView.h"
-	"EndLevelView.h"
-
-1638700753 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Character.h
-	<iostream>
-
-1638723855 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/GroundView.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MovableObjectView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -105,89 +70,9 @@
 	<SFML/Network.hpp>
 	<iostream>
 	<vector>
-	"Obstacle.h"
-	"MovableObjectView.h"
-
-1638450018 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Obstacle.h
-	<iostream>
-	"Position.h"
 	"MovableObject.h"
 
-1638535300 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/Position.h
-	<string>
-
-1638700753 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Character.cpp
-	"Character.h"
-
-1638783113 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/CharacterView.cpp
-	"CharacterView.h"
-
-1638783510 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Game.cpp
-	"Game.h"
-
-1638780766 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/GroundView.cpp
-	"GroundView.h"
-
-1638618438 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Obstacle.cpp
-	"Obstacle.h"
-
-1638618438 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/Position.cpp
-	"Position.h"
-
-1638698007 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Character.h
-
-1638699802 s/remotes/origin/main
-	<iostream>
-	"MovableObjectView.h"
-	"Position.h"
-	"MovableObject.h"
-
-1638723820 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/GroundView.h
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-	"Obstacle.h"
-	"MovableObjectView.h"
-
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Obstacle.h
-	<iostream>
-	"Position.h"
-	"MovableObject.h"
-
-1638610147 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Position.h
-	<string>
-
-1638610147 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MovableObject.h
-	"Position.h"
-
-1638699802 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MovableObjectView.h
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-
-1638699802 ject.h"
-
-1638451702 
-	"Enemy.h"
-	"GroundView.h"
-	<vector>
-	"Meat.h"
-
-1638781457 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EnemyView.cpp
-	"EnemyView.h"
-
-1638657361 .h"
-	"MovableObject.h"
-
-1638610147 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyView.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/EnemyView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -201,12 +86,12 @@
 	"PowerView.h"
 	"MovableObjectView.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Enemy.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Enemy.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638699864 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/PowerView.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/PowerView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -217,12 +102,12 @@
 	"Power.h"
 	"MovableObjectView.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Power.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Power.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638610147 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/MeatView.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/MeatView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -233,12 +118,12 @@
 	"Meat.h"
 	"MovableObjectView.h"
 
-1638435647 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Meat.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Meat.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638785793 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EndLevelView.h
+1638799099 /home/cedricloneux/Documents/SuperLuffyCrew/include/EndLevelView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -253,12 +138,12 @@
 	"EndLevel.h"
 	"MovableObjectView.h"
 
-1638462092 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EndLevel.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/EndLevel.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638436587 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/LifeView.h
+1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/LifeView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -266,82 +151,58 @@
 	<SFML/Network.hpp>
 	<iostream>
 
-1638698059 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Character.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Character.cpp
 	"Character.h"
 
-1638612132 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EndLevel.cpp
+1638799401 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/CharacterView.cpp
+	"CharacterView.h"
+
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevel.cpp
 	"EndLevel.h"
 
-1638785793 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EndLevelView.cpp
+1638799099 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevelView.cpp
 	"EndLevelView.h"
 
-1638612111 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Enemy.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1638785793 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
+1638799099 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
-1638785793 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/GroundView.cpp
+1638799855 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Game.cpp
+	"Game.h"
+
+1638799099 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
-1638612354 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/LifeView.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/LifeView.cpp
 	"LifeView.h"
 	<sstream>
 
-1638612379 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Meat.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Meat.cpp
 	"Meat.h"
 
-1638699513 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MeatView.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MeatView.cpp
 	"MeatView.h"
 
-1638612508 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MovableObject.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MovableObject.cpp
 	"MovableObject.h"
 
-1638468059 /home/corentin/Documents/Projet/SuperLuffyCrew/include/MovableObject.h
-	"Position.h"
-
-1638781335 /home/corentin/Documents/Projet/SuperLuffyCrew/include/MovableObjectView.h
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-	"MovableObject.h"
-
-1638710321 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObject.cpp
-	"MovableObject.h"
-
-1638700753 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/MovableObjectView.h
-	<SFML/Graphics.hpp>
-	<SFML/System.hpp>
-	<SFML/Window.hpp>
-	<SFML/Audio.hpp>
-	<SFML/Network.hpp>
-	<iostream>
-	<vector>
-	"MovableObject.h"
-
-1638694391 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/MovableObjectView.cpp
-
-1638612529 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Obstacle.cpp
-	"Obstacle.h"
-
-1638654468 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/MovableObjectView.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/MovableObjectView.cpp
 	"MovableObjectView.h"
 
-1638618438 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EndLevel.cpp
-	"EndLevel.h"
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Obstacle.cpp
+	"Obstacle.h"
 
-1638451702 /home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/include/EndLevel.h
-	<iostream>
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Position.cpp
+	"Position.h"
 
-1638612544 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Position.cpp
-
-1638612561 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Power.cpp
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Power.cpp
 	"Power.h"
 
+<<<<<<< HEAD
+1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/PowerView.cpp
+=======
 1638700075 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
@@ -450,7 +311,7 @@
 1638700753 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
-1638783576 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
+1638792285 /home/corentin/Documents/Projet/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -504,12 +365,12 @@
 	"Meat.h"
 	"MovableObjectView.h"
 
-1638344645 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Meat.h
+1638795887 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Meat.h
 	<iostream>
 	"Position.h"
 	"MovableObject.h"
 
-1638785420 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EndLevelView.h
+1638792604 /home/corentin/Documents/Projet/SuperLuffyCrew/include/EndLevelView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -529,10 +390,10 @@
 	"Position.h"
 	"MovableObject.h"
 
-1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/main.cpp
+1638791390 source:/home/corentin/Documents/Projet/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638785420 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Game.h
+1638795012 /home/corentin/Documents/Projet/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
@@ -540,7 +401,7 @@
 	"LifeView.h"
 	"EndLevelView.h"
 
-1638534732 /home/corentin/Documents/Projet/SuperLuffyCrew/include/LifeView.h
+1638795647 /home/corentin/Documents/Projet/SuperLuffyCrew/include/LifeView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -551,18 +412,17 @@
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EndLevel.cpp
 	"EndLevel.h"
 
-1638785420 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EndLevelView.cpp
+1638792774 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EndLevelView.cpp
 	"EndLevelView.h"
 
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Enemy.cpp
 	"Enemy.h"
 
-1638785420 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
+1638793319 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
-1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/LifeView.cpp
+1638795741 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/LifeView.cpp
 	"LifeView.h"
-	<sstream>
 
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/Meat.cpp
 	"Meat.h"
@@ -580,5 +440,6 @@
 	"Power.h"
 
 1638781335 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/PowerView.cpp
+>>>>>>> b6b0e0dc1a35c9f00416a6511bee8d0a652ebce8
 	"PowerView.h"
 
