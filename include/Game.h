@@ -41,13 +41,13 @@ class Game
         EnemyView enemyView;
 
         bool gameRestart = false;
-
-        /*sf::Music music;
+//SOUND
+        sf::Music music;
         sf::SoundBuffer buffer;
-        sf::Sound sound;*/
+        sf::Sound sound;
         int musicPlaying = -1;
         bool wasInFire = false;
-
+//----
         void checkCollisionsAndMove(int move);
 
         //Game logic
@@ -56,9 +56,9 @@ class Game
         void initWindow();
         void initBackground();
         void initVariables();
-
-        //void playMusic(int window);
-
+//SOUND
+        void playMusic(int window);
+//----
     public:
         Game();
         virtual ~Game();

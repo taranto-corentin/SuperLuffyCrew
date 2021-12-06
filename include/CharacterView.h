@@ -25,10 +25,10 @@ class CharacterView
         //Images
         sf::Texture* characterTextures[2][3];
         sf::Sprite characterSprite;
-
-        /*sf::SoundBuffer buffer;
-        sf::Sound sound;*/
-
+//SOUND
+        sf::SoundBuffer buffer;
+        sf::Sound sound;
+//----
         time_t momentCollision;
         //Constants
         const float xPos = 368.f;

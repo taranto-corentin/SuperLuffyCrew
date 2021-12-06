@@ -168,7 +168,7 @@ void Game::initBackground()
     this->worldBackgroundSprite.setTexture(this->worldBackgroundTexture);
     this->worldBackgroundSprite.setScale(1.f, 1.f);
 }
-/*
+//SOUND
 void Game::playMusic(int window)
 {
     bool inFire = this->powerView.getIsInFire();
@@ -189,7 +189,7 @@ void Game::playMusic(int window)
             success = music.openFromFile("assets/gameOver.wav");
             loop = false;
             break;
-        case 1: case 2: case 3: case4:
+        case 1: case 2: case 3: case 4:
             if ( inFire )
             {
                 success = music.openFromFile("assets/power.wav");
@@ -219,15 +219,19 @@ void Game::playMusic(int window)
 
     musicPlaying = window;
     wasInFire = inFire;
-}*/
+}
+//----
 
 void Game::checkCollisionsAndMove(int move)
 {
     int index = this->characterView.checkCollision(move);
     int indexEnemy = this->characterView.checkCollisionWithEnemies(move);
-    int indexPower = this->characterView.checkCollisionWithPowers(move);
-    int indexMeat = this->characterView.checkCollisionWithMeats(move);
-    int indexEndLevel = this->characterView.checkCollisionWithEndLevel(move);
+//    int indexPower = this->characterView.checkCollisionWithPowers(move);
+//    int indexMeat = this->characterView.checkCollisionWithMeats(move);
+//    int indexEndLevel = this->characterView.checkCollisionWithEndLevel(move);
+    this->characterView.checkCollisionWithPowers(move);
+    this->characterView.checkCollisionWithMeats(move);
+    this->characterView.checkCollisionWithEndLevel(move);
     //Move the obstacles
     if(index == -1 && indexEnemy == -1)
     {
@@ -294,7 +298,7 @@ void Game::pollEvents()
 
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                 {
-/*
+                    //HERE
                     if ( !this->characterView.getCharacter().isJumping() )
                     {
                         if ( !buffer.loadFromFile("assets/jump.wav") )
@@ -304,7 +308,7 @@ void Game::pollEvents()
                         sound = sf::Sound(buffer);
                         sound.play();
                     }
-                    */
+                    //h
 
                     this->characterView.jump();
                 }
@@ -351,12 +355,15 @@ void Game::render()
         window->draw(this->mainMenuSprite);
         window->draw(this->playSprite);
         window->draw(this->quitSprite);
-
-        //playMusic(7);
+//SOUND
+        playMusic(7);
+//----
     }else {
         if(characterView.getAdvancementState() == 1)
         {
-            //playMusic(1);
+//SOUND
+            playMusic(1);
+//----
             //Clear the content of the window
             this->window->clear();
             //Draw the world background
@@ -373,7 +380,9 @@ void Game::render()
             //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
         } else{
             if(characterView.getAdvancementState() == 5){
-                //playMusic(5);
+//SOUND
+                playMusic(5);
+//----
                 this->window->clear();
                 this->characterView = CharacterView();
                 this->groundView = GroundView();
@@ -385,7 +394,9 @@ void Game::render()
                 window->draw(this->winSprite);
             } else {
                 if(characterView.getAdvancementState() == 0){
-                    //playMusic(0);
+//SOUND
+                    playMusic(0);
+//----
                     this->window->clear();
                     this->characterView = CharacterView();
                     this->groundView = GroundView();

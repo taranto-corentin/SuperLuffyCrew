@@ -366,7 +366,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
              else {
-             /*
+//SOUND
                 if ( buffer.loadFromFile("assets/dammaged.wav") )
                 {
                     sound = sf::Sound(buffer);
@@ -376,7 +376,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 {
                 std::cout << "couldn't load dammage sound effect!";
                 }
-*/
+//----
                 character.takeDamage();
                 enemyView->killEnemy(i);
              }
@@ -419,16 +419,17 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         {
             continue;
         }
-        /*
+//SOUND
         if ( buffer.loadFromFile("assets/upLife.wav") )
-                {
-                    sound = sf::Sound(buffer);
-                    sound.play();
-                }
-                else
-                {
-                std::cout << "couldn't load dammage sound effect!";
-                }*/
+        {
+            sound = sf::Sound(buffer);
+            sound.play();
+        }
+        else
+        {
+        std::cout << "couldn't load dammage sound effect!";
+        }
+//----
         meatView->eatMeat(i);
         character.gainLife();
         return i;
