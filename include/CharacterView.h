@@ -20,17 +20,17 @@ class CharacterView
         MeatView* meatView;
         EndLevelView* endLevelView;
         int advancementState = 7;
+        float startingY;
 
         //Images
-        sf::Texture characterTextures[2][3];
+        sf::Texture* characterTextures[2][3];
         sf::Sprite characterSprite;
         sf::Sprite powerSprite;
 
         time_t momentCollision;
         //Constants
         const float xPos = 368.f;
-        const float jumpHeight = 322.f;
-        const float startingY = 472.f;
+        const float jumpHeight = 192.f;
         const int nbTypeMovement = 2;
         const int nbImagesPerMovement = 3;
 
