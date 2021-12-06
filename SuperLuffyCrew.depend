@@ -447,10 +447,10 @@
 1638700753 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
-1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/CharacterView.cpp
+1638798458 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/CharacterView.h
+1638798804 /home/cedricloneux/Documents/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -461,7 +461,7 @@
 1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/Character.h
 	<iostream>
 
-1638709133 /home/cedricloneux/Documents/SuperLuffyCrew/include/GroundView.h
+1638718875 /home/cedricloneux/Documents/SuperLuffyCrew/include/GroundView.h
 	<SFML/Graphics.hpp>
 	<SFML/System.hpp>
 	<SFML/Window.hpp>
@@ -566,7 +566,7 @@
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638713766 /home/cedricloneux/Documents/SuperLuffyCrew/include/Game.h
+1638798302 /home/cedricloneux/Documents/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
@@ -587,7 +587,7 @@
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevel.cpp
 	"EndLevel.h"
 
-1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevelView.cpp
+1638718875 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EndLevelView.cpp
 	"EndLevelView.h"
 
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Enemy.cpp
@@ -596,7 +596,7 @@
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
-1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/GroundView.cpp
+1638718875 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/GroundView.cpp
 	"GroundView.h"
 
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/LifeView.cpp
@@ -627,6 +627,6 @@
 1638709133 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
-1638715202 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Game.cpp
+1638798557 source:/home/cedricloneux/Documents/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 

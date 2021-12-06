@@ -40,10 +40,13 @@ class Game
 
         bool gameRestart = false;
 
-        sf::Music music;
+        /*sf::Music music;
         sf::SoundBuffer buffer;
-        sf::Sound sound;
+        sf::Sound sound;*/
         int musicPlaying = -1;
+        bool wasInFire = false;
+
+        void checkCollisionsAndMove(int move);
 
         //Game logic
 
@@ -54,7 +57,7 @@ class Game
         void initGroundSprite();
         void initGrounds();
 
-        void playMusic(int window);
+        //void playMusic(int window);
 
     public:
         Game();

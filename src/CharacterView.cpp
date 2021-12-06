@@ -175,6 +175,7 @@ void CharacterView::jump()
     {
         this->jumpDone = true;
     }
+
     if(!this->jumpDone)
     {
         int index = this->checkCollision();
@@ -273,6 +274,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
         {
             continue;
         }
+
         std::cout << "Collision with power !" << std::endl;
         std::cout << "Power view : " << powerView->str() << std::endl;
         powerView->assignPower(i);
@@ -321,6 +323,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
              else {
+             /*
+                if ( buffer.loadFromFile("assets/dammaged.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load dammage sound effect!";
+                }
+*/
                 character.takeDamage();
                 enemyView->killEnemy(i);
              }
@@ -366,6 +379,16 @@ const int CharacterView::checkCollisionWithMeats(int movement)
             continue;
         }
         std::cout << "Collision with meat !" << std::endl;
+        /*
+        if ( buffer.loadFromFile("assets/upLife.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load dammage sound effect!";
+                }*/
         meatView->eatMeat(i);
         character.gainLife();
         std::cout << "Meat view : " << meatView->str() << std::endl;

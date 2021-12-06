@@ -26,15 +26,17 @@ class CharacterView
         sf::Sprite characterSprite;
         sf::Sprite powerSprite;
 
+        /*sf::SoundBuffer buffer;
+        sf::Sound sound;*/
+
         time_t momentCollision;
         //Constants
-        const float xPos = 368.f;
-        const float jumpHeight = 322.f;
-        const float startingY = 472.f;
-        const int nbTypeMovement = 2;
-        const int nbImagesPerMovement = 3;
-
-        const float characterWidth = 45.f;
+        static inline const float xPos = 368.f;
+        static inline const float jumpHeight = 322.f;
+        static inline const float startingY = 472.f;
+        static inline const int nbTypeMovement = 2;
+        static inline const int nbImagesPerMovement = 3;
+        static inline const float characterWidth = 45.f;
 
     public:
         CharacterView();
