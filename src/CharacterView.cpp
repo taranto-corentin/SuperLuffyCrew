@@ -376,7 +376,7 @@ const int CharacterView::checkCollisionWithMeats(int movement)
 //Check collisions with the end of the level (the boat)
 const int CharacterView::checkCollisionWithEndLevel(int movement)
 {
-    std::vector<EndLevel*> endLevels = this->endLevelView->getEndLevels();
+    std::vector<MovableObject*> endLevels = this->endLevelView->getObjects();
 
     for(size_t i=0; i<endLevels.size(); i++)
     {

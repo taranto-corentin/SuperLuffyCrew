@@ -2,27 +2,22 @@
 
 EndLevelView::EndLevelView()
 {
-    EndLevel* endLevel = new EndLevel(5300, 600 - 190);
-    this->endLevels.push_back(endLevel);
-
-
-    //Load image
-    sf::Image endLevelImage;
-    if(!endLevelImage.loadFromFile("assets/GoingMerry.png"))
-    {
-        std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
-    }
+    EndLevel* endLevel = new EndLevel(4800, 600 - 190);
+    this->addObject(endLevel);
 
     //Load texture
-    this->endLevelTexture.loadFromImage(endLevelImage);
+    sf::Texture* texture = new sf::Texture();
+    if(!texture->loadFromFile("assets/GoingMerry.png"))
+    {
+        std::cout << "ERROR::GOING MERRY IMAGE NOT FOUND !" << std::endl;
+    }
 
     //Load the sprites
-    for(size_t i=0; i<this->endLevels.size(); i++)
+    for(size_t i=0; i<this->getObjects().size(); i++)
     {
         sf::Sprite sprite;
-        this->endLevelSprite.push_back(sprite);
-        this->endLevelSprite.at(i).setTexture(this->endLevelTexture);
-        this->endLevelSprite.at(i).setScale(2.f, 2.f);
+        sprite.setScale(2.f, 2.f);
+        this->addSprite(sprite, texture);
     }
 }
 
@@ -31,7 +26,7 @@ EndLevelView::~EndLevelView()
     //dtor
 }
 
-EndLevelView::EndLevelView(const EndLevelView& other):  endLevels(other.endLevels), endLevelTexture(other.endLevelTexture), endLevelSprite(other.endLevelSprite)
+EndLevelView::EndLevelView(const EndLevelView& other):  endLevels(other.endLevels)
 {
     //copy ctor
 }
@@ -40,8 +35,6 @@ EndLevelView& EndLevelView::operator=(const EndLevelView& rhs)
 {
     if (this != &rhs){
         this->endLevels = rhs.endLevels;
-        this->endLevelSprite = rhs.endLevelSprite;
-        this->endLevelTexture = rhs.endLevelTexture;
     }
     return *this;
 }
@@ -58,33 +51,10 @@ void EndLevelView::setPowerView(PowerView* powerView)
 
 void EndLevelView::render(sf::RenderWindow* window)
 {
-    for(size_t i=0; i<this->endLevelSprite.size(); i++)
-    {
-        this->endLevelSprite.at(i).setPosition(this->endLevels.at(i)->getX(), this->endLevels.at(i)->getY());
-        window->draw(this->endLevelSprite.at(i));
-    }
+    MovableObjectView::render(window);
 }
 
-void EndLevelView::moveEndLevel(int movement)
-{
-    float changement = 0.f;
-    switch(movement)
-    {
-        case 0:
-            changement = 4.f;
-            break;
-        case 1:
-            changement = -4.f;
-            break;
-    }
-
-    for(size_t i=0; i<this->endLevels.size(); i++)
-    {
-        this->endLevels.at(i)->changePosition(changement, 0.f);
-    }
-}
-
-std::string EndLevelView::str() const
+const std::string EndLevelView::str() const
 {
     std::string result;
     for(size_t i=0; i<this->endLevels.size(); i++)
