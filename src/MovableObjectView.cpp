@@ -7,7 +7,11 @@ MovableObjectView::MovableObjectView()
 
 MovableObjectView::~MovableObjectView()
 {
-    //dtor
+    for(size_t i=0; i<this->objects.size(); i++)
+    {
+        delete this->objects.at(i);
+    }
+    this->objects.clear();
 }
 
 MovableObjectView::MovableObjectView(const MovableObjectView& other): sprites(other.sprites)

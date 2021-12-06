@@ -12,7 +12,7 @@ class Obstacle : public MovableObject
 
 
     public:
-        Obstacle(float x, float y);
+        Obstacle(float x=0.f, float y=0.f);
         virtual ~Obstacle();
         Obstacle(const Obstacle& other);
         Obstacle& operator=(const Obstacle& other);

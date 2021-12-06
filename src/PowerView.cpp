@@ -28,7 +28,7 @@ PowerView::~PowerView()
 
 }
 
-PowerView::PowerView(const PowerView& other): MovableObjectView::MovableObjectView(other)
+PowerView::PowerView(const PowerView& other): MovableObjectView::MovableObjectView(other), isInFire(other.isInFire), activePowerTexture(other.activePowerTexture), activePowerSprite(other.activePowerSprite)
 {
     //copy ctor
 }
@@ -38,6 +38,9 @@ PowerView& PowerView::operator=(const PowerView& rhs)
     if (this == &rhs) return *this; // handle self assignment
 
     MovableObjectView::operator=(rhs);
+    this->isInFire = rhs.isInFire;
+    this->activePowerTexture = rhs.activePowerTexture;
+    this->activePowerSprite = rhs.activePowerSprite;
 
     return *this;
 }

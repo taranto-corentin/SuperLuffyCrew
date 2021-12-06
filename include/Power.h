@@ -12,7 +12,7 @@ class Power : public MovableObject
 
 
     public:
-        Power(float x, float y);
+        Power(float x=0.f, float y=0.f);
         virtual ~Power();
         Power(const Power& other);
         Power& operator=(const Power& other);
