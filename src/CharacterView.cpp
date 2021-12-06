@@ -3,6 +3,7 @@
 CharacterView::CharacterView()
 {
     //Init the character
+    this->startingY = 472.f;
     this->character = Character(this->startingY);
 
     //Init the jump done
@@ -25,12 +26,13 @@ CharacterView::CharacterView()
     {
         for(int j=0; j<this->nbImagesPerMovement; j++)
         {
-            this->characterTextures[i][j].loadFromImage(characterImages[i][j]);
+            this->characterTextures[i][j] = new sf::Texture();
+            this->characterTextures[i][j]->loadFromImage(characterImages[i][j]);
         }
     }
 
     //Initialization of the sprite
-    this->characterSprite.setTexture(characterTextures[1][0]);
+    this->characterSprite.setTexture(*(characterTextures[1][0]));
 
     //Defining the position of the sprite
     this->characterSprite.setPosition(this->xPos, this->character.getY());
@@ -50,6 +52,7 @@ CharacterView& CharacterView::operator=(const CharacterView& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
 
+    this->startingY = rhs.startingY;
     this->character = rhs.character;
     this->jumpDone = rhs.jumpDone;
     this->groundView = rhs.groundView;
@@ -107,6 +110,7 @@ void CharacterView::setEndLevelView(EndLevelView* endLevelView)
 //Render the character in the window
 void CharacterView::render(sf::RenderWindow* window)
 {
+    this->characterSprite.setPosition(this->xPos, this->character.getY());
     window->draw(this->characterSprite);
 }
 
@@ -125,6 +129,7 @@ void CharacterView::moveCharacter(const int movement)
         bool hasToFall = true;
         for(size_t i=0; i<grounds.size(); i++)
         {
+            //Condition to know if there is something under the character
             if(((this->xPos <= grounds.at(i)->getX() + 64 && this->xPos >= grounds.at(i)->getX()) ||
                (this->xPos - this->characterWidth <= grounds.at(i)->getX() && this->xPos + this->characterWidth >= grounds.at(i)->getX())) &&
                this->character.getY() + 64 == grounds.at(i)->getY())
@@ -132,6 +137,7 @@ void CharacterView::moveCharacter(const int movement)
                 hasToFall = false;
             }
         }
+        //If there is nothing then make the character fall and quit the method
         if(hasToFall)
         {
             this->character.setJumping(true);
@@ -139,24 +145,23 @@ void CharacterView::moveCharacter(const int movement)
             return;
         }
 
-        //Change the posture of the character
+        //Change the posture of the character in function of the current one
         const sf::Texture* texture = characterSprite.getTexture();
-        if(texture == &(this->characterTextures[movement][0]))
+        if(texture == this->characterTextures[movement][0])
         {
-            this->characterSprite.setTexture(this->characterTextures[movement][1]);
+            this->characterSprite.setTexture(*(this->characterTextures[movement][1]));
         }
-        else if(texture == &(this->characterTextures[movement][1]))
+        else if(texture == this->characterTextures[movement][1])
         {
-            this->characterSprite.setTexture(this->characterTextures[movement][2]);
+            this->characterSprite.setTexture(*(this->characterTextures[movement][2]));
         }
         else
         {
-            this->characterSprite.setTexture(this->characterTextures[movement][0]);
+            this->characterSprite.setTexture(*(this->characterTextures[movement][0]));
         }
         //Check the collision when the character is on fire
         if(powerView->getIsInFire())
         {
-            std::cout << "Luffy is in fire" << std::endl;
             checkCollisionWithEnemies();
         }
     }
@@ -170,23 +175,25 @@ void CharacterView::jump()
     {
         this->character.setJumping(true);
     }
-    //Checking if the character should go up or down
-    if(this->character.getY() <= this->jumpHeight)
+    //Check if the character should has reached its highest point
+    if(this->startingY - this->jumpHeight >= this->character.getY())
     {
         this->jumpDone = true;
     }
 
+    //If the character hasn't reached its highest point
     if(!this->jumpDone)
     {
         int index = this->checkCollision();
+        //If the character has collided with an obstacle while falling stop the jump and make him fall and quit the method
         if(index != -1)
         {
             this->jumpDone = true;
             this->character.jump(7);
             return;
         }
+        //Otherwise keep making the character go higher and update the position of the sprite
         this->character.jump(-6);
-        this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
     else
     {
@@ -200,8 +207,8 @@ void CharacterView::jump()
             //Stop the jump
             this->jumpDone = false;
             this->character.setJumping(false);
-            //Put the sprite at the new positions
-            this->characterSprite.setPosition(this->xPos, this->character.getY());
+            //Set the startingY at the new Y of the character
+            this->startingY = this->character.getY();
 
             return;
         }
@@ -209,7 +216,6 @@ void CharacterView::jump()
         checkCollisionWithPowers();
         checkCollisionWithMeats();
         this->character.jump(7);
-        this->characterSprite.setPosition(this->xPos, this->character.getY());
     }
 }
 
@@ -275,8 +281,6 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
             continue;
         }
 
-        std::cout << "Collision with power !" << std::endl;
-        std::cout << "Power view : " << powerView->str() << std::endl;
         powerView->assignPower(i);
         return i;
     }
@@ -318,7 +322,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         //Check if the character enters in collision with an enemy on the side or on the top
         if(movement == 1 || movement == 0){
              momentCollision = time(NULL);
-             std::cout << "Collision with the enemy !!! on side" << std::endl;
              if(powerView->getIsInFire()) {
                 enemyView->killEnemy(i);
              }
@@ -338,7 +341,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
         } else {
-            std::cout << "Collision with the enemy !!! on top" << std::endl;
             enemyView->killEnemy(i);
         }
         if(character.getLifePoint() <= 0){
@@ -346,7 +348,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
             character.setLifePoint(3);
         }
 
-        std::cout << "Collision with the enemy !!!" << std::endl;
         return i;
     }
     return -1;
@@ -378,7 +379,6 @@ const int CharacterView::checkCollisionWithMeats(int movement)
         {
             continue;
         }
-        std::cout << "Collision with meat !" << std::endl;
         /*
         if ( buffer.loadFromFile("assets/upLife.wav") )
                 {
@@ -391,7 +391,6 @@ const int CharacterView::checkCollisionWithMeats(int movement)
                 }*/
         meatView->eatMeat(i);
         character.gainLife();
-        std::cout << "Meat view : " << meatView->str() << std::endl;
         return i;
     }
     return -1;
@@ -400,7 +399,7 @@ const int CharacterView::checkCollisionWithMeats(int movement)
 //Check collisions with the end of the level (the boat)
 const int CharacterView::checkCollisionWithEndLevel(int movement)
 {
-    std::vector<EndLevel*> endLevels = this->endLevelView->getEndLevels();
+    std::vector<MovableObject*> endLevels = this->endLevelView->getObjects();
 
     for(size_t i=0; i<endLevels.size(); i++)
     {
@@ -423,11 +422,8 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
         {
             continue;
         }
-        std::cout << "Collision with EndLevel !" << std::endl;
         this->advancementState = 5;
-        endLevels.at(i)->changePosition(5301, 600 -190);
         character.setLifePoint(3);
-        std::cout << "EndLevel view : " << endLevelView->str() << std::endl;
         return i;
     }
     return -1;
@@ -437,5 +433,3 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
 Character CharacterView::getCharacter() const {
     return character;
 }
-
-

@@ -11,7 +11,7 @@ Game::Game()
     sf::Image mainMenuImage;
     sf::Image playImage;
     sf::Image quitImage;
-    if(!winImage.loadFromFile("assets/LevelPassed.png"))
+    if(!winImage.loadFromFile("assets/GameFinished.png"))
     {
         std::cout << "ERROR::EndLevel IMAGE NOT FOUND !!!" << std::endl;
     }
@@ -163,7 +163,7 @@ void Game::checkCollisionsAndMove(int move)
         this->powerView.moveObjects(move);
         this->enemyView.moveObjects(move);
         this->meatView.moveObjects(move);
-        this->endLevelView.moveEndLevel(move);
+        this->endLevelView.moveObjects(move);
     }
     //Update the image of the character
     this->characterView.moveCharacter(move);
@@ -188,6 +188,13 @@ void Game::pollEvents()
         }
         if(characterView.getAdvancementState() == 7){
 
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
+                this->characterView.setAdvancementState(1);
+            }
+
+            if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+                this->window->close();
+            }
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
                     sf::Vector2i MousePos = sf::Mouse::getPosition(*(this->window)) ;
                     sf::FloatRect objPos = playSprite.getGlobalBounds() ;
@@ -235,7 +242,7 @@ void Game::pollEvents()
                 if(characterView.getAdvancementState() == 5){
                     if(sf::Keyboard::isKeyPressed(sf::Keyboard::Enter))
                     {
-                        this->characterView.setAdvancementState(1);
+                        this->characterView.setAdvancementState(7);
                     }
                 } else {
                     if(characterView.getAdvancementState() == 0){

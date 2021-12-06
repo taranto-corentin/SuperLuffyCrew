@@ -14,18 +14,16 @@
 #include "GroundView.h"
 #include "PowerView.h"
 #include "EndLevel.h"
+#include "MovableObjectView.h"
 
 
-class EndLevelView
+class EndLevelView : public MovableObjectView
 {
     private:
         //Game logic
         std::vector<EndLevel*> endLevels;
         GroundView* groundView;
         PowerView* powerView;
-        //Images
-        sf::Texture endLevelTexture;
-        std::vector<sf::Sprite> endLevelSprite;
     public:
         EndLevelView();
         virtual ~EndLevelView();
@@ -38,8 +36,7 @@ class EndLevelView
         //Methods
         void render(sf::RenderWindow* window);
         void setPowerView(PowerView* powerView);
-        void moveEndLevel(int movement);
-        std::string str() const;
+        const std::string str() const;
 
     protected:
 };

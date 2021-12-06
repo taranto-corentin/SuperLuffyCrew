@@ -10,10 +10,6 @@ int main()
         game.update();
         //Render the game
         game.render();
-//        if(game.getGameRestart())
-//        {
-//            std::cout << "restart" << std::endl;
-//        }
     }
 
     return 0;
