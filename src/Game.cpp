@@ -62,7 +62,79 @@ Game::Game()
 
 Game::~Game()
 {
-    delete window;
+
+}
+
+
+Game::Game(const Game& other)
+{
+    //Copy of the window objects
+    this->window = other.window;
+    this->videoMode = other.videoMode;
+    this->events = other.events;
+
+    //Copy of the textures and sprites
+    this->winTextures = other.winTextures;
+    this->winSprite = other.winSprite;
+    this->loseTextures = other.loseTextures;
+    this->loseSprite = other.loseSprite;
+    this->mainMenuTextures = other.mainMenuTextures;
+    this->mainMenuSprite = other.mainMenuSprite;
+    this->playTextures = other.playTextures;
+    this->playSprite = other.playSprite;
+    this->quitTextures = other.quitTextures;
+    this->quitSprite = other.quitSprite;
+    this->worldBackgroundTexture = other.worldBackgroundTexture;
+    this->worldBackgroundSprite = other.worldBackgroundSprite;
+
+    //Copy of the game objects
+    this->groundView = other.groundView;
+    this->characterView = other.characterView;
+    this->powerView = other.powerView;
+    this->lifeView = other.lifeView;
+    this->meatView = other.meatView;
+    this->endLevelView = other.endLevelView;
+    this->enemyView = other.enemyView;
+
+    this->gameRestart = other.gameRestart;
+}
+
+Game& Game::operator=(const Game& rhs)
+{
+
+    if (this == &rhs) return *this; // handle self assignment
+
+    //Copy of the window objects
+    this->window = rhs.window;
+    this->videoMode = rhs.videoMode;
+    this->events = rhs.events;
+
+    //Copy of the textures and sprites
+    this->winTextures = rhs.winTextures;
+    this->winSprite = rhs.winSprite;
+    this->loseTextures = rhs.loseTextures;
+    this->loseSprite = rhs.loseSprite;
+    this->mainMenuTextures = rhs.mainMenuTextures;
+    this->mainMenuSprite = rhs.mainMenuSprite;
+    this->playTextures = rhs.playTextures;
+    this->playSprite = rhs.playSprite;
+    this->quitTextures = rhs.quitTextures;
+    this->quitSprite = rhs.quitSprite;
+    this->worldBackgroundTexture = rhs.worldBackgroundTexture;
+    this->worldBackgroundSprite = rhs.worldBackgroundSprite;
+
+    //Copy of the game objects
+    this->groundView = rhs.groundView;
+    this->characterView = rhs.characterView;
+    this->powerView = rhs.powerView;
+    this->lifeView = rhs.lifeView;
+    this->meatView = rhs.meatView;
+    this->endLevelView = rhs.endLevelView;
+    this->enemyView = rhs.enemyView;
+
+    this->gameRestart = rhs.gameRestart;
+
+    return *this;
 }
 
 void Game::initWindow()

@@ -25,7 +25,6 @@ class CharacterView
         //Images
         sf::Texture* characterTextures[2][3];
         sf::Sprite characterSprite;
-        sf::Sprite powerSprite;
 
         time_t momentCollision;
         //Constants

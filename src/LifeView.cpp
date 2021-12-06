@@ -1,7 +1,5 @@
 #include "LifeView.h"
 
-#include <sstream>
-
 LifeView::LifeView()
 {
     //Load image
@@ -22,6 +20,12 @@ LifeView::LifeView()
 LifeView::~LifeView()
 {
     //dtor
+}
+
+LifeView::LifeView(const LifeView& other)
+{
+    this->lifeSprite = other.lifeSprite;
+    this->lifeTexture = other.lifeTexture;
 }
 
 LifeView& LifeView::operator=(const LifeView& rhs)

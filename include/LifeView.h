@@ -19,7 +19,7 @@ class LifeView
     public:
         LifeView();
         virtual ~LifeView();
-        //MeatView(const MeatView& other);
+        LifeView(const LifeView& other);
         LifeView& operator=(const LifeView& other);
 
         //Methods

@@ -26,7 +26,7 @@ EndLevelView::~EndLevelView()
     //dtor
 }
 
-EndLevelView::EndLevelView(const EndLevelView& other):  endLevels(other.endLevels)
+EndLevelView::EndLevelView(const EndLevelView& other): MovableObjectView::MovableObjectView(other)
 {
     //copy ctor
 }
@@ -34,34 +34,12 @@ EndLevelView::EndLevelView(const EndLevelView& other):  endLevels(other.endLevel
 EndLevelView& EndLevelView::operator=(const EndLevelView& rhs)
 {
     if (this != &rhs){
-        this->endLevels = rhs.endLevels;
+        MovableObjectView::operator=(rhs);
     }
     return *this;
 }
 
-std::vector<EndLevel*> EndLevelView::getEndLevels()
-{
-    return this->endLevels;
-}
-
-void EndLevelView::setPowerView(PowerView* powerView)
-{
-    this->powerView = powerView;
-}
-
-void EndLevelView::render(sf::RenderWindow* window)
-{
-    MovableObjectView::render(window);
-}
-
 const std::string EndLevelView::str() const
 {
-    std::string result;
-    for(size_t i=0; i<this->endLevels.size(); i++)
-    {
-        result += this->endLevels.at(i)->str() + "\n";
-    }
-    return result;
+    return "End level";
 }
-
-

@@ -66,7 +66,6 @@ void EnemyView::setPowerView(PowerView* powerView)
 }
 
 //The character kills the enemy at the 'index' position
-
 void EnemyView::killEnemy(int index)
 {
     this->powerView->turnOffLuffy(index);

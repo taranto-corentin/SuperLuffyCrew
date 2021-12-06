@@ -40,32 +40,72 @@ CharacterView::CharacterView()
 
 CharacterView::~CharacterView()
 {
-    //dtor
+    for(int i=0; i<this->nbTypeMovement; i++)
+    {
+        for(int j=0; j<this->nbImagesPerMovement; j++)
+        {
+            delete this->characterTextures[i][j];
+            this->characterTextures[i][j] = nullptr;
+        }
+    }
 }
 
 CharacterView::CharacterView(const CharacterView& other)
 {
+    //Copy of the game logic elements
+    this->startingY = other.startingY;
+    this->character = other.character;
+    this->jumpDone = other.jumpDone;
 
+    //Copy of all the view elements for the collisions
+    this->groundView = other.groundView;
+    this->enemyView = other.enemyView;
+    this->powerView = other.powerView;
+    this->meatView = other.meatView;
+    this->endLevelView = other.endLevelView;
+
+    //Copy the textures
+    for(int i=0; i<2; i++)
+    {
+        for(int j=0; j<3; j++)
+        {
+            this->characterTextures[i][j] = new sf::Texture(*(other.characterTextures[i][j]));
+        }
+    }
+
+    //Copy the sprite and set it to its initial state
+    this->characterSprite = other.characterSprite;
+    this->characterSprite.setTexture(*(characterTextures[1][0]));
 }
 
 CharacterView& CharacterView::operator=(const CharacterView& rhs)
 {
     if (this == &rhs) return *this; // handle self assignment
 
+    //Copy of the game logic elements
     this->startingY = rhs.startingY;
     this->character = rhs.character;
     this->jumpDone = rhs.jumpDone;
+
+    //Copy of all the view elements for the collisions
     this->groundView = rhs.groundView;
+    this->enemyView = rhs.enemyView;
+    this->powerView = rhs.powerView;
+    this->meatView = rhs.meatView;
+    this->endLevelView = rhs.endLevelView;
+
     //Copy the textures
     for(int i=0; i<2; i++)
     {
         for(int j=0; j<3; j++)
         {
-            this->characterTextures[i][j] = rhs.characterTextures[i][j];
+            this->characterTextures[i][j] = new sf::Texture(*(rhs.characterTextures[i][j]));
         }
     }
 
+    //Copy the sprite and set it to its initial state
     this->characterSprite = rhs.characterSprite;
+    this->characterSprite.setTexture(*(characterTextures[1][0]));
 
     return *this;
 }
