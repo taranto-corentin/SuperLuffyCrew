@@ -104,8 +104,8 @@ GroundView::GroundView()
     this->addObject(obstacle28);
     Obstacle* obstacle29 = new Obstacle(3054, 600-320);
     this->addObject(obstacle29);
-    //Obstacle* obstacle30 = new Obstacle(2800, 600-128);
-    //this->addObject(obstacle30);
+    Obstacle* obstacle30 = new Obstacle(2800, 600-128);
+    this->addObject(obstacle30);
 
     Obstacle* obstacle31 = new Obstacle(3450, 600-128);
     this->addObject(obstacle31);
