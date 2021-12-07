@@ -363,6 +363,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         if(movement == 1 || movement == 0){
              momentCollision = time(NULL);
              if(powerView->getIsInFire()) {
+//SOUND
+                /*if ( buffer.loadFromFile("assets/kill.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load kill sound effect!";
+                }*/
+//----
                 enemyView->killEnemy(i);
              }
              else {
@@ -381,6 +392,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
         } else {
+//SOUND
+            /*if ( buffer.loadFromFile("assets/kill.wav") )
+            {
+                sound = sf::Sound(buffer);
+                sound.play();
+            }
+            else
+            {
+            std::cout << "couldn't load kill sound effect!";
+            }*/
+//----
             enemyView->killEnemy(i);
         }
         if(character.getLifePoint() <= 0){

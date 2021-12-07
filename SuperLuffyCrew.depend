@@ -208,10 +208,10 @@
 1638811643 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/PowerView.cpp
 	"PowerView.h"
 
-1638812736 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
+1638886451 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/CharacterView.cpp
 	"CharacterView.h"
 
-1638814201 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
+1638883887 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/Game.cpp
 	"Game.h"
 
 1638783178 source:/home/dompas/Bureau/DevJeuxVideo/SuperLuffyCrew/src/EndLevelView.cpp
@@ -448,15 +448,16 @@
 1638784524 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/main.cpp
 	"Game.h"
 
-1638812891 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
+1638883887 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/Game.h
 	"CharacterView.h"
 	"GroundView.h"
 	"PowerView.h"
 	"EnemyView.h"
 	"LifeView.h"
 	"EndLevelView.h"
+	"EnemyViewGenerator.h"
 
-1638812865 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
+1638883887 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/CharacterView.h
 	"Character.h"
 	"GroundView.h"
 	"EnemyView.h"
@@ -611,7 +612,7 @@
 1638811643 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EndLevelView.cpp
 	"EndLevelView.h"
 
-1638811643 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
+1638883887 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyView.cpp
 	"EnemyView.h"
 
 1638811643 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/LifeView.cpp
@@ -665,5 +666,17 @@
 	"EnemyViewBuilder.h"
 
 1638878292 source:/home/corentin/Documents/Projet/SuperLuffyCrew/src/EnemyViewGenerator.cpp
+	"EnemyViewGenerator.h"
+
+1638883887 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyViewGenerator.h
+	"EnemyViewBuilder.h"
+
+1638883887 /home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/include/EnemyViewBuilder.h
+	"EnemyView.h"
+
+1638883887 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyViewBuilder.cpp
+	"EnemyViewBuilder.h"
+
+1638883887 source:/home/maxime/Documents/Projet_Dev-JV/SuperLuffyCrew/src/EnemyViewGenerator.cpp
 	"EnemyViewGenerator.h"
 
