@@ -31,12 +31,12 @@ class CharacterView
 //----
         time_t momentCollision;
         //Constants
-        const float xPos = 368.f;
-        const float jumpHeight = 192.f;
-        const int nbTypeMovement = 2;
-        const int nbImagesPerMovement = 3;
+        const float XPOS = 368.f;
+        const float JUMP_HEIGHT = 192.f;
+        const int NB_TYPE_MOVEMENT = 2;
+        const int NB_IMAGES_PER_MOVEMENT = 3;
 
-        const float characterWidth = 45.f;
+        const float CHARACTER_WIDTH = 45.f;
 
     public:
         CharacterView();

@@ -2,7 +2,7 @@
 
 EnemyView::EnemyView()
 {
-    Enemy* enemy1 = new Enemy(1150, 600 - 128);
+    /*Enemy* enemy1 = new Enemy(1150, 600 - 128);
     this->addObject(enemy1);
     Enemy* enemy2 = new Enemy(1250, 600 - 128);
     this->addObject(enemy2);
@@ -38,7 +38,7 @@ EnemyView::EnemyView()
         sf::Sprite sprite;
         sprite.setScale(2.f, 2.f);
         this->addSprite(sprite, texture);
-    }
+    }*/
 }
 
 EnemyView::~EnemyView()

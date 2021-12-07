@@ -3,11 +3,12 @@
 
 #include "CharacterView.h"
 #include "GroundView.h"
-
 #include "PowerView.h"
 #include "EnemyView.h"
 #include "LifeView.h"
 #include "EndLevelView.h"
+
+#include "EnemyViewGenerator.h"
 
 class Game
 {

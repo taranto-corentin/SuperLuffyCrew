@@ -22,9 +22,9 @@ CharacterView::CharacterView()
     }
 
     //Loading the textures
-    for(int i=0; i<this->nbTypeMovement; i++)
+    for(int i=0; i<this->NB_TYPE_MOVEMENT; i++)
     {
-        for(int j=0; j<this->nbImagesPerMovement; j++)
+        for(int j=0; j<this->NB_IMAGES_PER_MOVEMENT; j++)
         {
             this->characterTextures[i][j] = new sf::Texture();
             this->characterTextures[i][j]->loadFromImage(characterImages[i][j]);
@@ -35,14 +35,14 @@ CharacterView::CharacterView()
     this->characterSprite.setTexture(*(characterTextures[1][0]));
 
     //Defining the position of the sprite
-    this->characterSprite.setPosition(this->xPos, this->character.getY());
+    this->characterSprite.setPosition(this->XPOS, this->character.getY());
 }
 
 CharacterView::~CharacterView()
 {
-    for(int i=0; i<this->nbTypeMovement; i++)
+    for(int i=0; i<this->NB_TYPE_MOVEMENT; i++)
     {
-        for(int j=0; j<this->nbImagesPerMovement; j++)
+        for(int j=0; j<this->NB_IMAGES_PER_MOVEMENT; j++)
         {
             delete this->characterTextures[i][j];
             this->characterTextures[i][j] = nullptr;
@@ -65,9 +65,9 @@ CharacterView::CharacterView(const CharacterView& other)
     this->endLevelView = other.endLevelView;
 
     //Copy the textures
-    for(int i=0; i<2; i++)
+    for(int i=0; i<this->NB_TYPE_MOVEMENT; i++)
     {
-        for(int j=0; j<3; j++)
+        for(int j=0; j<NB_IMAGES_PER_MOVEMENT; j++)
         {
             this->characterTextures[i][j] = new sf::Texture(*(other.characterTextures[i][j]));
         }
@@ -150,7 +150,7 @@ void CharacterView::setEndLevelView(EndLevelView* endLevelView)
 //Render the character in the window
 void CharacterView::render(sf::RenderWindow* window)
 {
-    this->characterSprite.setPosition(this->xPos, this->character.getY());
+    this->characterSprite.setPosition(this->XPOS, this->character.getY());
     window->draw(this->characterSprite);
 }
 
@@ -170,8 +170,8 @@ void CharacterView::moveCharacter(const int movement)
         for(size_t i=0; i<grounds.size(); i++)
         {
             //Condition to know if there is something under the character
-            if(((this->xPos <= grounds.at(i)->getX() + 64 && this->xPos >= grounds.at(i)->getX()) ||
-               (this->xPos - this->characterWidth <= grounds.at(i)->getX() && this->xPos + this->characterWidth >= grounds.at(i)->getX())) &&
+            if(((this->XPOS <= grounds.at(i)->getX() + 64 && this->XPOS >= grounds.at(i)->getX()) ||
+               (this->XPOS - this->CHARACTER_WIDTH <= grounds.at(i)->getX() && this->XPOS + this->CHARACTER_WIDTH >= grounds.at(i)->getX())) &&
                this->character.getY() + 64 == grounds.at(i)->getY())
             {
                 hasToFall = false;
@@ -216,7 +216,7 @@ void CharacterView::jump()
         this->character.setJumping(true);
     }
     //Check if the character should has reached its highest point
-    if(this->startingY - this->jumpHeight >= this->character.getY())
+    if(this->startingY - this->JUMP_HEIGHT >= this->character.getY())
     {
         this->jumpDone = true;
     }
@@ -281,7 +281,7 @@ const int CharacterView::checkCollision(int movement) const
                 newX -= 4.f;
                 break;
         }
-        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
         }
@@ -312,7 +312,7 @@ const int CharacterView::checkCollisionWithPowers(int movement) const
                 newX -= 4.f;
                 break;
         }
-        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
         }
@@ -348,7 +348,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 newY -= 4.f;
                 break;
         }
-        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
         }
@@ -411,7 +411,7 @@ const int CharacterView::checkCollisionWithMeats(int movement)
                 newX -= 4.f;
                 break;
         }
-        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
         }
@@ -455,7 +455,7 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
                 newX -= 4.f;
                 break;
         }
-        if(this->xPos + this->characterWidth <= newX || this->xPos >= newX + this->characterWidth)
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
         }

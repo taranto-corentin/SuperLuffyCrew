@@ -150,6 +150,8 @@ void Game::initWindow()
 
 void Game::initVariables()
 {
+    this->enemyView = EnemyViewGenerator().make();
+
     this->characterView.setGroundView(&groundView);
     //this->enemyView.setGroundView(&groundView);
     this->characterView.setPowerView(&powerView);
@@ -386,7 +388,6 @@ void Game::render()
                 this->window->clear();
                 this->characterView = CharacterView();
                 this->groundView = GroundView();
-                this->enemyView = EnemyView();
                 this->powerView = PowerView();
                 this->meatView = MeatView();
                 this->endLevelView = EndLevelView();
@@ -400,7 +401,6 @@ void Game::render()
                     this->window->clear();
                     this->characterView = CharacterView();
                     this->groundView = GroundView();
-                    this->enemyView = EnemyView();
                     this->powerView = PowerView();
                     this->meatView = MeatView();
                     this->endLevelView = EndLevelView();
