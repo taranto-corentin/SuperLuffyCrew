@@ -58,12 +58,13 @@ class CharacterView
         void moveCharacter(const int movement);
         void jump();
         const bool isJumping() const;
-        const int checkCollision(int movement=0) const;
+        const int checkCollision(int movement=0);
         const int checkCollisionWithEnemies(int movement=0);
-        const int checkCollisionWithPowers(int movement=0) const;
+        const int checkCollisionWithPowers(int movement=0);
         const int checkCollisionWithMeats(int movement=0);
         const int checkCollisionWithEndLevel(int movement=0);
         const int checkIfLuffyOrEnemyDie()const;
+        const int getCollisionIndex(std::vector<MovableObject*> objects, int movement);
 };
 
 #endif // CHARACTERVIEW_H
