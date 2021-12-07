@@ -40,6 +40,7 @@ CharacterView::CharacterView()
 
 CharacterView::~CharacterView()
 {
+    //Clear the list of textures to avoid memory leaks
     for(int i=0; i<this->NB_TYPE_MOVEMENT; i++)
     {
         for(int j=0; j<this->NB_IMAGES_PER_MOVEMENT; j++)
@@ -252,6 +253,7 @@ void CharacterView::jump()
 
             return;
         }
+        //Check any potential collision and keep the jump going
         checkCollisionWithEnemies(2);
         checkCollisionWithPowers();
         checkCollisionWithMeats();
@@ -265,75 +267,36 @@ const bool CharacterView::isJumping() const
 }
 
 //Check collisions with obstacles
-const int CharacterView::checkCollision(int movement) const
+const int CharacterView::checkCollision(int movement)
 {
+    //Get all the obstcales
     std::vector<MovableObject*> grounds = this->groundView->getObjects();
-    for(size_t i=0; i<grounds.size(); i++)
-    {
-        int newX = grounds.at(i)->getX();
-        int newY = grounds.at(i)->getY();
-        switch(movement)
-        {
-            case 0:
-                newX += 4.f;
-                break;
-            case 1:
-                newX -= 4.f;
-                break;
-        }
-        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
-        {
-            continue;
-        }
-        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
-        {
-            continue;
-        }
-        return i;
-    }
-    return -1;
+    return this->getCollisionIndex(grounds, movement);
 }
 
 //Check collisions with powers
-const int CharacterView::checkCollisionWithPowers(int movement) const
+const int CharacterView::checkCollisionWithPowers(int movement)
 {
+    //Get all the powers
     std::vector<MovableObject*> powers = this->powerView->getObjects();
 
-    for(size_t i=0; i<powers.size(); i++)
+    int index = this->getCollisionIndex(powers, movement);
+    if(index != -1)
     {
-        int newX = powers.at(i)->getX();
-        int newY = powers.at(i)->getY();
-        switch(movement)
-        {
-            case 0:
-                newX += 4.f;
-                break;
-            case 1:
-                newX -= 4.f;
-                break;
-        }
-        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
-        {
-            continue;
-        }
-        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
-        {
-            continue;
-        }
-
-        powerView->assignPower(i);
-        return i;
+        powerView->assignPower(index);
     }
-    return -1;
+    return index;
 }
 
 //Check collisions with enemies
 const int CharacterView::checkCollisionWithEnemies(int movement)
 {
+    //Get all the enemies
     std::vector<MovableObject*> enemies = this->enemyView->getObjects();
 
     for(size_t i=0; i<enemies.size(); i++)
     {
+        //Determine the new position of the character
         int newX = enemies.at(i)->getX();
         int newY = enemies.at(i)->getY();
         switch(movement)
@@ -348,6 +311,7 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 newY -= 4.f;
                 break;
         }
+        //Check if there is a collision
         if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
@@ -355,7 +319,6 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 
         if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
         {
-
             continue;
         }
 
@@ -363,6 +326,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
         if(movement == 1 || movement == 0){
              momentCollision = time(NULL);
              if(powerView->getIsInFire()) {
+//SOUND
+                /*if ( buffer.loadFromFile("assets/kill.wav") )
+                {
+                    sound = sf::Sound(buffer);
+                    sound.play();
+                }
+                else
+                {
+                std::cout << "couldn't load kill sound effect!";
+                }*/
+//----
                 enemyView->killEnemy(i);
              }
              else {
@@ -381,6 +355,17 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
                 enemyView->killEnemy(i);
              }
         } else {
+//SOUND
+            /*if ( buffer.loadFromFile("assets/kill.wav") )
+            {
+                sound = sf::Sound(buffer);
+                sound.play();
+            }
+            else
+            {
+            std::cout << "couldn't load kill sound effect!";
+            }*/
+//----
             enemyView->killEnemy(i);
         }
         if(character.getLifePoint() <= 0){
@@ -396,10 +381,12 @@ const int CharacterView::checkCollisionWithEnemies(int movement)
 //Check collisions with the meat
 const int CharacterView::checkCollisionWithMeats(int movement)
 {
+    //Get all the meat
     std::vector<MovableObject*> meats = this->meatView->getObjects();
 
     for(size_t i=0; i<meats.size(); i++)
     {
+        //Get the new position of the meat
         int newX = meats.at(i)->getX();
         int newY = meats.at(i)->getY();
         switch(movement)
@@ -411,6 +398,7 @@ const int CharacterView::checkCollisionWithMeats(int movement)
                 newX -= 4.f;
                 break;
         }
+        //Check if there is a collision
         if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
@@ -440,10 +428,12 @@ const int CharacterView::checkCollisionWithMeats(int movement)
 //Check collisions with the end of the level (the boat)
 const int CharacterView::checkCollisionWithEndLevel(int movement)
 {
+    //Get the endLevel
     std::vector<MovableObject*> endLevels = this->endLevelView->getObjects();
 
     for(size_t i=0; i<endLevels.size(); i++)
     {
+        //Determine the new position of the endLevel
         int newX = endLevels.at(i)->getX();
         int newY = endLevels.at(i)->getY();
         switch(movement)
@@ -455,6 +445,7 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
                 newX -= 4.f;
                 break;
         }
+        //Check if there is a collision or not
         if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
         {
             continue;
@@ -473,4 +464,34 @@ const int CharacterView::checkCollisionWithEndLevel(int movement)
 //Getter
 Character CharacterView::getCharacter() const {
     return character;
+}
+
+const int CharacterView::getCollisionIndex(std::vector<MovableObject*> objects, int movement)
+{
+    for(size_t i=0; i<objects.size(); i++)
+    {
+        //Determine the new position of the object based on its movement
+        int newX = objects.at(i)->getX();
+        int newY = objects.at(i)->getY();
+        switch(movement)
+        {
+            case 0:
+                newX += 4.f;
+                break;
+            case 1:
+                newX -= 4.f;
+                break;
+        }
+        //Determine if the character collided with an obstacle
+        if(this->XPOS + this->CHARACTER_WIDTH <= newX || this->XPOS >= newX + this->CHARACTER_WIDTH)
+        {
+            continue;
+        }
+        if(this->character.getY() + 64 <= newY || newY + 64 <= this->character.getY())
+        {
+            continue;
+        }
+        return i;
+    }
+    return -1;
 }

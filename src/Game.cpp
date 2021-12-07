@@ -6,6 +6,7 @@ Game::Game()
     initWindow();
     initBackground();
 
+    //Load the images for the menus
     sf::Image winImage;
     sf::Image loseImage;
     sf::Image mainMenuImage;
@@ -152,8 +153,8 @@ void Game::initVariables()
 {
     this->enemyView = EnemyViewGenerator().make();
 
+    //Set all the views where it is necessary
     this->characterView.setGroundView(&groundView);
-    //this->enemyView.setGroundView(&groundView);
     this->characterView.setPowerView(&powerView);
     this->characterView.setEnemyView(&enemyView);
     this->characterView.setMeatView(&meatView);
@@ -222,15 +223,12 @@ void Game::playMusic(int window)
     musicPlaying = window;
     wasInFire = inFire;
 }
-//----
 
 void Game::checkCollisionsAndMove(int move)
 {
+    //Check the collisions
     int index = this->characterView.checkCollision(move);
     int indexEnemy = this->characterView.checkCollisionWithEnemies(move);
-//    int indexPower = this->characterView.checkCollisionWithPowers(move);
-//    int indexMeat = this->characterView.checkCollisionWithMeats(move);
-//    int indexEndLevel = this->characterView.checkCollisionWithEndLevel(move);
     this->characterView.checkCollisionWithPowers(move);
     this->characterView.checkCollisionWithMeats(move);
     this->characterView.checkCollisionWithEndLevel(move);
@@ -260,12 +258,13 @@ void Game::pollEvents()
     {
         switch(this->events.type)
         {
+            //If we click on the cross at the right top corner of the window it closes the window
             case sf::Event::Closed:
                 this->window->close();
                 break;
         }
         if(characterView.getAdvancementState() == 7){
-
+            //Restart the game if the user press space and close the window if the user press esc
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)){
                 this->characterView.setAdvancementState(1);
             }
@@ -273,6 +272,7 @@ void Game::pollEvents()
             if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
                 this->window->close();
             }
+            //Allows to use a sprite as a button by checking if the user clicked on the sprite or not
             if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
                     sf::Vector2i MousePos = sf::Mouse::getPosition(*(this->window)) ;
                     sf::FloatRect objPos = playSprite.getGlobalBounds() ;
@@ -288,6 +288,7 @@ void Game::pollEvents()
         }else {
             if(characterView.getAdvancementState() == 1)
             {
+                //Move the character accordingly to the keys pressed and check the collision with any potential elements
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
                 {
                     checkCollisionsAndMove(1);
@@ -297,10 +298,9 @@ void Game::pollEvents()
                 {
                     checkCollisionsAndMove(0);
                 }
-
+                //Make the character jump
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
                 {
-                    //HERE
                     if ( !this->characterView.getCharacter().isJumping() )
                     {
                         if ( !buffer.loadFromFile("assets/jump.wav") )
@@ -310,7 +310,6 @@ void Game::pollEvents()
                         sound = sf::Sound(buffer);
                         sound.play();
                     }
-                    //h
 
                     this->characterView.jump();
                 }
@@ -352,66 +351,59 @@ void Game::renderBackground()
 
 void Game::render()
 {
+    //Display the elements of the main menu
     if(characterView.getAdvancementState() == 7){
         this->window->clear();
         window->draw(this->mainMenuSprite);
         window->draw(this->playSprite);
         window->draw(this->quitSprite);
-//SOUND
-        playMusic(7);
-//----
-    }else {
-        if(characterView.getAdvancementState() == 1)
-        {
-//SOUND
-            playMusic(1);
-//----
-            //Clear the content of the window
-            this->window->clear();
-            //Draw the world background
-            this->renderBackground();
-            //Draw the game objects
-            this->groundView.render(this->window);
-            this->characterView.render(this->window);
-            this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
-            this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
-            this->powerView.render(this->window);
-            this->enemyView.render(this->window);
-            this->meatView.render(this->window);
-            this->endLevelView.render(this->window);
-            //std::cout << "hero life before: " << characterView.getCharacter().getLifePoint() << std::endl;
-        } else{
-            if(characterView.getAdvancementState() == 5){
-//SOUND
-                playMusic(5);
-//----
-                this->window->clear();
-                this->characterView = CharacterView();
-                this->groundView = GroundView();
-                this->powerView = PowerView();
-                this->meatView = MeatView();
-                this->endLevelView = EndLevelView();
-                initVariables();
-                window->draw(this->winSprite);
-            } else {
-                if(characterView.getAdvancementState() == 0){
-//SOUND
-                    playMusic(0);
-//----
-                    this->window->clear();
-                    this->characterView = CharacterView();
-                    this->groundView = GroundView();
-                    this->powerView = PowerView();
-                    this->meatView = MeatView();
-                    this->endLevelView = EndLevelView();
-                    initVariables();
-                    std::cout << "state 0" << std::endl;
-                    window->draw(this->loseSprite);
-                }
-            }
 
-        }
+        playMusic(7);
     }
+    else if(characterView.getAdvancementState() == 1)
+    {
+        playMusic(1);
+
+        //Clear the content of the window
+        this->window->clear();
+        //Draw the world background
+        this->renderBackground();
+        //Draw the game objects
+        this->groundView.render(this->window);
+        this->characterView.render(this->window);
+        this->lifeView.render(this->window, characterView.getCharacter().getLifePoint());
+        this->lifeView.updateLifeTxt(characterView.getCharacter().getLifePoint());
+        this->powerView.render(this->window);
+        this->enemyView.render(this->window);
+        this->meatView.render(this->window);
+        this->endLevelView.render(this->window);
+    }
+    else if(characterView.getAdvancementState() == 5){
+        playMusic(5);
+
+        this->window->clear();
+        this->resetGame();
+        window->draw(this->winSprite);
+    }
+    else if(characterView.getAdvancementState() == 0){
+        playMusic(0);
+
+        this->window->clear();
+        this->resetGame();
+        window->draw(this->loseSprite);
+    }
+
     //Display the new content of the window
     this->window->display();
+}
+
+void Game::resetGame()
+{
+    //Reinitialize the variables to their basic state
+    this->characterView = CharacterView();
+    this->groundView = GroundView();
+    this->powerView = PowerView();
+    this->meatView = MeatView();
+    this->endLevelView = EndLevelView();
+    initVariables();
 }

@@ -75,6 +75,7 @@ class Game
         void render();
         void renderGround();
         void renderBackground();
+        void resetGame();
 };
 
 #endif // GAME_H
